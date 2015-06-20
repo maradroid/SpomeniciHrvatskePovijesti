@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string-array name="stoljece_12">
+		<item>Bašćanska ploča</item>
+    </string-array>
+
+    <string-array name="stoljece_12_tag">
+        <item>bascanska_ploca</item>
+    </string-array>
+
+
+	<string-array name="bascanska_ploca">	<!-- ime spomenika -->
+   		<item>Jurandvor kod Baške na otoku Krku</item>	<!-- mjesto  -->
+   		<item>1100.</item>	<!-- godina  -->
+   		<item>Formativni tip glagoljice</item>	<!--  pismo -->
+   		<item>Hrvatska redakcija staroslavenskog jezika</item>	<!-- jezik  -->
+   		<item>Kralj Zvonimir daruje ledinu za gradnju crkve Sv. Lucije</item>	<!-- sadržaj  -->
+		<item>Kamena ploča</item>	<!-- veličina  -->
+		<item>Ploča je služila kao oltarna pregrada; sadrži nekoliko ćiriličnih slova; Značajni istraživači: Franjo Rački, Vatroslav Jagić, Vjekoslav Štefanić, Branko Fučić; danas je u HAZU.</item>	<!-- zanimljivosti -->
+  	</string-array>
+
+   
+</resources>

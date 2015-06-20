@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Povijesni Spomenici</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="stoljeca">
+        <item>12. stoljeće</item>
+        <item>13. stoljeće</item>
+    </string-array>
+
+</resources>

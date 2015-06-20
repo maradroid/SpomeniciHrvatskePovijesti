@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string-array name="stoljece_13">
+		<item>Kukuljevićev odlomak misala</item>
+		<item>Vinodolski zakon</item>
+    </string-array>
+
+    <string-array name="stoljece_13_tag">
+        <item>kukuljevicev_odlomak_misala</item>
+        <item>vinodolski_zakon</item>
+    </string-array>
+
+
+	<string-array name="kukuljevicev_odlomak_misala">	<!-- ime spomenika -->
+   		<item>Zapadno krilo hrvatskog glagoljaštva</item>	<!-- mjesto  -->
+   		<item>XIII.st.</item>	<!-- godina  -->
+   		<item>Ustavna glagoljica</item>	<!--  pismo -->
+   		<item>Hrvatska redakcija staroslavenskog jezika</item>	<!-- jezik  -->
+   		<item>Odlomak misala iz temporala</item>	<!-- sadržaj  -->
+		<item>List pergamenta</item>	<!-- veličina  -->
+		<item>Paleografski pokazatelji govore o starini: veličina slova neujednačena, ligature rijetke; iz zbirke Ivana Kukuljevića, čuva se u HAZU.</item>	<!-- zanimljivosti -->
+  	</string-array>
+
+	<string-array name="vinodolski_zakon">	<!-- ime spomenika -->
+   		<item>Općina Vinodol</item>	<!-- mjesto  -->
+   		<item>1288.</item>	<!-- godina  -->
+   		<item>Uglata/kurzivna glagoljica</item>	<!--  pismo -->
+   		<item>Hrvatski jezik</item>	<!-- jezik  -->
+   		<item>Zbornik običajnog prava vinodolskih općina</item>	<!-- sadržaj  -->
+		<item>Tekst sa 77 članaka</item>	<!-- veličina  -->
+		<item>Najstariji hrvatski glagoljični zakonski tekst i drugi po starini slavenski zakonik, poslije Ruske pravde, nije sačuvan u izvorniku, objavio ga prvi put Mažuranić 1843., čuva se u NSK Zagreb</item>	<!-- zanimljivosti -->
+  	</string-array>
+
+   
+</resources>
