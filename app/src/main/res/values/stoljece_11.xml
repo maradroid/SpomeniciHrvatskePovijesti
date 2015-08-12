@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="stoljece_11">
+        <item></item>
+    </string-array>
+
+    <string-array name="stoljece_11_tag">
+        <item></item>
+    </string-array>
+
+    <string-array name="">	<!-- ime spomenika -->
+        <item></item>	<!-- mjesto  -->
+        <item></item>	<!-- godina  -->
+        <item></item>	<!--  pismo -->
+        <item></item>	<!-- jezik  -->
+        <item></item>	<!-- sadržaj  -->
+        <item></item>	<!-- veličina  -->
+        <item></item>	<!-- zanimljivosti -->
+        <item></item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+</resources>

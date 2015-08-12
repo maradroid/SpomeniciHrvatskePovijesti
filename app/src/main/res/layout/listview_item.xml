@@ -12,6 +12,7 @@
         android:layout_marginTop="@dimen/in_card_margin"
         android:layout_marginBottom="@dimen/in_card_margin"
         android:layout_marginLeft="@dimen/in_card_margin"
+        android:layout_marginRight="@dimen/in_card_margin"
         android:text="safsa"
         android:textColor="@color/main_color"
         android:fontFamily="sans-serif-medium"

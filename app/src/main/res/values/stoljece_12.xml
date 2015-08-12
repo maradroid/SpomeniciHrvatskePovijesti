@@ -3,22 +3,105 @@
 
 	<string-array name="stoljece_12">
 		<item>Bašćanska ploča</item>
-    </string-array>
+		<item>Budimpeštanski odlomci</item>
+		<item>Glagoljički natpis iz Čečavca kod Požege</item>
+		<item>Bašćanski ostrišci</item>
+		<item>Pariški abecedarij</item>
+		<item>Grafiti u Brodskom Drenovcu kod Požege</item>
+		<item>Glagoljički ulomak iz Kijevaca kod Bosanske Gradiške</item>
+		<item>Ploča Kulina bana</item>
+	</string-array>
 
-    <string-array name="stoljece_12_tag">
-        <item>bascanska_ploca</item>
-    </string-array>
-
+	<string-array name="stoljece_12_tag">
+		<item>bascanska_ploca</item>
+		<item>budimpestanski_odlomci</item>
+		<item>glagoljicki_natpis_iz_cecavca_kod_pozege</item>
+		<item>bascanski_ostrisci</item>
+		<item>pariski_abecedarij</item>
+		<item>grafiti_u_brodskom_drenovcu_kod_pozege</item>
+		<item>glagoljicki_ulomak_iz_kijevaca_kod_bosanske_gradiske</item>
+		<item>ploca_kulina_bana</item>
+	</string-array>
 
 	<string-array name="bascanska_ploca">	<!-- ime spomenika -->
-   		<item>Jurandvor kod Baške na otoku Krku</item>	<!-- mjesto  -->
-   		<item>1100.</item>	<!-- godina  -->
-   		<item>Formativni tip glagoljice</item>	<!--  pismo -->
-   		<item>Hrvatska redakcija staroslavenskog jezika</item>	<!-- jezik  -->
-   		<item>Kralj Zvonimir daruje ledinu za gradnju crkve Sv. Lucije</item>	<!-- sadržaj  -->
+		<item>Jurandvor kod Baške na otoku Krku</item>	<!-- mjesto  -->
+		<item>1100.</item>	<!-- godina  -->
+		<item>Formativni tip glagoljice</item>	<!--  pismo -->
+		<item>Hrvatska redakcija staroslavenskog jezika</item>	<!-- jezik  -->
+		<item>Kralj Zvonimir daruje ledinu za gradnju crkve Sv. Lucije</item>	<!-- sadržaj  -->
 		<item>Kamena ploča</item>	<!-- veličina  -->
 		<item>Ploča je služila kao oltarna pregrada; sadrži nekoliko ćiriličnih slova; Značajni istraživači: Franjo Rački, Vatroslav Jagić, Vjekoslav Štefanić, Branko Fučić; danas je u HAZU.</item>	<!-- zanimljivosti -->
-  	</string-array>
+	</string-array>
+
+	<string-array name="budimpestanski_odlomci">	<!-- ime spomenika -->
+		<item>$</item>	<!-- mjesto  -->
+		<item>XII.st.</item>	<!-- godina  -->
+		<item>Prijelazni tip glagoljice</item>	<!--  pismo -->
+		<item>Hrvatski</item>	<!-- jezik  -->
+		<item>Ispisan je dio žitja Simeona Stylita</item>	<!-- sadržaj  -->
+		<item>2 ulomka pergamene</item>	<!-- veličina  -->
+		<item>Najstariji očuvani hrvatskoglagoljski hagiografski tekst</item>	<!-- zanimljivosti -->
+	</string-array>
+
+	<string-array name="glagoljicki_natpis_iz_cecavca_kod_pozege">	<!-- ime spomenika -->
+		<item>Čečavac</item>	<!-- mjesto  -->
+		<item>XI/XII.st.</item>	<!-- godina  -->
+		<item>Formativna glagoljica</item>	<!--  pismo -->
+		<item>$</item>	<!-- jezik  -->
+		<item>Četiri se glagoljična slova tumače kao godina prema brojevnoj vrijednosti čriz = 1129</item>	<!-- sadržaj  -->
+		<item>4 glagoljična slova</item>	<!-- veličina  -->
+		<item>Potječe iz romaničke crkve Sv. Miholvila</item>	<!-- zanimljivosti -->
+	</string-array>
+
+	<string-array name="bascanski_ostrisci">
+		<item>Baška</item>
+		<item>XII.st.</item>
+		<item>Predstandardizacijsko glagoljičko razdoblje (prijelazna glagoljica)</item>
+		<item>$</item>
+		<item>Sadrže odlomak Muke po Mateju (Mt 26, 37-48)</item>
+		<item>Dvije pergamenske vrpce</item>
+		<item>Nazivaju se još i Premudini ostrišci prema popu glagoljašu i filologu Vinku Premudi – oporučno ih je ostavio Jugoslavenskoj akademiji znanosti i umjetnosti u Zagrebu</item>
+	</string-array>
+
+	<string-array name="pariski_abecedarij">
+		<item>$</item>
+		<item>XII.st.</item>
+		<item>Prijelazna glagoljica</item>
+		<item>$</item>
+		<item>$</item>
+		<item>$</item>
+		<item>U literaturi se ponekad naziva i bugarskim</item>
+	</string-array>
+
+	<string-array name="grafiti_u_brodskom_drenovcu_kod_pozege">
+		<item>Brodski Drenovac</item>
+		<item>XII.st.</item>
+		<item>Prijelazna glagoljica</item>
+		<item>$</item>
+		<item>Grafiti s par ispisanih glagoljičnih slova</item>
+		<item>4 grafita</item>
+		<item>Na jednom su kamenu prikazana tri kralja kako se odlaze pokloniti Isusu</item>
+	</string-array>
+
+	<string-array name="glagoljicki_ulomak_iz_kijevaca_kod_bosanske_gradiske">
+		<item>Kijevci</item>
+		<item>XII.st.</item>
+		<item>Prijelazna glagoljica</item>
+		<item>$</item>
+		<item>Nepoznat</item>
+		<item>Nekoliko ispisanih glagoljskih slova</item>
+		<item>Zabilježeno muško ime "Raden" u dativu</item>
+	</string-array>
+
+	<string-array name="ploca_kulina_bana">
+		<item>$</item>
+		<item>1193.</item>
+		<item>Hrvatska ćirilica uz tri glagoljska slova</item>
+		<item>$</item>
+		<item>Dio glagoljske azbuke u kojoj su prebrisana glagoljska slova</item>
+		<item>$</item>
+		<item>Sadrži tri glagoljska slova - A, B i Ž</item>
+	</string-array>
 
    
 </resources>
