@@ -2,22 +2,516 @@
 <resources>
 
     <string-array name="stoljece_15">
-        <item></item>
+        <item>Glagoljska isprava iz Ostrožca kod Bihaća</item>
+        <item>Hrvatskoglagoljska legenda o sv. Mauru</item>
+        <item>Newyorški misal</item>
+        <item>List pergamene s otoka Krka</item>
+        <item>Bakarski brevijar</item>
+        <item>Češka glagoljska Biblija</item>
+        <item>Ročki misal</item>
+        <item>Barbanski misal</item>
+        <item>Zakon brašćine sv. Marije Goričke u Baški</item>
+        <item>Misal Borgiano Illirico 8</item>
+        <item>Humski brevijar</item>
+        <item>Hrvatskoglagoljski brevijar MR 161</item>
+        <item>Moskovski brevijar</item>
+        <item>Moskovski fragment glagoljskog misala</item>
+        <item>Kaptolska Kvaderna</item>
+        <item>Oporuka Tome Partinića</item>
+        <item>"Zrcalo" žakna Luke iz Vrbnika</item>
+        <item>Baselski odlomak brevijara</item>
+        <item>Mavrov brevijar</item>
+        <item>Knjiga korizmenih propovijedi</item>
+        <item>Glagoljski list iz II. vrbničkog misala</item>
+        <item>Fraščićev psaltir</item>
+        <item>Lička listina</item>
+        <item>Berčićev zbornik br. 5</item>
+        <item>Beramski misal</item>
+        <item>Pulski odlomak glagoljskog misala</item>
+        <item>Drivenički odlomak glagoljskog brevijara</item>
+        <item>Zapis Jurja iz Roča u Novakovu misalu</item>
+        <item>Vinodolski/Kukuljevićev brevijar</item>
+        <item>Misal Borgiano illirico 10</item>
+        <item>Dabarski brevijar</item>
+        <item>Tlmačenie od muki Gospoda našego Isuhrsta</item>
+        <item>Zapis popa Martinca o bitki na Krbavskome polju 1493.</item>
+        <item>Povelja Dujma IV. Frankapana</item>
+        <item>Isprava kneza Anža Frankapana</item>
+        <item>Odlomak Tomina evanđelja</item>
+        <item>Korizmenjak (Knige svetago Brnardina)</item>
+        <item>Antoninov konfesional</item>
+        <item>Magijski recepti i zapisi</item>
     </string-array>
 
     <string-array name="stoljece_15_tag">
-        <item></item>
+        <item>glagoljska_isprava_iz_ostrosca_kod_bihaca</item>
+        <item>hrvatskoglagoljska_legenda_o_sv_mauru</item>
+        <item>newyorski_misal</item>
+        <item>list_pergamene_s_otoka_krka</item>
+        <item>bakarski_brevijar</item>
+        <item>ceska_glagoljska_biblija</item>
+        <item>rocki_misal</item>
+        <item>barbanski_misal</item>
+        <item>zakon_brascine_sv_marije_goricke_u_baski</item>
+        <item>misal_borgiano_illirico_8</item>
+        <item>humski_brevijar</item>
+        <item>hrvatskoglagoljski_brevijar_mr_161</item>
+        <item>moskovski_brevijar</item>
+        <item>moskovski_fragment_glagoljskog_misala</item>
+        <item>kaptolska_kvaderna</item>
+        <item>oporuka_tome_partinica</item>
+        <item>zrcalo_zakna_luke_iz_vrbnika</item>
+        <item>baselski_odlomak_brevijara</item>
+        <item>mavrov_brevijar</item>
+        <item>knjiga_korizmenih_propovijedi</item>
+        <item>glagoljski_list_iz_ii_vrbnickog_misala</item>
+        <item>frascicev_psaltir</item>
+        <item>licka_listina</item>
+        <item>bercicev_zbornik_br_5</item>
+        <item>beramski_misal</item>
+        <item>pulski_odlomak_glagoljskog_misala</item>
+        <item>drivenicki_odlomak_glagoljskog_brevijara</item>
+        <item>zapis_jurja_iz_roca_u_novakovu_misalu</item>
+        <item>vinodolski_kukuljevicev_brevijar</item>
+        <item>misal_borgiano_illirico_10</item>
+        <item>dabarski_brevijar</item>
+        <item>tlmačenie_od_muki_Gospoda_našego_Isuhrsta</item>
+        <item>zapis_popa_martinca_o_bitki_na_krbavskome_polju_1493</item>
+        <item>povelja_dujma_iv_frankapana</item>
+        <item>isprava_kneza_anza_frankapana</item>
+        <item>odlomak_tomina_evandelja</item>
+        <item>korizmenjak_knige_svetago_brnardina</item>
+        <item>antoninov_konfesional</item>
+        <item>magijski_recepti_i_zapisi</item>
     </string-array>
 
-    <string-array name="">	<!-- ime spomenika -->
-        <item></item>	<!-- mjesto  -->
-        <item></item>	<!-- godina  -->
-        <item></item>	<!--  pismo -->
-        <item></item>	<!-- jezik  -->
-        <item></item>	<!-- sadržaj  -->
-        <item></item>	<!-- veličina  -->
-        <item></item>	<!-- zanimljivosti -->
-        <item></item>	<!-- internet adresa za više informacija -->
+    <string-array name="glagoljska_isprava_iz_ostrosca_kod_bihaca">	<!-- ime spomenika -->
+        <item>Ostrožac kod Bihaća</item>	<!-- mjesto  -->
+        <item>1403. godina</item>	<!-- godina  -->
+        <item>Poluustavna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>$</item>	<!-- sadržaj  -->
+        <item>Pergamena s pečatom na vrpci od ljubičaste svile</item>	<!-- veličina  -->
+        <item>Čuva se u arhivu knezova Auersperg u Ljubljani</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="hrvatskoglagoljska_legenda_o_sv_Mauru">	<!-- ime spomenika -->
+        <item>Istra</item>	<!-- mjesto  -->
+        <item>XV. stoljeće</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>Životopis sv. Maura/Mavra</item>	<!-- sadržaj  -->
+        <item>$</item>	<!-- veličina  -->
+        <item>Sveti Mauro prvi je poznati biskup Porečke biskupije, za Dioklecijanova progona je mučen i ubijen. Legenda se nalazi u glagoljičkoj Berčićevoj zbirci br.5 iz XV. stoljeća</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="newyorski_misal">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>1400.-1410. godina</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>U uvodu kratki podatci o povijesti staroslavenske liturgije i glagoljskog pisma u biskupijama Primorske i Dalmatinske Hrvatske</item>	<!-- sadržaj  -->
+        <item>293 lista</item>	<!-- veličina  -->
+        <item>Smatra se da je misal pisan u okolici Zadra ili na ličko-krbavskom području, a danas se čuva u The Pierpont Morgan knjižnici u New Yorku</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="list_pergamene_s_otoka_krka">	<!-- ime spomenika -->
+        <item>Krk</item>	<!-- mjesto  -->
+        <item>XV. stoljeće</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>Dio Pravila jedne svjetovne bratovštine s otoka Krka</item>	<!-- sadržaj  -->
+        <item>List pergamene</item>	<!-- veličina  -->
+        <item>Čuva se u Nacionalnoj knjižnici u Oslu</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="bakarski_brevijar">	<!-- ime spomenika -->
+        <item>Bakar</item>	<!-- mjesto  -->
+        <item>1414. godina</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>Sadrži crkvenu kroniku Bakra</item>	<!-- sadržaj  -->
+        <item>$</item>	<!-- veličina  -->
+        <item>Pisao ga je Bartol Krbavac, izgubljen je</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="ceska_glagoljska_biblija">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>1416. godina</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>Sadrži dijelove najstarijeg češkog prijevoda Biblije</item>	<!-- sadržaj  -->
+        <item>258 pergamentnih folija</item>	<!-- veličina  -->
+        <item>Autori su češki učenici hrvatskih glagoljaša što u knjizi izrijekom navode</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="rocki_misal">	<!-- ime spomenika -->
+        <item>Roč, Istra</item>	<!-- mjesto  -->
+        <item>1421. godina</item>	<!-- godina  -->
+        <item>Uglata glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>Sadrži tekst misala, tekst rituala i naknadne bilješke</item>	<!-- sadržaj  -->
+        <item>232 lista pergamene</item>	<!-- veličina  -->
+        <item>Autor je Bartol Krbavac, 13 listova napisao je neki drugi pisac, misal je bogat iluminacijama, a danas se čuva u Austrijskoj nacionalnoj knjižnici u Beču</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="barbanski_misal">	<!-- ime spomenika -->
+        <item>Barban, Istra</item>	<!-- mjesto  -->
+        <item>1425. godina</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>$</item>	<!-- sadržaj  -->
+        <item>1 list (ostali izgubljeni)</item>	<!-- veličina  -->
+        <item>Autor je Urban, barbanski župnik</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="zakon_brascine_sv_marije_goricke_u_baski">	<!-- ime spomenika -->
+        <item>Baška</item>	<!-- mjesto  -->
+        <item>1425. godina</item>	<!-- godina  -->
+        <item>Uglata glagoljica</item>	<!--  pismo -->
+        <item>Krčka čakavica s jakim utjecajem staroslavenskoga jezika</item>	<!-- jezik  -->
+        <item>$</item>	<!-- sadržaj  -->
+        <item>7 listova od kojih su dva izgubljena</item>	<!-- veličina  -->
+        <item>Najstariji sačuvani statut jedne bratovštine napisan glagoljicom</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="misal_borgiano_illirico_8">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>1435. godina</item>	<!-- godina  -->
+        <item>Uglata glagoljica</item>	<!--  pismo -->
+        <item>Hrvatski crkvenoslavenski jezik</item>	<!-- jezik  -->
+        <item>$</item>	<!-- sadržaj  -->
+        <item>288 pergamentnih listova</item>	<!-- veličina  -->
+        <item>Čuva se u Apostolskoj knjižnici u Vatikanu</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="humski_brevijar">	<!-- ime spomenika -->
+        <item>>Hum, Istra</item>	<!-- mjesto  -->
+        <item>1442. godina</item>	<!-- godina  -->
+        <item>Uglata glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>$</item>	<!-- sadržaj  -->
+        <item>$</item>	<!-- veličina  -->
+        <item>Čuva se u Nacionalnoj sveučilišnoj knjižnici u Zagrebu</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="hrvatskoglagoljski_brevijar_mr_161">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>1442. godina</item>	<!-- godina  -->
+        <item>Uglata glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>Sadrži temporal i sanktoral</item>	<!-- sadržaj  -->
+        <item>469 listova</item>	<!-- veličina  -->
+        <item>Koristio se u Bakru sve do 18. stoljeća</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="moskovski_brevijar">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>1442./1443. godina</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>$</item>	<!-- sadržaj  -->
+        <item>500 stranica</item>	<!-- veličina  -->
+        <item>Čuva se u Državnoj knjižnici u Moskvi</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="moskovski_fragment_glagoljskog_misala">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>XV. stoljeće</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>Sadrži Kanon mise s nekoliko prefacija i votivne mise</item>	<!-- sadržaj  -->
+        <item>17 listova</item>	<!-- veličina  -->
+        <item>Čuva se u Državnom povijesnom muzeju u Moskvi, pretpostavlja se da je pisac fra Juraj</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="kaptolska_kvaderna">	<!-- ime spomenika -->
+        <item>Senj</item>	<!-- mjesto  -->
+        <item>XV. stoljeće</item>	<!-- godina  -->
+        <item>Uglata glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>$</item>	<!-- sadržaj  -->
+        <item>$</item>	<!-- veličina  -->
+        <item>Sačuvana je Kvaderna pisana u 17. i 17. stoljeću, u Kvaderni piše imovinsko stanje senjskog kaptola</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="oporuka_tome_partinica">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>1445. godina</item>	<!-- godina  -->
+        <item>Poluustavna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>$</item>	<!-- sadržaj  -->
+        <item>$</item>	<!-- veličina  -->
+        <item>Oporuka je sačuvana samo u kasnijem prijepisu</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="zrcalo_zakna_luke_iz_vrbnika">	<!-- ime spomenika -->
+        <item>Vrbnik</item>	<!-- mjesto  -->
+        <item>1445. godina</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>Duhovno štivo pisano narodnim jezikom</item>	<!-- sadržaj  -->
+        <item>$</item>	<!-- veličina  -->
+        <item>Nalazi se u Vatikanskoj knjižnici</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="baselski_odlomak_brevijara">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>XV. stoljeće</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>$</item>	<!-- sadržaj  -->
+        <item>Odlomak glagoljskog rukopisa</item>	<!-- veličina  -->
+        <item>Čuva se u Sveučilišnoj knjižnici u Baselu</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="mavrov_brevijar">	<!-- ime spomenika -->
+        <item>Vrbnik</item>	<!-- mjesto  -->
+        <item>1460. godina</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>Sadrži treću inačicu službe sv. Ćirila i Metoda koja je do tada bila nepoznata</item>	<!-- sadržaj  -->
+        <item>417 listova</item>	<!-- veličina  -->
+        <item>Čuva se u Nacionalnoj i sveučilišnoj knjižnici u Zagrebu</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="knjiga_korizmenih_propovijedi">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>1460. godina</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>Sadrži propovijedi za korizmeno vrijeme</item>	<!-- sadržaj  -->
+        <item>$</item>	<!-- veličina  -->
+        <item>Čuva se u Javnoj knjižnici u Portu, jedno je vrijeme bila u vlasništvu Alberta Fortisa iz Italije</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="glagoljski_list_iz_ii_vrbnickog_misala">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>1462. godina</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>$</item>	<!-- sadržaj  -->
+        <item>1 list</item>	<!-- veličina  -->
+        <item>Čuva se u Sveučilišnoj knjižnici u Princetonu</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="frascicev_psaltir">	<!-- ime spomenika -->
+        <item>Istra</item>	<!-- mjesto  -->
+        <item>1463. godina</item>	<!-- godina  -->
+        <item>Kurzivna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>Prvi dio sadrži filološke tekstove, a drugi jezikoslovne analize</item>	<!-- sadržaj  -->
+        <item>132 lista</item>	<!-- veličina  -->
+        <item>Napisao ga je u Lidaru pop Petar Fraščić, jedini očuvani glagoljski psaltir s komentarom</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="licka_listina">	<!-- ime spomenika -->
+        <item>Lika</item>	<!-- mjesto  -->
+        <item>1469. godina</item>	<!-- godina  -->
+        <item>Poluustavna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>$</item>	<!-- sadržaj  -->
+        <item>$</item>	<!-- veličina  -->
+        <item>Sud potvrđuje oporuku ličkog plemića Matijice Utišenića kojom ostavlja zemlju crkvi sv. Ivana</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="bercicev_zbornik_br_5">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>XV. stoljeće</item>	<!-- godina  -->
+        <item>Kurzivna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatski jezik (čakavsko narječje)</item>	<!-- jezik  -->
+        <item>Sadrži ispisane prozne tekstove među kojima je i 6 starohrvatskih religioznih pjesama</item>	<!-- sadržaj  -->
+        <item>$</item>	<!-- veličina  -->
+        <item>Čuva se u Ruskoj nacionalnoj knjižnici u Petrogradu</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="beramski_misal">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>1450. godina</item>	<!-- godina  -->
+        <item>Kurzivna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>Sadrži ukrašene inicijale i minijature te alegorije mjeseci</item>	<!-- sadržaj  -->
+        <item>245 listova</item>	<!-- veličina  -->
+        <item>Čuva se u Nacionalnoj i sveučilišnoj knjižnici u Ljubljani, autor je Bartol Krbavac</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="pulski_odlomak_glagoljskog_misala">	<!-- ime spomenika -->
+        <item>Pula</item>	<!-- mjesto  -->
+        <item>XV. stoljeće</item>	<!-- godina  -->
+        <item>Kurzivna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>Cijela misa subote poslije 4. korizmene nedjelje s biblijskim čitanjima i ostalim propisanim molitvama i otpjevima, kao i početak mise Nedjelje Muke</item>	<!-- sadržaj  -->
+        <item>List iz glagoljskog misala</item>	<!-- veličina  -->
+        <item>Odlomak je služio kao omot nepoznatoj knjizi</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="drivenicki_odlomak_glagoljskog_brevijara">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>XV. stoljeće</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>Sadržio dio govora sv. Augustina biskupa koji se čitao na zajedničkom oficiju</item>	<!-- sadržaj  -->
+        <item>Dvolist glagoljskog brevijara</item>	<!-- veličina  -->
+        <item>Poslužila je kao čvrst hrbat kod uveza druge knjige</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="zapis_jurja_iz_roca_u_novakovu_misalu">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>1482. godina</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>Dio Novakova misala iz 1368. godine</item>	<!-- sadržaj  -->
+        <item>$</item>	<!-- veličina  -->
+        <item>"Vita, vita, štampa naša gori gre!"</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="vinodolski_kukuljevicev_brevijar">	<!-- ime spomenika -->
+        <item>Vinodol</item>	<!-- mjesto  -->
+        <item>1470. godina</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>$</item>	<!-- sadržaj  -->
+        <item>199 listova</item>	<!-- veličina  -->
+        <item>Čuva se u Hrvatskoj akademiji znanosti i umjetnosti</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="misal_borgiano_illirico_10">	<!-- ime spomenika -->
+        <item>Lika</item>	<!-- mjesto  -->
+        <item>1485. godina</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>$</item>	<!-- sadržaj  -->
+        <item>403 lista</item>	<!-- veličina  -->
+        <item>Čuva se u Apostolskoj knjižnici u Vatikanu</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="dabarski_brevijar">	<!-- ime spomenika -->
+        <item>Dabar kod Otočca</item>	<!-- mjesto  -->
+        <item>1486. godina</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>Vjerojatno namijenjen nekoj franjevačkoj zajednici jer završava blagdanom sv. Franje Asiškog</item>	<!-- sadržaj  -->
+        <item>306 listova</item>	<!-- veličina  -->
+        <item>Napisao ga je pop Stipan</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="tlmačenie_od_muki_Gospoda_našego_Isuhrsta">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>1493. godina</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>$</item>	<!-- sadržaj  -->
+        <item>$</item>	<!-- veličina  -->
+        <item>Autor je Šimun Greblo koji je u to doba bio "žakan oko lit"</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="zapis_popa_martinca_o_bitki_na_krbavskome_polju_1493">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>1495. godina</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>Starohrvatski jezik</item>	<!-- jezik  -->
+        <item>Opis i komentar bitke na Krbavskome polju iz 1493. godine</item>	<!-- sadržaj  -->
+        <item>$</item>	<!-- veličina  -->
+        <item>Zapis se nalazi u Drugom novljanskom brevijaru iz 1495. godine</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="povelja_dujma_iv_frankapana">	<!-- ime spomenika -->
+        <item>Senj</item>	<!-- mjesto  -->
+        <item>1447. godina</item>	<!-- godina  -->
+        <item>Kurzivna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatski</item>	<!-- jezik  -->
+        <item>Knez Dujam daruje sjenokošu samostanu sv. Jelene blizu Senja</item>	<!-- sadržaj  -->
+        <item>1 list - isprava</item>	<!-- veličina  -->
+        <item>$</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="isprava_kneza_anza_frankapana">	<!-- ime spomenika -->
+        <item>Brinje</item>	<!-- mjesto  -->
+        <item>1495. godina</item>	<!-- godina  -->
+        <item>Kurzivna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatski</item>	<!-- jezik  -->
+        <item>Knez daruje samostanu sv. Spasa selo</item>	<!-- sadržaj  -->
+        <item>1 list - isprava</item>	<!-- veličina  -->
+        <item>$</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="odlomak_tomina_evandelja">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>XV. stoljeće</item>	<!-- godina  -->
+        <item>Polukurzivna glagoljica</item>	<!--  pismo -->
+        <item>Staroslavenski (hrvatski)</item>	<!-- jezik  -->
+        <item>Odlomak Tomina evanđelja, apokrif o djetinjstvu Isusa</item>	<!-- sadržaj  -->
+        <item>List papira</item>	<!-- veličina  -->
+        <item>Jedina potvrda da je u hrvatskoglagoljskoj književnosti postojao apokrif o Isusovu djetinjstvu koji se pripisivao apostolu Tomi</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="korizmenjak_knige_svetago_brnardina">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>XV./XVI. stoljeće</item>	<!-- godina  -->
+        <item>Poluustavna/ustavna i kurzivna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatskočakavski</item>	<!-- jezik  -->
+        <item>Isti sadržaj kao i tekst koji se nalazi u Kolunićevu zborniku, a odnosi se na Korizmenjak</item>	<!-- sadržaj  -->
+        <item>130 listova papira</item>	<!-- veličina  -->
+        <item>Ne zna se gdje je knjiga napisana, ali se zbog jezičnih obilježja smješta u čakavske krajeve</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="antoninov_konfesional">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>XV. stoljeće</item>	<!-- godina  -->
+        <item>Poluustavna/ustavna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatskočakavski</item>	<!-- jezik  -->
+        <item>Priručnik o ispovijedanju napravljen po Antoninovu konfesionalu Summula confessionis</item>	<!-- sadržaj  -->
+        <item>67 listova pergamene</item>	<!-- veličina  -->
+        <item>Nepoznato mjesto nastanka, s obzirom na karakteristike jezika i pisma smješta ga se u zapadne čakavske krajeve</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="magijski_recepti_i_zapisi">	<!-- ime spomenika -->
+        <item>Vinodol</item>	<!-- mjesto  -->
+        <item>XV. stoljeće</item>	<!-- godina  -->
+        <item>Miješanje ustavne i kurzivne glagoljice</item>	<!--  pismo -->
+        <item>Hrvatski s elementima crkvenoslavenskog</item>	<!-- jezik  -->
+        <item>Raznovrsni magijski recepti, upute i molitve</item>	<!-- sadržaj  -->
+        <item>Svezak od 10 listova pergamene</item>	<!-- veličina  -->
+        <item>Vlasnici knjižice su Benkovići koji su u to doba iz Grižana - uglavnom svećenici</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
     </string-array>
 
 </resources>

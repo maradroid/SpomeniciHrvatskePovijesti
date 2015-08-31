@@ -2,22 +2,33 @@
 <resources>
 
     <string-array name="stoljece_11">
-        <item></item>
+        <item>Budimpeštanski odlomci</item>
+        <item>Pariški abecedarij</item>
     </string-array>
 
     <string-array name="stoljece_11_tag">
-        <item></item>
+        <item>budimpestanski_odlomci</item>
+        <item>pariski_abecedarij</item>
     </string-array>
 
-    <string-array name="">	<!-- ime spomenika -->
-        <item></item>	<!-- mjesto  -->
-        <item></item>	<!-- godina  -->
-        <item></item>	<!--  pismo -->
-        <item></item>	<!-- jezik  -->
-        <item></item>	<!-- sadržaj  -->
-        <item></item>	<!-- veličina  -->
-        <item></item>	<!-- zanimljivosti -->
-        <item></item>	<!-- internet adresa za više informacija -->
+    <string-array name="budimpestanski_odlomci">	<!-- ime spomenika -->
+        <item>Budimpešta</item>	<!-- mjesto  -->
+        <item>XI. stoljeće</item>	<!-- godina  -->
+        <item>Prijelazni tip glagoljice - tradicionalna slova za jor i jer</item>	<!--  pismo -->
+        <item>Hrvatskoslavenski</item>	<!-- jezik  -->
+        <item>Ispisan je dio žitja Simeona Stylita/Šimuna Stupnika</item>	<!-- sadržaj  -->
+        <item>2 ulomka pergamene</item>	<!-- veličina  -->
+        <item>Najstariji očuvani hrvatskoglagoljski hagiografski tekst</item>	<!-- zanimljivosti -->
+    </string-array>
+
+    <string-array name="pariski_abecedarij">
+        <item>$</item>
+        <item>XI. stoljeće</item>
+        <item>Obla glagoljica</item>
+        <item>$</item>
+        <item>Imena 31 glagoljskog slova pisana latinicom</item>
+        <item>$</item>
+        <item>U literaturi se ponekad naziva i "bugarskim", tj. Abecedarium bulgaricum, najstariji je ksenografski abecedarij što znači da ga je sastavljao stranac s namjerom upoznavanja nove publike s glagoljičkim pismom.</item>
     </string-array>
 
 </resources>

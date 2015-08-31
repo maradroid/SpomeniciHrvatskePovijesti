@@ -2,22 +2,60 @@
 <resources>
 
     <string-array name="stoljece_18">
-        <item></item>
+        <item>Glagoljska notarska isprava iz Kukljice</item>
+        <item>Zakletve protiv štetočina i zla oblaka</item>
+        <item>Pištula gospodina našega Isukrsta</item>
+        <item>Karta sv. Bonifacija</item>
     </string-array>
 
     <string-array name="stoljece_18_tag">
-        <item></item>
+        <item>glagoljska_notarska_isprava_iz_kukljice</item>
+        <item>zakletve_protiv_stetocina_i_zla_oblaka</item>
+        <item>pistula_gospodina_nasega_isukrsta</item>
+        <item>karta_sv_bonifacija</item>
     </string-array>
 
-    <string-array name="">	<!-- ime spomenika -->
-        <item></item>	<!-- mjesto  -->
-        <item></item>	<!-- godina  -->
-        <item></item>	<!--  pismo -->
-        <item></item>	<!-- jezik  -->
-        <item></item>	<!-- sadržaj  -->
-        <item></item>	<!-- veličina  -->
-        <item></item>	<!-- zanimljivosti -->
-        <item></item>	<!-- internet adresa za više informacija -->
+    <string-array name="glagoljska_notarska_isprava_iz_kukljice">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>1797. godina</item>	<!-- godina  -->
+        <item>Kurzivna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>$</item>	<!-- sadržaj  -->
+        <item>$</item>	<!-- veličina  -->
+        <item>$</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
     </string-array>
 
+    <string-array name="zakletve_protiv_stetocina_i_zla_oblaka">	<!-- ime spomenika -->
+        <item>Dugi otok</item>	<!-- mjesto  -->
+        <item>1703. godina</item>	<!-- godina  -->
+        <item>Kurzivna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatski s elementima ikavice</item>	<!-- jezik  -->
+        <item>Molitve i razne zakletve protiv zla</item>	<!-- sadržaj  -->
+        <item>Svezak od 14 listova</item>	<!-- veličina  -->
+        <item>Zakletve je prepisao Ivan Rudić iz Dugog otoka</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="pistula_gospodina_nasega_isukrsta">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>XVIII. stoljeće</item>	<!-- godina  -->
+        <item>Kurzivna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatski sa štokavskoikavskim elementima</item>	<!-- jezik  -->
+        <item>Isukrstova epistola o nedjelji</item>	<!-- sadržaj  -->
+        <item>Svezak od 6 listova</item>	<!-- veličina  -->
+        <item>Koriste se latinični znakovi za samoglasnike "i" i "o"</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="karta_sv_bonifacija">	<!-- ime spomenika -->
+        <item>Sjeverna Dalmacija</item>	<!-- mjesto  -->
+        <item>XVIII. stoljeće</item>	<!-- godina  -->
+        <item>Kurzivna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatski s elementima ikavice</item>	<!-- jezik  -->
+        <item>Legenda o Bonifacijevu oslobađanju vlastite majke iz čistilišta</item>	<!-- sadržaj  -->
+        <item>Dvolist papira</item>	<!-- veličina  -->
+        <item>$</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
 </resources>

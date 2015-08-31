@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="stoljece_10">
+    <string-array name="stoljece_19">
         <item></item>
     </string-array>
 
-    <string-array name="stoljece_10_tag">
+    <string-array name="stoljece_19_tag">
         <item></item>
     </string-array>
 
-    <string-array name="_10">	<!-- ime spomenika -->
+    <string-array name="_19">	<!-- ime spomenika -->
         <item></item>	<!-- mjesto  -->
         <item></item>	<!-- godina  -->
         <item></item>	<!--  pismo -->

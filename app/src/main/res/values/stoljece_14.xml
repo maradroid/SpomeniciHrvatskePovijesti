@@ -2,22 +2,87 @@
 <resources>
 
     <string-array name="stoljece_14">
-        <item></item>
+        <item>Grafiti u Brodskom Drenovcu kod Požege</item>
+        <item>Pariški zbornik</item>
+        <item>Brevijar Illirico 5</item>
+        <item>Brevijar Illirico 6</item>
+        <item>Pašmanski brevijar</item>
+        <item>Fragment govora o svetkovanju nedjelje</item>
     </string-array>
 
     <string-array name="stoljece_14_tag">
-        <item></item>
+        <item>grafiti_u_brodskom_drenovcu_kod_pozege</item>
+        <item>pariski_zbornik</item>
+        <item>brevijar_illirico_5</item>
+        <item>brevijar_illirico_6</item>
+        <item>pasmanski_brevijar</item>
+        <item>fragment_govora_o_svetkovanju_nedjelje</item>
     </string-array>
 
-    <string-array name="">	<!-- ime spomenika -->
-        <item></item>	<!-- mjesto  -->
-        <item></item>	<!-- godina  -->
-        <item></item>	<!--  pismo -->
-        <item></item>	<!-- jezik  -->
-        <item></item>	<!-- sadržaj  -->
-        <item></item>	<!-- veličina  -->
-        <item></item>	<!-- zanimljivosti -->
-        <item></item>	<!-- internet adresa za više informacija -->
+    <string-array name="grafiti_u_brodskom_drenovcu_kod_pozege">
+        <item>Brodski Drenovac</item>
+        <item>XIV./XV. stoljeće</item>
+        <item>Formativna i ustavna glagoljica</item>
+        <item>Hrvatskostaroslavenski i starohrvatski</item>
+        <item>Četiri grafita nalaze se na gotičkom kustodiju, zabilježena slova s vanjske istočne strane i oko crkvenih vrata (DRAGO, VIOT, EČR, TORO; RAB; U DRÊNOVÊCE TO E PISA BRT RÊČIĆ i dr.)</item>
+        <item>4 grafita</item>
+        <item>Na jednom su kamenu prikazana tri kralja kako se odlaze pokloniti Isusu</item>
+        <item>$</item>
+    </string-array>
+
+    <string-array name="pariski_zbornik">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>1375. godina</item>	<!-- godina  -->
+        <item>$</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>Duhovna čitanja, dijelovi misala te psaltir</item>	<!-- sadržaj  -->
+        <item>296 listova pergamene</item>	<!-- veličina  -->
+        <item>Pisali su ga Gregorij iz Modruša, pisac Stipan i prvad Mikula, čuva se u pariškoj Nacionalnoj biblioteci</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="brevijar_illirico_5">	<!-- ime spomenika -->
+        <item>Lika</item>	<!-- mjesto  -->
+        <item>XIV. stoljeće</item>	<!-- godina  -->
+        <item>Uglata glagoljica</item>	<!--  pismo -->
+        <item>Hrvatski</item>	<!-- jezik  -->
+        <item>$</item>	<!-- sadržaj  -->
+        <item>248 listova pergamene</item>	<!-- veličina  -->
+        <item>Čuva se u Apostolskoj knjižnici u Vatikanu</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="brevijar_illirico_6">	<!-- ime spomenika -->
+        <item>Lika</item>	<!-- mjesto  -->
+        <item>1379. godina</item>	<!-- godina  -->
+        <item>Uglata glagoljica</item>	<!--  pismo -->
+        <item>Hrvatski</item>	<!-- jezik  -->
+        <item>Drugi dio Brevijara Illirico 5</item>	<!-- sadržaj  -->
+        <item>217 listova pergamene</item>	<!-- veličina  -->
+        <item>Čuva se u Apostolskoj knjižnici u Vatikanu</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="pasmanski_brevijar">	<!-- ime spomenika -->
+        <item>Pašman</item>	<!-- mjesto  -->
+        <item>XIV./XV. stoljeće</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>Crkvenoslavenski s elementima narodnog jezika</item>	<!-- jezik  -->
+        <item>Brevijar rimske kurije</item>	<!-- sadržaj  -->
+        <item>414 listova</item>	<!-- veličina  -->
+        <item>Jedan od rijetkih potpunih glagoljskih kodeksa</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="fragment_govora_o_svetkovanju_nedjelje">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>XIV. stoljeće</item>	<!-- godina  -->
+        <item>Poluustavna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatskočakavski, crkvenoslavenski i češki</item>	<!-- jezik  -->
+        <item>Odlomak govora o svetkovanju nedjelje, potvrde iz oba zavjeta, kritika svećenstva</item>	<!-- sadržaj  -->
+        <item>Dvolist pergamene</item>	<!-- veličina  -->
+        <item>Govor je preveo Hrvat u emauskom periodu s češkog jezika (zbog toga sadrži riječi češkog jezika)</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
     </string-array>
 
 </resources>

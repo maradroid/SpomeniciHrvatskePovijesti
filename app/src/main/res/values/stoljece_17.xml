@@ -2,22 +2,61 @@
 <resources>
 
     <string-array name="stoljece_17">
-        <item></item>
+        <item>Fatevićev zbornik</item>
+        <item>Amulet Petra Marelića</item>
+        <item>Disipula</item>
+        <item>Molitvenik fra Ivana Čeperića</item>
     </string-array>
 
     <string-array name="stoljece_17_tag">
-        <item></item>
+        <item>fatevicev_zbornik</item>
+        <item>amulet_petra_marelica</item>
+        <item>disipula_2</item>
+        <item>molitvenik_fra_ivana_ceperica</item>
     </string-array>
 
-    <string-array name="">	<!-- ime spomenika -->
-        <item></item>	<!-- mjesto  -->
-        <item></item>	<!-- godina  -->
-        <item></item>	<!--  pismo -->
-        <item></item>	<!-- jezik  -->
-        <item></item>	<!-- sadržaj  -->
-        <item></item>	<!-- veličina  -->
-        <item></item>	<!-- zanimljivosti -->
-        <item></item>	<!-- internet adresa za više informacija -->
+    <string-array name="fatevicev_zbornik">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>1617. godina</item>	<!-- godina  -->
+        <item>$</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>Sadržava nekoliko korizmenih propovijedi koje su vjerojatno prepisane iz kvarezimala Kolunićeva tipa</item>	<!-- sadržaj  -->
+        <item>$</item>	<!-- veličina  -->
+        <item>Čuva se u arhivu HAZU</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="amulet_petra_marelica">	<!-- ime spomenika -->
+        <item>Otok Iža</item>	<!-- mjesto  -->
+        <item>XVII. stoljeće</item>	<!-- godina  -->
+        <item>Kurzivna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatski</item>	<!-- jezik  -->
+        <item>$</item>	<!-- sadržaj  -->
+        <item>1 list</item>	<!-- veličina  -->
+        <item>Maleni format listića služio je matičaru don Petru Mareliću kao amulet</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="disipula_2">	<!-- ime spomenika -->
+        <item>Selci</item>	<!-- mjesto  -->
+        <item>1600. godina</item>	<!-- godina  -->
+        <item>Kurzivna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>Zbornik propovijedi za nedjelje i blagdane preko cijele godine</item>	<!-- sadržaj  -->
+        <item>233 lista</item>	<!-- veličina  -->
+        <item>Rukopis je napisao Ivan Brozović iz Selaca, tekst je jednostavan i čitanje je olakšano brisanjem ligatura i kratica</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="molitvenik_fra_ivana_ceperica">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>XVII./XVIII. stoljeće</item>	<!-- godina  -->
+        <item>Kurzivna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatskočakavski</item>	<!-- jezik  -->
+        <item>Zbornik molitvi koje su pisane kao zahvala po misi, sadrži i snažne molitve poput egzorcizama</item>	<!-- sadržaj  -->
+        <item>Knjižica od 113 stranica</item>	<!-- veličina  -->
+        <item>Molitvenik su pisale 3 anonimne ruke, zbog toga se smatra da je nastao u različito vrijeme</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
     </string-array>
 
 </resources>

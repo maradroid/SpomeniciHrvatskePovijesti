@@ -2,22 +2,152 @@
 <resources>
 
     <string-array name="stoljece_16">
-        <item></item>
+        <item>Petrinićev zbornik</item>
+        <item>Klimantovićev ritual</item>
+        <item>Glagoljičko pismo Filipa Pilušinovića</item>
+        <item>Isprava o prodaji zemlje u Dolnjoj Kupčini</item>
+        <item>Glagoljičko pismo Nikole Šubića Zrinskog</item>
+        <item>Kvaderna kapitula lovranskoga</item>
+        <item>Komad lista iz Prvog dela Novog testamenta</item>
+        <item>Biblijska povijest</item>
+        <item>Glavićev zbornik</item>
+        <item>Odlomak Poslanice o nedjelji</item>
+        <item>Disipula</item>
     </string-array>
 
     <string-array name="stoljece_16_tag">
-        <item></item>
+        <item>petrinicev_zbornik</item>
+        <item>klimantovicev_ritual</item>
+        <item>glagoljicko_pismo_filipa_pilusinovica</item>
+        <item>isprava_o_prodaji_zemlje_u_dolnjoj_kupcini</item>
+        <item>glagoljicko_pismo_nikole_subica_zrinskog</item>
+        <item>kvaderna_kapitula_lovranskoga</item>
+        <item>komad_lista_iz_prvog_dela_novog_testamenta</item>
+        <item>biblijska_povijest</item>
+        <item>glavicev_zbornik</item>
+        <item>odlomak_poslanice_o_nedjelji</item>
+        <item>disipula_1</item>
     </string-array>
 
-    <string-array name="">	<!-- ime spomenika -->
-        <item></item>	<!-- mjesto  -->
-        <item></item>	<!-- godina  -->
-        <item></item>	<!--  pismo -->
-        <item></item>	<!-- jezik  -->
-        <item></item>	<!-- sadržaj  -->
-        <item></item>	<!-- veličina  -->
-        <item></item>	<!-- zanimljivosti -->
-        <item></item>	<!-- internet adresa za više informacija -->
+    <string-array name="petrinicev_zbornik">	<!-- ime spomenika -->
+        <item>Lika</item>	<!-- mjesto  -->
+        <item>1503. godina</item>	<!-- godina  -->
+        <item>Kurzivna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatskočakavski</item>	<!-- jezik  -->
+        <item>$</item>	<!-- sadržaj  -->
+        <item>153 lista</item>	<!-- veličina  -->
+        <item>Čuva se u Nacionalnoj knjižnici u Beču</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="klimantovicev_ritual">	<!-- ime spomenika -->
+        <item>Ugljan</item>	<!-- mjesto  -->
+        <item>1512. godina</item>	<!-- godina  -->
+        <item>Kurzivna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatski</item>	<!-- jezik  -->
+        <item>Sadrži pjesnička djela te pravila po kojima žive franjevci trećoredci</item>	<!-- sadržaj  -->
+        <item>235 listova pergamene</item>	<!-- veličina  -->
+        <item>Naziv dobio po istaknutom glagoljašu Šimunu Klimantoviću. Jedini potpuni ritual (od 3 napisana)</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="glagoljicko_pismo_filipa_pilusinovica">	<!-- ime spomenika -->
+        <item>Osp pod Novim</item>	<!-- mjesto  -->
+        <item>1504. godina</item>	<!-- godina  -->
+        <item>Kurzivna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatski</item>	<!-- jezik  -->
+        <item>Ivan Banić daruje zemljište samostanu sv. Marije u Crikvenici</item>	<!-- sadržaj  -->
+        <item>1 list - isprava/povelja</item>	<!-- veličina  -->
+        <item>Rukopis sadrži standardnu kršćansku invokaciju</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="isprava_o_prodaji_zemlje_u_dolnjoj_kupcini">	<!-- ime spomenika -->
+        <item>Pokuplje</item>	<!-- mjesto  -->
+        <item>1564. godina</item>	<!-- godina  -->
+        <item>Kurzivna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatski</item>	<!-- jezik  -->
+        <item>Mikula Petrčić kupuje zemlju od Ilije i Lovre Brzića</item>	<!-- sadržaj  -->
+        <item>1 list - isprava</item>	<!-- veličina  -->
+        <item>$</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="glagoljicko_pismo_nikole_subica_zrinskog">	<!-- ime spomenika -->
+        <item>Ozalj</item>	<!-- mjesto  -->
+        <item>1554. godina</item>	<!-- godina  -->
+        <item>Kurzivna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatski</item>	<!-- jezik  -->
+        <item>Nikola Šubić Zrinski piše pismo o velikoj opasnosti od Turaka</item>	<!-- sadržaj  -->
+        <item>1 list papira</item>	<!-- veličina  -->
+        <item>$</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="kvaderna_kapitula_lovranskoga">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>1574. godina (noviji upisi do kraja 18. stoljeća)</item>	<!-- godina  -->
+        <item>Kurzivna glagoljica</item>	<!--  pismo -->
+        <item>$</item>	<!-- jezik  -->
+        <item>Sadrži hrvatske, latinske i talijanske tekstove</item>	<!-- sadržaj  -->
+        <item>Dva sačuvana lista</item>	<!-- veličina  -->
+        <item>Dva istrgnuta originalna lista čuvaju se u Narodnoj i univerzitetnoj knjižnici u Ljubljani</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="komad_lista_iz_prvog_dela_novog_testamenta">	<!-- ime spomenika -->
+        <item>Tubingen</item>	<!-- mjesto  -->
+        <item>1562. godina</item>	<!-- godina  -->
+        <item>Tiskano izdanje glagoljice</item>	<!--  pismo -->
+        <item>Hrvatski</item>	<!-- jezik  -->
+        <item>Fragment sadrži dio iz Evanđelja po Luki</item>	<!-- sadržaj  -->
+        <item>Komad lista</item>	<!-- veličina  -->
+        <item>Izdan je u Tubingenu</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="biblijska_povijest">	<!-- ime spomenika -->
+        <item>Sjevernodalmatinski otoci</item>	<!-- mjesto  -->
+        <item>XVI./XVII. stoljeće</item>	<!-- godina  -->
+        <item>Kurzivna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatskočakavski s talijanizmima</item>	<!-- jezik  -->
+        <item>Slobodno prepričana Biblija</item>	<!-- sadržaj  -->
+        <item>371 list</item>	<!-- veličina  -->
+        <item>Štefanić smatra da je sve pisala jedna osoba</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="glavicev_zbornik">	<!-- ime spomenika -->
+        <item>Šibenik ili Zadar</item>	<!-- mjesto  -->
+        <item>1557. godina</item>	<!-- godina  -->
+        <item>Kurzivna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatskočakavski</item>	<!-- jezik  -->
+        <item>Tekstovi potrebni redovnicima samostana, kronike, Regula franjevaca trećoredaca i drugi tekstovi</item>	<!-- sadržaj  -->
+        <item>$</item>	<!-- veličina  -->
+        <item>Ime dobio po Šimunu Glaviću, franjevcu trećoredcu, uzor mu je bio Šimun Klimantović</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="odlomak_poslanice_o_nedjelji">	<!-- ime spomenika -->
+        <item>Istra</item>	<!-- mjesto  -->
+        <item>XVI. stoljeće</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>Crkvenoslavenski jezik s elementima čakavskog narječja</item>	<!-- jezik  -->
+        <item>Početak apokrifne Poslanice o nedjelji</item>	<!-- sadržaj  -->
+        <item>Dvolist papira</item>	<!-- veličina  -->
+        <item>Odlomak obiluje ligaturama, a izraženo je ekavsko pisanje jata</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="disipula_1">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>1541. godina</item>	<!-- godina  -->
+        <item>Kurzivna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatskočakavski</item>	<!-- jezik  -->
+        <item>Zbirka propovijedi za nedjelje i svece</item>	<!-- sadržaj  -->
+        <item>178 listova</item>	<!-- veličina  -->
+        <item>Nepoznato mjesto pronalaska</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
     </string-array>
 
 </resources>

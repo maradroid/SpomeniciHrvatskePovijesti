@@ -32,8 +32,15 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
         setSupportActionBar(toolbar);
         toolbar.setTitleTextColor(Color.WHITE);
 
-        listaStoljeca.add(new Stoljece("12. stoljeće","stoljece_12","Bašćanska ploča...",R.drawable.bascanska_plocaxx));
+        listaStoljeca.add(new Stoljece("11. stoljeće", "stoljece_11", "Pariški abecedarij...", R.drawable.vinodol3x));
+        listaStoljeca.add(new Stoljece("12. stoljeće", "stoljece_12", "Bašćanska ploča...", R.drawable.bascanska_plocaxx));
         listaStoljeca.add(new Stoljece("13. stoljeće","stoljece_13","Vinodolski zakon...",R.drawable.vinodol3x));
+        listaStoljeca.add(new Stoljece("14. stoljeće","stoljece_14","Pašmanski brevijar...",R.drawable.vinodol3x));
+        listaStoljeca.add(new Stoljece("15. stoljeće","stoljece_15","Lička listina...",R.drawable.vinodol3x));
+        listaStoljeca.add(new Stoljece("16. stoljeće","stoljece_16","Klimantovićev ritual...",R.drawable.vinodol3x));
+        listaStoljeca.add(new Stoljece("17. stoljeće","stoljece_17","Fatevićev zbornik...",R.drawable.vinodol3x));
+        listaStoljeca.add(new Stoljece("18. stoljeće","stoljece_18","Karta sv. Bonifacija...",R.drawable.vinodol3x));
+
 
         mRecycler = (RecyclerView) findViewById(R.id.recycler_view);
         mRecycler.setHasFixedSize(true);
