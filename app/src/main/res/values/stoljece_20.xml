@@ -2,22 +2,74 @@
 <resources>
 
     <string-array name="stoljece_20">
-        <item></item>
+        <item>Rimьski misalь slovênьskimь ezikomь...</item>
+        <item>Vesperal rimsko-slověnski. Večernje na nedělje i svetce po vse lěto po crkvenim kńigam glagolskim s priloženijem jutrnj i časov velih blagdan i drugih molitav</item>
+        <item>Abecedarium palaeoslovenicum in usum glagolitarum accedunt paradigmata morphologica specimina lectionum e missali romano slavonico idiomate selecta specimina cantus glossarium</item>
+        <item>Rimski misal slověnskim jezikom...</item>
+        <item>Čin Misi s izbranimi Misami : Rimski misal povelenijem Svetago zbora ekumenskago vatikanskago drugago obnovljen a proglašen oblastiju Pavla Papi VI.</item>
     </string-array>
 
     <string-array name="stoljece_20_tag">
-        <item></item>
+        <item>rimski_misal_slovenskim_ezikom</item>
+        <item>vesperal_rimsko_slovenski_vecernje_na_nedelje_i_svetce_po_vse_leto_po_crkvenim_knigam_glagolskim_s_prilozenijem_jutrnj_i_casov_velih_blagdan_i_drugih_molitav</item>
+        <item>abecedarium_palaeoslovenicum_in_usum_glagolitarum_accedunt_paradigmata_morphologica_specimina_lectionum_e_missali_romano_slavonico_idiomate_selecta_sepcimina_cantus_glossarium</item>
+        <item>rimski_misal_slovenskim_jezikom_4</item>
+        <item>cin_misi_s_izbranimi_misami_rimski_misal_povelenijem_svetago_zbora_ekumenskago_vatikanskago_drugago_obnovljen_a_proglasen_oblastiju_pavla_papi_vi</item>
     </string-array>
 
-    <string-array name="_20">	<!-- ime spomenika -->
-        <item></item>	<!-- mjesto  -->
-        <item></item>	<!-- godina  -->
-        <item></item>	<!--  pismo -->
-        <item></item>	<!-- jezik  -->
-        <item></item>	<!-- sadržaj  -->
-        <item></item>	<!-- veličina  -->
-        <item></item>	<!-- zanimljivosti -->
-        <item></item>	<!-- internet adresa za više informacija -->
+    <string-array name="rimski_misal_slovenskim_ezikom">	<!-- ime spomenika -->
+        <item>Rim</item>	<!-- mjesto  -->
+        <item>1905. godina</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
+        <item>Missale Romanum na izvornom jeziku</item>	<!-- sadržaj  -->
+        <item>Oko 800 stranica</item>	<!-- veličina  -->
+        <item>Priređivač Josip Vajs, godine 1904. Pozvan u Rim kako bi priredio drugo (treće) izdanje Parčićeva glagoljskog misala; iza svjetskoga rata hrvatski biskupi povjerili su mu izdanje na latiničnoj transkripciji; uz misal dr. Vajs izdao je i rimsko-slavenski vesperal sastavljen prema glagoljskim knjigama</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="vesperal_rimsko_slovenski_vecernje_na_nedelje_i_svetce_po_vse_leto_po_crkvenim_knigam_glagolskim_s_prilozenijem_jutrnj_i_casov_velih_blagdan_i_drugih_molitav">	<!-- ime spomenika -->
+        <item>Krk, Staroslavenska akademija</item>	<!-- mjesto  -->
+        <item>1907. godina</item>	<!-- godina  -->
+        <item>Latinica</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
+        <item>Liturgijska knjiga - vesperal</item>	<!-- sadržaj  -->
+        <item>$</item>	<!-- veličina  -->
+        <item>Staroslavenska akademija započela je izdavački rad pod vodstvom J. Vajsa; među izdanja SA u Krku (tiskara Kurykta) pripadaju pojedine biblijske knjige što ih je prema kodeksima priredio Vajs (ukupno osam), a među njima prvi je Vesperal rimsko-slovinski</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="abecedarium_palaeoslovenicum_in_usum_glagolitarum_accedunt_paradigmata_morphologica_specimina_lectionum_e_missali_romano_slavonico_idiomate_selecta_sepcimina_cantus_glossarium">	<!-- ime spomenika -->
+        <item>Krk, Staroslavenska akademija</item>	<!-- mjesto  -->
+        <item>1909. godina</item>	<!-- godina  -->
+        <item>Latinica/ustavna glagoljica</item>	<!--  pismo -->
+        <item>Latinski/hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
+        <item>Početnica s osnovama gramatike</item>	<!-- sadržaj  -->
+        <item>74 stranice</item>	<!-- veličina  -->
+        <item>Temeljni priručnik s gramatičkim osnovama i glosarom za služenje novouređenim liturgijskim knjigama u Vajsovu izdanju; drugo izdanje 1917. godine</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="rimski_misal_slovenskim_jezikom_4">	<!-- ime spomenika -->
+        <item>Rim</item>	<!-- mjesto  -->
+        <item>1927. godina</item>	<!-- godina  -->
+        <item>Latinica/ustavna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
+        <item>Missale Romanum na izvornom jeziku</item>	<!-- sadržaj  -->
+        <item>Oko 890 stranica</item>	<!-- veličina  -->
+        <item>Iza svjetskoga rata hrvatski biskupi povjerili su mu izdanje na latiničnoj transliteraciji/transkripciji; samo je Čin mise (Pravilo misi) tiskan dvopismeno latinicom i glagoljicom</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="cin_misi_s_izbranimi_misami_rimski_misal_povelenijem_svetago_zbora_ekumenskago_vatikanskago_drugago_obnovljen_a_proglasen_oblastiju_pavla_papi_vi">	<!-- ime spomenika -->
+        <item>Zagreb</item>	<!-- mjesto  -->
+        <item>1980. godina</item>	<!-- godina  -->
+        <item>Latinica</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
+        <item>Glagoljski Red mise s izabranim misama</item>	<!-- sadržaj  -->
+        <item>64 stranice</item>	<!-- veličina  -->
+        <item>Nakon Drugoga vatikanskog koncila narodni jezik prevladao je u liturgijskim knjgama, ali se staroslavensko bogoslužje i dalje željelo očuvati; Ivan Golub na hrvatskostaroslavenski jezik prevodi novi Ordo missae (Kršćanska sadašnjost, Zagreb)</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
     </string-array>
 
 </resources>

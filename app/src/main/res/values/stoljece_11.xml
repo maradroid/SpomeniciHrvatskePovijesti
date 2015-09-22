@@ -4,20 +4,48 @@
     <string-array name="stoljece_11">
         <item>Budimpeštanski odlomci</item>
         <item>Pariški abecedarij</item>
+        <item>Valunska ploča</item>
+        <item>Kločev glagoljaš</item>
+        <item>Plominski natpis</item>
+        <item>Konavoski glagoljski natpis</item>
+        <item>Krčki natpis</item>
+        <item>Župski glagoljski natpis</item>
+        <item>Jurandvorski ulomci</item>
+        <item>Senjska ploča</item>
+        <item>Grdoselski ulomak</item>
+        <item>Kninski ulomak</item>
+        <item>Plastovski odlomak</item>
+        <item>Bečki listići</item>
+        <item>Prva stranica Kijevskih listića</item>
+        <item>Glagoljički natpis iz Čečavca kod Slavonske Požege</item>
     </string-array>
 
     <string-array name="stoljece_11_tag">
         <item>budimpestanski_odlomci</item>
         <item>pariski_abecedarij</item>
+        <item>valunska_ploca</item>
+        <item>klocev_glagoljas</item>
+        <item>plominski_natpis</item>
+        <item>konavoski_glagoljski_natpis</item>
+        <item>krcki_natpis</item>
+        <item>zupski_glagoljski_natpis</item>
+        <item>jurandvorski_ulomci</item>
+        <item>senjska_ploca</item>
+        <item>grdoselski_ulomak</item>
+        <item>kninski_ulomak</item>
+        <item>plastovski_odlomak</item>
+        <item>becki_listici</item>
+        <item>prva_stranica_kijevskih_listica</item>
+        <item>glagoljicki_natpis_iz_cecavca_kod_slavonske_pozege</item>
     </string-array>
 
     <string-array name="budimpestanski_odlomci">	<!-- ime spomenika -->
-        <item>Budimpešta</item>	<!-- mjesto  -->
-        <item>XI. stoljeće</item>	<!-- godina  -->
-        <item>Prijelazni tip glagoljice - tradicionalna slova za jor i jer</item>	<!--  pismo -->
-        <item>Hrvatskoslavenski</item>	<!-- jezik  -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>XI. - XII. stoljeće</item>	<!-- godina  -->
+        <item>Formativna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
         <item>Ispisan je dio žitja Simeona Stylita/Šimuna Stupnika</item>	<!-- sadržaj  -->
-        <item>2 ulomka pergamene</item>	<!-- veličina  -->
+        <item>2 ulomka pergamenta</item>	<!-- veličina  -->
         <item>Najstariji očuvani hrvatskoglagoljski hagiografski tekst</item>	<!-- zanimljivosti -->
     </string-array>
 
@@ -25,10 +53,163 @@
         <item>$</item>
         <item>XI. stoljeće</item>
         <item>Obla glagoljica</item>
-        <item>$</item>
+        <item>Latinski jezik</item>
         <item>Imena 31 glagoljskog slova pisana latinicom</item>
         <item>$</item>
-        <item>U literaturi se ponekad naziva i "bugarskim", tj. Abecedarium bulgaricum, najstariji je ksenografski abecedarij što znači da ga je sastavljao stranac s namjerom upoznavanja nove publike s glagoljičkim pismom.</item>
+        <item>U literaturi se ponekad naziva i "bugarskim", tj. Abecedarium bulgaricum, najstariji je ksenografski abecedarij što znači da ga je sastavljao stranac s namjerom upoznavanja nove publike s glagoljičkim pismom</item>
+    </string-array>
+
+    <string-array name="valunska_ploca">	<!-- ime spomenika -->
+        <item>Crkva Sv. Marije u Valunu na Cresu</item>	<!-- mjesto  -->
+        <item>XI. stoljeće</item>	<!-- godina  -->
+        <item>Glagoljica i latinica</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski i latinski jezik</item>	<!-- jezik  -->
+        <item>Nadgrobni natpis</item>	<!-- sadržaj  -->
+        <item>Kamena ploča</item>	<!-- veličina  -->
+        <item>Dvojezični i dvopismeni nadgrobni natpis</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="klocev_glagoljas">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>XI. stoljeće</item>	<!-- godina  -->
+        <item>Obla glagoljica uz neke uglate oblike</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
+        <item>Pet homilija</item>	<!-- sadržaj  -->
+        <item>14 listova kodeksa (najvjerojatnije sadržavao 552)</item>	<!-- veličina  -->
+        <item>Spomenik koji ima neke uglate glagoljične oblike, sadrži originalnu Anonimnu homiliju za koju se pretpostavlja da je autor Sv. Metod</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="plominski_natpis">	<!-- ime spomenika -->
+        <item>Crkva Sv. Jurja u Plominu</item>	<!-- mjesto  -->
+        <item>XI. stoljeće</item>	<!-- godina  -->
+        <item>Obla glagoljica</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
+        <item>Fragmentarno uklesane 4 riječi autora: SE E PISЪLЪ S</item>	<!-- sadržaj  -->
+        <item>Kameni reljef</item>	<!-- veličina  -->
+        <item>Tekst na reljefu s uklesanim likom Silvana/Sv. Jurja</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="konavoski_glagoljski_natpis">	<!-- ime spomenika -->
+        <item>Dunave u Konavlima</item>	<!-- mjesto  -->
+        <item>XI. stoljeće</item>	<!-- godina  -->
+        <item>Obla glagoljica</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
+        <item>Natpis čiji sadržaj govori o nastanku tog spomenika</item>	<!-- sadržaj  -->
+        <item>Kamena ploča</item>	<!-- veličina  -->
+        <item>Istočno (južno) krilo glagoljaštva, pretpostavlja se da je nastao 1060. godine, čuva se u Arheološkom muzeju u Dubrovniku</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="krcki_natpis">	<!-- ime spomenika -->
+        <item>Krk</item>	<!-- mjesto  -->
+        <item>XI. stoljeće</item>	<!-- godina  -->
+        <item>Obla glagoljica</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
+        <item>Natpis o gradnji crkve uz benediktinski samostan</item>	<!-- sadržaj  -->
+        <item>Kamena ploča</item>	<!-- veličina  -->
+        <item>Ploča na kojoj su zapisana imena graditelja benediktinskog samostana (maĵъ, opatъ radonê, rugota, dobroslav[ъ]))</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="zupski_glagoljski_natpis">	<!-- ime spomenika -->
+        <item>Župa Dubrovačka</item>	<!-- mjesto  -->
+        <item>XI. - XII. stoljeće</item>	<!-- godina  -->
+        <item>Formativna glagoljica (predstandardizacijsko razdoblje – zapadno područje hrvatskoga glagoljaštva)</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
+        <item>Nepoznat, neistražen</item>	<!-- sadržaj  -->
+        <item>Kamena ploča</item>	<!-- veličina  -->
+        <item>Glagoljski natpis na ulomku antičkog crijepa (teguli), pronađen kraj crkve Sv. Đurđa između mjesta Petrače i Buića u Župi Dubrovačkoj; još neistražen u potpunosti, čuva se u Arheološkom muzeju u Dubrovniku</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="jurandvorski_ulomci">	<!-- ime spomenika -->
+        <item>Crkva Sv. Lucije u Jurandvoru, Krk</item>	<!-- mjesto  -->
+        <item>XI. - XII. stoljeće</item>	<!-- godina  -->
+        <item>Formativna glagoljica (predstandardizacijsko razdoblje – zapadno područje hrvatskoga glagoljaštva)</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
+        <item>Nepoznati dijelovi ulomaka, spominje se kralj Zvonimir</item>	<!-- sadržaj  -->
+        <item>4 ulomka ploče</item>	<!-- veličina  -->
+        <item>Popularno se još zove i "druga Bašćanska ploča"</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="senjska_ploca">	<!-- ime spomenika -->
+        <item>Senj</item>	<!-- mjesto  -->
+        <item>XI. - XII. stoljeće</item>	<!-- godina  -->
+        <item>Formativna glagoljica (predstandardizacijsko razdoblje - zapadno područje hrvatskoga glagoljaštva)</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
+        <item>Ulomci teksta, sadrži kršćansku invokaciju</item>	<!-- sadržaj  -->
+        <item>Ploča, gornji dio lijevog pluteja (oltarne pregrade)</item>	<!-- veličina  -->
+        <item>Motivi lozice, pletera, desetak redaka teksta, pronađena prilikom konzerviranja tvrđave Nehaj 1964. godine</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="grdoselski_ulomak">	<!-- ime spomenika -->
+        <item>Istra</item>	<!-- mjesto  -->
+        <item>XI. - XII. stoljeće</item>	<!-- godina  -->
+        <item>Formativna glagoljica (predstandardizacijsko razdoblje – zapadno područje hrvatskoga glagoljaštva)</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
+        <item>Spominje se pop Golob iz Tinjana, kapelan grdoselskog kneza Pankracija</item>	<!-- sadržaj  -->
+        <item>Ulomak kamene grede ili ploče s dijelom glagoljskoga natpisa</item>	<!-- veličina  -->
+        <item>Prijelazni tip oble u uglatu glagoljicu, mali ulomak gdje je posveta oltara u čast dvjema sveticama</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="kninski_ulomak">	<!-- ime spomenika -->
+        <item>Crkva Sv. Bartola u Kapitulu kod Knina</item>	<!-- mjesto  -->
+        <item>XI. - XII. stoljeće</item>	<!-- godina  -->
+        <item>Formativna glagoljica (predstandardizacijsko razdoblje – zapadno područje hrvatskoga glagoljaštva)</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
+        <item>Ulomak luka s par glagoljičnih i ćiriličnih slova: oĉju premi</item>	<!-- sadržaj  -->
+        <item>Maleni ulomak ukrašen romaničkom lozicom</item>	<!-- veličina  -->
+        <item>Miješanje glagoljice i ćirilice</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="plastovski_odlomak">	<!-- ime spomenika -->
+        <item>Plastovo kod Skradina</item>	<!-- mjesto  -->
+        <item>XI. - XII. stoljeće</item>	<!-- godina  -->
+        <item>Formativna glagoljica (predstandardizacijsko razdoblje – rub zapadnog područja hrvatskoga glagoljaštva)</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
+        <item>Maleni ulomak s tekstom: P E T R A     ?    I J U     M U     U Ž U     T U E G A    B R A</item>	<!-- sadržaj  -->
+        <item>Maleni kameni ulomak</item>	<!-- veličina  -->
+        <item>Miješanje glagoljičnih i ćiriličnih slova</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="becki_listici">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>XI. - XII. stoljeće</item>	<!-- godina  -->
+        <item>Formativna glagoljica (predstandardizacijsko razdoblje - zapadno područje hrvatskoga glagoljaštva)</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
+        <item>Odlomak gregorijanskog sakramentara (misala) zapadnog obreda, sadrže tri mise u čast apostola</item>	<!-- sadržaj  -->
+        <item>Dva lista pergamenta</item>	<!-- veličina  -->
+        <item>Po sadržaju bliski Kijevskim listićima (liturgija Sv. Petra), svjedoče o češko-hrvatskim uljudbenim vezama; U literaturi se nerijetko ističe kako su Bečki listići najstariji hrvatskoglagoljski tekst liturgijske namjene; našao ih je i opisao Vatroslav Jagić 1890. godine</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="prva_stranica_kijevskih_listica">	<!-- ime spomenika -->
+        <item>$</item>	<!-- mjesto  -->
+        <item>XI. - XII. stoljeće</item>	<!-- godina  -->
+        <item>Obla/formativna glagoljica (istočno područje hrvatskoga glagoljaštva)</item>	<!--  pismo -->
+        <item>Staroslavenski/Hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
+        <item>Poslanica Sv. Pavla apostola Rimljanima i oracije Blažene Djevice Marije (prepletanje istočne i zapadne tradicije)</item>	<!-- sadržaj  -->
+        <item>Listovi neujednačene veličine</item>	<!-- veličina  -->
+        <item>Kijevski listići drže se najstarijim spomenikom kanona starocrkvenoslavenskih spisa, nastali su na češkom području i broje ukupno 13 stranica, prva stranica pisana je kasnije na hrvatskom prostoru i zaključuje se da je taj dio sakramentara bio u uporabi na dubrovačkom području</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="glagoljicki_natpis_iz_cecavca_kod_slavonske_pozege">	<!-- ime spomenika -->
+        <item>Čečavac</item>	<!-- mjesto  -->
+        <item>XI. - XII. stoljeće</item>	<!-- godina  -->
+        <item>Formativna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
+        <item>Četiri se glagoljična slova tumače kao godina prema brojevnoj vrijednosti ČRIZ = 1129</item>	<!-- sadržaj  -->
+        <item>4 glagoljična slova na komadu opeke</item>	<!-- veličina  -->
+        <item>Potječe iz romaničke benediktinske opatije Sv. Miholvila u Rudini. Čuva se u Muzeju Požeške kotline u Požegi</item>	<!-- zanimljivosti -->
     </string-array>
 
 </resources>

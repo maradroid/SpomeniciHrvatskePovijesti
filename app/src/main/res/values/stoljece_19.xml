@@ -2,22 +2,178 @@
 <resources>
 
     <string-array name="stoljece_19">
-        <item></item>
+        <item>Chrestomathia linguae veteroslovenicae charactere glagolitici</item>
+        <item>Obrazac mise Misi za umr\'šee s koralnim napjevom</item>
+        <item>Bukvar staroslovenskog jezika glagolskimi pismeni za čitanje crkvenih knjig</item>
+        <item>Obrazac mise za Kêsara i Kralja našego i Decretum</item>
+        <item>Čitanka staroslavenskoga jezika</item>
+        <item>Obrazac mise na blagdan Bezgrešnoga začeća</item>
+        <item>Ulomci Sv. Pisma</item>
+        <item>PÊSAN, SLOG sv. Tomi iz\' Akvina k\' sv. Evharistii</item>
+        <item>Prilog\' slovên\'skim\' ezikom\' v\' nem\'že misi v\'seob\'ĉee vr\'k\'ve, za nêkaê mêsta i v\' tretiem\' činê sv. Fran\'čiska služimie s\'dr\'žet\' se</item>
+        <item>Čini i pravilo misli</item>
+        <item>Rimski misal slavenskim jezikom...</item>
+        <item>Mali azbukvar  za pravilno i jednolično čitanje glagoljice u novih crkvenih knjigah po crkvenoj recenziji</item>
+        <item>Vsa lêpa esi, Marie</item>
     </string-array>
 
     <string-array name="stoljece_19_tag">
-        <item></item>
+        <item>chrestomathia_linguae_veteroslovenicae_charactere_glagolitici</item>
+        <item>obrazac_mise_misi_za_umrsee_s_koralnim_napjevom</item>
+        <item>bukvar_staroslovenskog_jezika_glagolskimi_pismeni_za_citanje_crkvenih_knjig</item>
+        <item>obrazac_mise_za_kesara_i_kralja_nasego_i_decretum</item>
+        <item>citanka_staroslavenskoga_jezika</item>
+        <item>obrazac_mise_na_blagdan_bezgresnoga_zaceca</item>
+        <item>ulomci_sv_pisma</item>
+        <item>pesan_slog_sv_tomi_iz_akvina_k_sv_evharistii</item>
+        <item>prilog_slovenskim_ezikom_v_nemze_misi_v_seobcee_vrkve_za_nekae_mesta_i_v_tretiem_cine_sv_franciska_sluzimie_sdrzet_se</item>
+        <item>cini_i_pravilo_misli</item>
+        <item>rimski_misal_slavenskim_jezikom</item>
+        <item>mali_azbukvar_za_pravilno_i_jednolicno_citanje_glagoljice_u_novih_crkvenih_knjigah_po_crkvenoj_recenziji</item>
+        <item>vsa_lepa_esi_marie</item>
     </string-array>
 
-    <string-array name="_19">	<!-- ime spomenika -->
-        <item></item>	<!-- mjesto  -->
-        <item></item>	<!-- godina  -->
-        <item></item>	<!--  pismo -->
-        <item></item>	<!-- jezik  -->
-        <item></item>	<!-- sadržaj  -->
-        <item></item>	<!-- veličina  -->
-        <item></item>	<!-- zanimljivosti -->
-        <item></item>	<!-- internet adresa za više informacija -->
+    <string-array name="chrestomathia_linguae_veteroslovenicae_charactere_glagolitici">	<!-- ime spomenika -->
+        <item>Prag</item>	<!-- mjesto  -->
+        <item>1859. godina</item>	<!-- godina  -->
+        <item>Latinica/ustavna glagoljica</item>	<!--  pismo -->
+        <item>Latinski/hrvatskostaroslavenski jezik (obnovljeni tip iz XIX. stoljeća)</item>	<!-- jezik  -->
+        <item>Staroslavenska/starohrvatska čitanka</item>	<!-- sadržaj  -->
+        <item>$</item>	<!-- veličina  -->
+        <item>Priredio Ivan Berčić</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="obrazac_mise_misi_za_umrsee_s_koralnim_napjevom">	<!-- ime spomenika -->
+        <item>Galevac</item>	<!-- mjesto  -->
+        <item>1860. godina</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski jezik (obnovljeni tip iz XIX. stoljeća)</item>	<!-- jezik  -->
+        <item>Mise za mrtve</item>	<!-- sadržaj  -->
+        <item>Litografija</item>	<!-- veličina  -->
+        <item>Priređivač Dragutin Antun Parčić</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="bukvar_staroslovenskog_jezika_glagolskimi_pismeni_za_citanje_crkvenih_knjig">	<!-- ime spomenika -->
+        <item>Prag</item>	<!-- mjesto  -->
+        <item>1862. godina</item>	<!-- godina  -->
+        <item>Latinica/ustavna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatski/hrvatskostaroslavenski jezik (obnovljeni tip iz XIX. stoljeća)</item>	<!-- jezik  -->
+        <item>Bukvar</item>	<!-- sadržaj  -->
+        <item>$</item>	<!-- veličina  -->
+        <item>Dodane upute za pravilno čitanje rusificiranih tekstova misala i brevijara u skladu s hrvatskom redakcijom, Bukvar ima i dva litografirana Dodatka: Glagolska rukopisna azbuka (kurzivna glagoljica s primjerima) i Bosanska azbukva (azbuka bosanske ćirilice s uputama za čitanje); iste godine je Berčić priredio i kratku staroslavensku gramatiku, ali ona nije tiskana</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="obrazac_mise_za_kesara_i_kralja_nasego_i_decretum">	<!-- ime spomenika -->
+        <item>Zadar</item>	<!-- mjesto  -->
+        <item>1863. godina</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski jezik (obnovljeni tip iz XIX. stoljeća)</item>	<!-- jezik  -->
+        <item>$</item>	<!-- sadržaj  -->
+        <item>Litografija</item>	<!-- veličina  -->
+        <item>Priređivač Dragutin Antun Parčić</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="citanka_staroslavenskoga_jezika">	<!-- ime spomenika -->
+        <item>Prag</item>	<!-- mjesto  -->
+        <item>1864. godina</item>	<!-- godina  -->
+        <item>Latinica/ustavna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatski/hrvatskostaroslavenski jezik (obnovljeni tip iz XIX. stoljeća)</item>	<!-- jezik  -->
+        <item>Čitanka</item>	<!-- sadržaj  -->
+        <item>$</item>	<!-- veličina  -->
+        <item>Drugo izdanje hrestomatije pod naslovom Čitanka staroslavenskoga jezika, znatno prošireno i preuređeno, građa je podijeljena u tri dijela: bugarski razred (obla glagoljica), hrvatski razred (uglata rukopisna i tiskana glagoljica do R. Levakovića) i ruski razred (rusificirana hrvatska izdanja od Levakovića do Karamana)</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="obrazac_mise_na_blagdan_bezgresnoga_zaceca">	<!-- ime spomenika -->
+        <item>Krk</item>	<!-- mjesto  -->
+        <item>1. prosinca 1864. godine</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski jezik (obnovljeni tip iz XIX. stoljeća)</item>	<!-- jezik  -->
+        <item>Obrazac mise</item>	<!-- sadržaj  -->
+        <item>Litografija</item>	<!-- veličina  -->
+        <item>Priređivač Dragutin Antun Parčić</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="ulomci_sv_pisma">	<!-- ime spomenika -->
+        <item>Prag</item>	<!-- mjesto  -->
+        <item>1865. - 1871. godine</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
+        <item>Ulomci iz Biblije</item>	<!-- sadržaj  -->
+        <item>$</item>	<!-- veličina  -->
+        <item>Berčić je pokušao sastaviti cjelokupnu Bibliju na temelju hrvatskoglagoljskih liturgijskih spomenika, građu je najvećim dijelom uzimao iz prvotiska Misala (1483.) i Brozićeva Brevijara (1561.)</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="pesan_slog_sv_tomi_iz_akvina_k_sv_evharistii">	<!-- ime spomenika -->
+        <item>Glavotok</item>	<!-- mjesto  -->
+        <item>1870. (?) godina</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski jezik (obnovljeni tip iz XIX. stoljeća)</item>	<!-- jezik  -->
+        <item>Prijevod himni</item>	<!-- sadržaj  -->
+        <item>$</item>	<!-- veličina  -->
+        <item>Priređivač Dragutin Antun Parčić, tiskani u Serafinskoj tiskari</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="prilog_slovenskim_ezikom_v_nemze_misi_v_seobcee_vrkve_za_nekae_mesta_i_v_tretiem_cine_sv_franciska_sluzimie_sdrzet_se">	<!-- ime spomenika -->
+        <item>Rim</item>	<!-- mjesto  -->
+        <item>1881. godina</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski jezik (obnovljeni tip iz XIX. stoljeća)</item>	<!-- jezik  -->
+        <item>Dodatak Karamanovu Misalu s novim misama</item>	<!-- sadržaj  -->
+        <item>$</item>	<!-- veličina  -->
+        <item>Autor je Dragutin Antun Parčić</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="cini_i_pravilo_misli">	<!-- ime spomenika -->
+        <item>Rim</item>	<!-- mjesto  -->
+        <item>1881. godina</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski jezik (obnovljeni tip iz XIX. stoljeća)</item>	<!-- jezik  -->
+        <item>Ordo missae (Red Sv. mise)</item>	<!-- sadržaj  -->
+        <item>$</item>	<!-- veličina  -->
+        <item>Priređivač je Dragutin Antun Parčić</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="rimski_misal_slavenskim_jezikom">	<!-- ime spomenika -->
+        <item>Rim</item>	<!-- mjesto  -->
+        <item>1893. godina</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
+        <item>Missale romanum na izvornom jeziku</item>	<!-- sadržaj  -->
+        <item>Oko 800 stranica</item>	<!-- veličina  -->
+        <item>Autor Dragutin Antun Parčić, prvi misal koji se vratio izvornom jeziku nakon istočnoslaveniziranih izdanja, Vatroslav Jagić istaknuo je da Misal predstavlja trijumf slavenske filologije nasuprot 260 godina dugoj rusifikaciji hrvatskoglagoljskih knjiga i posvemašnjem ignoriranju slavističkih dosega; izdanje Parčićeva Misala ponovljeno je godine 1894. (samo dotiskano, neočuvano) i 1896. (neizmijenjeno) pa posmrtno 1905. u izdanju Josipa Vajsa</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="mali_azbukvar_za_pravilno_i_jednolicno_citanje_glagoljice_u_novih_crkvenih_knjigah_po_crkvenoj_recenziji">	<!-- ime spomenika -->
+        <item>Rim</item>	<!-- mjesto  -->
+        <item>1894. godina</item>	<!-- godina  -->
+        <item>Latinica/ustavna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatski/hrvatskostaroslavenski jezik (obnovljeni tip iz XIX. stoljeća)</item>	<!-- jezik  -->
+        <item>Priručnik za glagoljsko pismo</item>	<!-- sadržaj  -->
+        <item>$</item>	<!-- veličina  -->
+        <item>Autor je I. Broz, a Parčić priređivač za tisak</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
+    </string-array>
+
+    <string-array name="vsa_lepa_esi_marie">	<!-- ime spomenika -->
+        <item>Crkva Sv. Marije na Glavotoku</item>	<!-- mjesto  -->
+        <item>XIX. stoljeće</item>	<!-- godina  -->
+        <item>Ustavna glagoljica</item>	<!--  pismo -->
+        <item>Hrvatskostaroslavenski jezik (obnovljeni tip iz XIX. stoljeća)</item>	<!-- jezik  -->
+        <item>Napjev za kor</item>	<!-- sadržaj  -->
+        <item>$</item>	<!-- veličina  -->
+        <item>Priređivač Dragutin Antun Parčić</item>	<!-- zanimljivosti -->
+        <item>$</item>	<!-- internet adresa za više informacija -->
     </string-array>
 
 </resources>

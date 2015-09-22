@@ -14,15 +14,16 @@ import java.util.ArrayList;
 /**
  * Created by mara on 3/11/15.
  */
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private ArrayList<Stoljece> listaStoljeca = new ArrayList<Stoljece>();
     private static ClickListener clickListener;
+    private ImageView img;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
-    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         // each data item is just a string in this case
 
         ImageView cardImage;
@@ -38,9 +39,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             this.cardStoljece = (TextView) v.findViewById(R.id.card_stoljece_tv);
             this.cardZnamenitosti = (TextView) v.findViewById(R.id.card_znamenitosti_tv);
             v.setOnClickListener(this);
-
+            RecyclerViewAdapter.this.img = this.cardImage;
         }
 
+        public ImageView getCardImage() {
+            return cardImage;
+        }
 
         @Override
         public void onClick(View v) {
@@ -83,7 +87,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     // Create new views (invoked by the layout manager)
     @Override
-    public RecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent,
                                                    int viewType) {
 
         View v = LayoutInflater.from(parent.getContext())
@@ -100,14 +104,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
 
-        holder.cardStoljece.setText(listaStoljeca.get(position).getCardStoljece());
-        holder.cardZnamenitosti.setText(listaStoljeca.get(position).getCardZanimljivosti());
-        holder.cardImage.setImageResource(listaStoljeca.get(position).getCardImage());
+        ((ViewHolder)holder).cardStoljece.setText(listaStoljeca.get(position).getCardStoljece());
+        ((ViewHolder)holder).cardZnamenitosti.setText(listaStoljeca.get(position).getCardZanimljivosti());
+        ((ViewHolder)holder).cardImage.setImageResource(listaStoljeca.get(position).getCardImage());
+        //Log.e("maradroid","imageHeight: "+holder.cardImage.getHeight());
+    }
 
+    public ImageView Mara(){
+        return img;
     }
 
     // Return the size of your dataset (invoked by the layout manager)

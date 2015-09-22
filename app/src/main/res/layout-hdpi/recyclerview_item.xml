@@ -7,13 +7,15 @@
     android:layout_marginRight="@dimen/card_margin"
     android:layout_marginLeft="@dimen/card_margin"
     android:layout_marginTop="@dimen/card_margin"
+    android:id="@+id/parent_layout_ll"
     >
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
+        android:layout_width="match_parent"
+        android:layout_height="123dp"
         android:id="@+id/card_iv"
-        android:background="@color/main_color"/>
+        android:background="@color/main_color"
+        android:scaleType="centerCrop"/>
 
 
     <TextView

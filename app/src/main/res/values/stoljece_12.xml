@@ -3,46 +3,48 @@
 
 	<string-array name="stoljece_12">
 		<item>Bašćanska ploča</item>
-		<item>Glagoljički natpis iz Čečavca kod Slavonske Požege</item>
 		<item>Bašćanski ostrišci</item>
 		<item>Glagoljički ulomak iz Kijevaca kod Bosanske Gradiške</item>
+		<item>Minhenski abecedarij</item>
+		<item>Darovnica slavnog Dragoslava</item>
+		<item>Humski grafit</item>
+		<item>Grškovićev odlomak apostola</item>
+		<item>Mihanovićev odlomak apostola</item>
+		<item>Supetarski ulomak</item>
+		<item>Svetokrižki odlomak</item>
 	</string-array>
 
 	<string-array name="stoljece_12_tag">
 		<item>bascanska_ploca</item>
-		<item>glagoljicki_natpis_iz_cecavca_kod_slavonske_pozege</item>
 		<item>bascanski_ostrisci</item>
 		<item>glagoljicki_ulomak_iz_kijevaca_kod_bosanske_gradiske</item>
+		<item>minhenski_abecedarij</item>
+		<item>darovnica_slavnog_dragoslava</item>
+		<item>humski_grafit</item>
+		<item>grskovicev_odlomak_apostola</item>
+		<item>mihanovicev_odlomak_apostola</item>
+		<item>supetarski_ulomak</item>
+		<item>svetokrizki_odlomak</item>
 	</string-array>
 
 	<string-array name="bascanska_ploca">	<!-- ime spomenika -->
 		<item>Jurandvor kod Baške na otoku Krku</item>	<!-- mjesto  -->
 		<item>1100. godina</item>	<!-- godina  -->
-		<item>Formativni tip glagoljice</item>	<!--  pismo -->
-		<item>Hrvatska redakcija staroslavenskog jezika</item>	<!-- jezik  -->
+		<item>Formativna glagoljica (predstandardizacijsko razdoblje - zapadno područje hrvatskoga glagoljaštva)</item>	<!--  pismo -->
+		<item>Hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
 		<item>Kralj Zvonimir daruje ledinu za gradnju crkve Sv. Lucije</item>	<!-- sadržaj  -->
 		<item>Kamena ploča</item>	<!-- veličina  -->
-		<item>Ploča je služila kao oltarna pregrada; sadrži nekoliko ćiriličnih slova; Značajni istraživači: Franjo Rački, Vatroslav Jagić, Vjekoslav Štefanić, Branko Fučić; danas je u HAZU.</item>	<!-- zanimljivosti -->
-	</string-array>
-
-	<string-array name="glagoljicki_natpis_iz_cecavca_kod_slavonske_pozege">	<!-- ime spomenika -->
-		<item>Čečavac</item>	<!-- mjesto  -->
-		<item>XI/XII. stoljeće</item>	<!-- godina  -->
-		<item>Formativna glagoljica</item>	<!--  pismo -->
-		<item>$</item>	<!-- jezik  -->
-		<item>Četiri se glagoljična slova tumače kao godina prema brojevnoj vrijednosti ČRIZ = 1129</item>	<!-- sadržaj  -->
-		<item>4 glagoljična slova na komadu opeke</item>	<!-- veličina  -->
-		<item>Potječe iz romaničke benediktinske opatije sv. Miholvila u Rudini. Čuva se u Muzeju Požeške kotline u Požegi</item>	<!-- zanimljivosti -->
+		<item>Ploča je služila kao oltarna pregrada; sadrži nekoliko ćiriličnih slova; Značajni istraživači: Franjo Rački, Ivan Crnčić Vatroslav Jagić, Vjekoslav Štefanić, Branko Fučić; danas se čuva u Auli Hrvatske akademije znanosti i umjetnosti</item>	<!-- zanimljivosti -->
 	</string-array>
 
 	<string-array name="bascanski_ostrisci">
 		<item>Baška</item>
 		<item>XII. stoljeće</item>
-		<item>Formativna glagoljica (zapadno područje hrvatskog glagoljaštva)</item>
-		<item>Hrvatskostaroslavenski</item>
+		<item>Formativna glagoljica (predstandardizacijsko razdoblje - zapadno područje hrvatskoga glagoljaštva)</item>
+		<item>Hrvatskostaroslavenski jezik</item>
 		<item>Sadrže evanđeoske stihove, odlomak Muke po Mateju (Mt 26, 37-48)</item>
 		<item>Dvije pergamenske vrpce, dva uska pergamentna ostriška</item>
-		<item>Nazivaju se još i Premudini ostrišci prema popu glagoljašu i filologu Vinku Premudi – oporučno ih je ostavio Jugoslavenskoj akademiji znanosti i umjetnosti u Zagrebu. Vinko Premuda ostriške je pronašao u Baški, ali su se nakon njegove smrti zagubili te su ponovno pronađeni.</item>
+		<item>Nazivaju se još i Premudini ostrišci prema popu glagoljašu i filologu Vinku Premudi – oporučno ih je ostavio Jugoslavenskoj akademiji znanosti i umjetnosti u Zagrebu. Vinko Premuda ostriške je pronašao u Baški, ali su se nakon njegove smrti zagubili te su ponovno pronađeni</item>
 	</string-array>
 
 	<string-array name="glagoljicki_ulomak_iz_kijevaca_kod_bosanske_gradiske">
@@ -52,7 +54,84 @@
 		<item>$</item>
 		<item>Nepotpun natpis uparan u prirodni blok građevnoga kamena</item>
 		<item>Nekoliko ispisanih formativnih glagoljskih slova</item>
-		<item>Zabilježeno muško ime "Raden" u dativu. Kijevački natpis leži na samom rubu panonskoga prostora, a Branko Fučić dvoji treba li ga pripisati hrvatskome ili starijem moravsko-panonskome glagoljskom području.</item>
+		<item>Zabilježeno muško ime "Raden" u dativu. Kijevački natpis leži na samom rubu panonskoga prostora, a Branko Fučić dvoji treba li ga pripisati hrvatskome ili starijem moravsko-panonskome glagoljskom području</item>
+	</string-array>
+
+	<string-array name="minhenski_abecedarij">	<!-- ime spomenika -->
+		<item>$</item>	<!-- mjesto  -->
+		<item>XII. stoljeće</item>	<!-- godina  -->
+		<item>Obla glagoljica (i ćirilica)</item>	<!--  pismo -->
+		<item>$</item>	<!-- jezik  -->
+		<item>Glagoljični i ćirilični abecedarij</item>	<!-- sadržaj  -->
+		<item>1 list pergamenta</item>	<!-- veličina  -->
+		<item>Napisan rukom na zadnju stranicu latiničnog (latinskog) kodeksa iz X. stoljeća; ksenografski alfabet; prvi ga je u slavistici objavio Vatroslav Jagić 1911. godine</item>	<!-- zanimljivosti -->
+		<item>$</item>	<!-- internet adresa za više informacija -->
+	</string-array>
+
+	<string-array name="darovnica_slavnog_dragoslava">	<!-- ime spomenika -->
+		<item>Dobrinj na Krku</item>	<!-- mjesto  -->
+		<item>1100. godina</item>	<!-- godina  -->
+		<item>Glagoljica (kurzivna u prijepisu)</item>	<!--  pismo -->
+		<item>Hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
+		<item>Dragoslav daruje svoje imanje crkvi Sv. Vida</item>	<!-- sadržaj  -->
+		<item>Isprava/dokument/listina</item>	<!-- veličina  -->
+		<item>Najstariji pisani spomenik o postojanju župa na Krku, spominju se po prvi put Dobrinj i Vrbnik, nije sačuvan u izvorniku</item>	<!-- zanimljivosti -->
+		<item>$</item>	<!-- internet adresa za više informacija -->
+	</string-array>
+
+	<string-array name="humski_grafit">	<!-- ime spomenika -->
+		<item>Crkva Sv. Jerolima (Jeronima) u Humu</item>	<!-- mjesto  -->
+		<item>XII. stoljeće</item>	<!-- godina  -->
+		<item>Glagoljica (najstariji tip pisma glagoljskih spomenika Istre i Kvarnera)</item>	<!--  pismo -->
+		<item>Hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
+		<item>Grafit popa glagoljaša, evidentirane odslužene gregorijanske mise</item>	<!-- sadržaj  -->
+		<item>Glagoljični grafit na zidu oslikanom freskama</item>	<!-- veličina  -->
+		<item>Uparan je oštricom uz 30 okomitih crta; Zabilježeno je da se za dušu pokojnog humskog kovača Martina izrekao gregorijanski niz misa, ali povrh njega i još jedna misa (je vzeta)</item>	<!-- zanimljivosti -->
+		<item>$</item>	<!-- internet adresa za više informacija -->
+	</string-array>
+
+	<string-array name="grskovicev_odlomak_apostola">	<!-- ime spomenika -->
+		<item>Istočna Bosna, Zahumlje ili Zeta</item>	<!-- mjesto  -->
+		<item>XII. stoljeće</item>	<!-- godina  -->
+		<item>Formativna glagoljica (predstandardizacijsko razdoblje - istočno područje hrvatskoga glagoljaštva)</item>	<!--  pismo -->
+		<item>Hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
+		<item>Odlomci iz Djela apostolskih namijenjeni uporabi u crkvi</item>	<!-- sadržaj  -->
+		<item>Dva pergamentna dvolista</item>	<!-- veličina  -->
+		<item>Odlomke potkraj XIX. stoljeća pronašao vrbnički kapelan Niko Gršković, čuvaju se u Arhivu HAZU</item>	<!-- zanimljivosti -->
+		<item>$</item>	<!-- internet adresa za više informacija -->
+	</string-array>
+
+	<string-array name="mihanovicev_odlomak_apostola">	<!-- ime spomenika -->
+		<item>Bosansko-humsko područje (ili zetsko)</item>	<!-- mjesto  -->
+		<item>XII. stoljeće</item>	<!-- godina  -->
+		<item>Formativna glagoljica (predstandardizacijsko razdoblje - istočno područje hrvatskoga glagoljaštva)</item>	<!--  pismo -->
+		<item>Hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
+		<item>Odlomak kratkog apostolara, sadrži perikope iz Poslanica Pavla apostola Korinćanima, Efežanima, Galaćanima (uzus istočne Crkve)</item>	<!-- sadržaj  -->
+		<item>Pergamentni dvolist</item>	<!-- veličina  -->
+		<item>Pronađen zalijepljen u koricama Ilovičke krmčije, nastao u doba kad je prevladavala ćirilična pismenost, čuva se u Arhivu HAZU</item>	<!-- zanimljivosti -->
+		<item>$</item>	<!-- internet adresa za više informacija -->
+	</string-array>
+
+	<string-array name="supetarski_ulomak">	<!-- ime spomenika -->
+		<item>Sv. Petar u Šumi</item>	<!-- mjesto  -->
+		<item>XII. stoljeće</item>	<!-- godina  -->
+		<item>Formativna glagoljica (predstandardizacijsko razdoblje - zapadno područje hrvatskoga glagoljaštva)</item>	<!--  pismo -->
+		<item>Hrvatskostaroslavenski jezik</item>	<!-- jezik  -->
+		<item>Dio razbijene, prelomljene kamene grede, ulomak: amenъ  їĕkovъm[ъ]</item>	<!-- sadržaj  -->
+		<item>Mali kameni ulomak</item>	<!-- veličina  -->
+		<item>Riječ amen pisana ćirilicom, a ime Jakov glagoljicom, čuva se u Etnografskom muzeju Istre u Pazinu</item>	<!-- zanimljivosti -->
+		<item>$</item>	<!-- internet adresa za više informacija -->
+	</string-array>
+
+	<string-array name="svetokrizki_odlomak">	<!-- ime spomenika -->
+		<item>Sv. Križ pokraj Trsata</item>	<!-- mjesto  -->
+		<item>XII. - XIII. stoljeće</item>	<!-- godina  -->
+		<item>Formativna glagoljica</item>	<!--  pismo -->
+		<item>4 slova - jat, S, A i E</item>	<!-- jezik  -->
+		<item>Nepotpuni ulomak s glagoljičnim slovima</item>	<!-- sadržaj  -->
+		<item>Maleni glineni ulomak</item>	<!-- veličina  -->
+		<item>Svetokrižki ulomak je 1. prosinca 2004. godine pronašao učenik riječke Osnovne škole "Gornja Vežica" Antonio Torre na brdu Sveti križ iznad istočnog dijela grada za izviđanje terena u sklopu uređenja poučne staze na brdu</item>	<!-- zanimljivosti -->
+		<item>$</item>	<!-- internet adresa za više informacija -->
 	</string-array>
 
 </resources>

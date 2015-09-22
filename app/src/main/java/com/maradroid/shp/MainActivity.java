@@ -32,15 +32,16 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
         setSupportActionBar(toolbar);
         toolbar.setTitleTextColor(Color.WHITE);
 
-        listaStoljeca.add(new Stoljece("11. stoljeće", "stoljece_11", "Pariški abecedarij...", R.drawable.vinodol3x));
-        listaStoljeca.add(new Stoljece("12. stoljeće", "stoljece_12", "Bašćanska ploča...", R.drawable.bascanska_plocaxx));
-        listaStoljeca.add(new Stoljece("13. stoljeće","stoljece_13","Vinodolski zakon...",R.drawable.vinodol3x));
-        listaStoljeca.add(new Stoljece("14. stoljeće","stoljece_14","Pašmanski brevijar...",R.drawable.vinodol3x));
-        listaStoljeca.add(new Stoljece("15. stoljeće","stoljece_15","Lička listina...",R.drawable.vinodol3x));
-        listaStoljeca.add(new Stoljece("16. stoljeće","stoljece_16","Klimantovićev ritual...",R.drawable.vinodol3x));
-        listaStoljeca.add(new Stoljece("17. stoljeće","stoljece_17","Fatevićev zbornik...",R.drawable.vinodol3x));
-        listaStoljeca.add(new Stoljece("18. stoljeće","stoljece_18","Karta sv. Bonifacija...",R.drawable.vinodol3x));
-
+        listaStoljeca.add(new Stoljece("11. stoljeće", "stoljece_11", "Pariški abecedarij...", R.mipmap.jedanaest));
+        listaStoljeca.add(new Stoljece("12. stoljeće", "stoljece_12", "Bašćanska ploča...", R.mipmap.bascanska_plocaxx));
+        listaStoljeca.add(new Stoljece("13. stoljeće","stoljece_13","Vinodolski zakon...",R.mipmap.vinodol3x));
+        listaStoljeca.add(new Stoljece("14. stoljeće","stoljece_14","Pašmanski brevijar...",R.mipmap.cetrnaest));
+        listaStoljeca.add(new Stoljece("15. stoljeće","stoljece_15","Lička listina...",R.mipmap.petnaest));
+        listaStoljeca.add(new Stoljece("16. stoljeće","stoljece_16","Klimantovićev ritual...",R.mipmap.sesnaest));
+        listaStoljeca.add(new Stoljece("17. stoljeće","stoljece_17","Fatevićev zbornik...",R.mipmap.sedamnaest));
+        listaStoljeca.add(new Stoljece("18. stoljeće","stoljece_18","Karta sv. Bonifacija...",R.mipmap.osamnaest));
+        listaStoljeca.add(new Stoljece("19. stoljeće","stoljece_19","Čini i pravilo misli...",R.mipmap.devetnaest));
+        listaStoljeca.add(new Stoljece("20. stoljeće","stoljece_20","Rimski misal slověnskim jezikom...",R.mipmap.dvadeset));
 
         mRecycler = (RecyclerView) findViewById(R.id.recycler_view);
         mRecycler.setHasFixedSize(true);
@@ -50,6 +51,7 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
         mAdapter.setClickListener(this);
         mRecycler.setAdapter(mAdapter);
 
+
     }
 
     @Override
@@ -58,7 +60,8 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
             intent = new Intent(this, ListViewActivity.class);
             intent.putExtra("tag",listaStoljeca.get(position).getStoljeceTag());
             startActivity(intent);
-
+        Log.e("maradroid", "imageHeight: " + mAdapter.Mara().getHeight());
+        Log.e("maradroid", "imageWidth: " + mAdapter.Mara().getWidth());
     }
 
 
