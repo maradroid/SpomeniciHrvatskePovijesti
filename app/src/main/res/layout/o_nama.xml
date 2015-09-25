@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#d9d9d9"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/tool_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/card_margin"
+        android:layout_marginLeft="@dimen/card_margin"
+        android:layout_marginRight="@dimen/card_margin"
+        android:layout_marginTop="@dimen/card_margin"
+        android:background="@drawable/card_like2"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/label_bottom_margin"
+            android:layout_marginLeft="@dimen/in_card_margin"
+            android:layout_marginRight="@dimen/in_card_margin"
+            android:fontFamily="sans-serif-medium"
+            android:text="Sudionici projekta"
+            android:textStyle="bold"
+            android:textColor="@color/main_color"
+            android:textSize="30sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/label_bottom_margin"
+            android:layout_marginLeft="@dimen/in_card_margin"
+            android:layout_marginRight="@dimen/in_card_margin"
+            android:layout_marginTop="@dimen/label_top_margin"
+            android:fontFamily="sans-serif-medium"
+            android:text="Studenti"
+            android:textStyle="bold"
+            android:textColor="@color/main_color"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/label_bottom_margin"
+            android:layout_marginLeft="@dimen/in_card_margin"
+            android:layout_marginRight="@dimen/in_card_margin"
+            android:fontFamily="sans-serif-medium"
+            android:text="Matija Marić (ETFOS)\nLuka Mandić (ETFOS)\nMatej Peharda (FFOS)\nSilvijo Šaur (FFOS)"
+            android:textColor="@color/second_color"
+            android:textSize="15sp"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/label_bottom_margin"
+            android:layout_marginLeft="@dimen/in_card_margin"
+            android:layout_marginRight="@dimen/in_card_margin"
+            android:layout_marginTop="@dimen/label_top_margin"
+            android:fontFamily="sans-serif-medium"
+            android:text="Mentori"
+            android:textStyle="bold"
+            android:textColor="@color/main_color"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/label_bottom_margin"
+            android:layout_marginLeft="@dimen/in_card_margin"
+            android:layout_marginRight="@dimen/in_card_margin"
+            android:fontFamily="sans-serif-medium"
+            android:text="Izv. prof. dr. sc. Milica Lukić (FFOS)\nVera Blažević Krezić, znanstvena novakinja (FFOS)"
+            android:textColor="@color/second_color"
+            android:textSize="15sp"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

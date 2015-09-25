@@ -47,7 +47,7 @@
         <item>blagdanar_popa_andrija</item>
         <item>narucnik_plebanusev</item>
         <item>veprinacki_zakon</item>
-        <item>mestriȇ_od_dobra_umrtiȇ</item>
+        <item>mestrie_od_dobra_umrtie</item>
         <item>mirakuli_slavne_deve_marie</item>
         <item>transit_svetog_jerolima</item>
         <item>senjski_korizmenjak</item>
@@ -56,9 +56,9 @@
         <item>psaltir_bukvar</item>
         <item>oficii_rimski_oficii_blazenie_devi_marie</item>
         <item>misal_hruacki</item>
-        <item>knizice_od_zitiȇ_rimskih_arhierȇov_i_cesarov</item>
+        <item>knizice_od_zitie_rimskih_arhiereov_i_cesarov</item>
         <item>knizice_krsta</item>
-        <item>od_bitiȇ_redovnickoga_knizice</item>
+        <item>od_bitie_redovnickoga_knizice</item>
         <item>disipula</item>
         <item>glagoljicko_pismo_nikole_subica_zrinskog</item>
         <item>glavicev_zbornik</item>
@@ -145,7 +145,7 @@
         <item>$</item>	<!-- internet adresa za više informacija -->
     </string-array>
 
-    <string-array name="mestriȇ_od_dobra_umrtiȇ">	<!-- ime spomenika -->
+    <string-array name="mestrie_od_dobra_umrtie">	<!-- ime spomenika -->
         <item>Senj</item>	<!-- mjesto  -->
         <item>1507./1508. godina</item>	<!-- godina  -->
         <item>Ustavna glagoljica</item>	<!--  pismo -->
@@ -244,7 +244,7 @@
         <item>$</item>	<!-- internet adresa za više informacija -->
     </string-array>
 
-    <string-array name="knizice_od_zitiȇ_rimskih_arhierȇov_i_cesarov">	<!-- ime spomenika -->
+    <string-array name="knizice_od_zitie_rimskih_arhiereov_i_cesarov">	<!-- ime spomenika -->
         <item>Rijeka</item>	<!-- mjesto  -->
         <item>1531. godina</item>	<!-- godina  -->
         <item>Ustavna glagoljica</item>	<!--  pismo -->
@@ -266,7 +266,7 @@
         <item>$</item>	<!-- internet adresa za više informacija -->
     </string-array>
 
-    <string-array name="od_bitiȇ_redovnickoga_knizice">	<!-- ime spomenika -->
+    <string-array name="od_bitie_redovnickoga_knizice">	<!-- ime spomenika -->
         <item>Rijeka</item>	<!-- mjesto  -->
         <item>1531. godina</item>	<!-- godina  -->
         <item>Ustavna glagoljica</item>	<!--  pismo -->
@@ -277,7 +277,7 @@
         <item>$</item>	<!-- internet adresa za više informacija -->
     </string-array>
 
-    <string-array name="Disipula">	<!-- ime spomenika -->
+    <string-array name="disipula">	<!-- ime spomenika -->
         <item>$</item>	<!-- mjesto  -->
         <item>1541. godina</item>	<!-- godina  -->
         <item>Kurzivna glagoljica</item>	<!--  pismo -->

@@ -3,9 +3,9 @@
 
     <string-array name="stoljece_18">
         <item>Zakletve protiv štetočina i zla oblaka</item>
-        <item>Missal rimskij va jezik slovinskij... (2)</item>
+        <item>Missal rimskij va jezik slovenskij sazdan povoljenijem P. G. N. Pape Urbana osmago</item>
         <item>Misse za umervšije</item>
-        <item>Missal rimskij slavenskim jazykom...</item>
+        <item>Missal rimskij slavenskim jazykom poveljenijem P. G. N. Papy Urbana Osmago izdan</item>
         <item>Bukvar</item>
         <item>Bukvar (2)</item>
         <item>Molitvi prežde</item>
@@ -18,7 +18,7 @@
     <string-array name="stoljece_18_tag">
         <item>zakletve_protiv_stetocina_i_zla_oblaka</item>
         <item>missal_rimskij_va_jezik_slovinskij_1</item>
-        <item>misse_za_umervšije</item>
+        <item>misse_za_umervsije</item>
         <item>missal_rimskij_slavenskim_jazykom</item>
         <item>bukvar</item>
         <item>bukvar_1</item>
@@ -51,7 +51,7 @@
         <item>$</item>	<!-- internet adresa za više informacija -->
     </string-array>
 
-    <string-array name="misse_za_umervšije">	<!-- ime spomenika -->
+    <string-array name="misse_za_umervsije">	<!-- ime spomenika -->
         <item>Rim</item>	<!-- mjesto  -->
         <item>1707. godina</item>	<!-- godina  -->
         <item>Ustavna glagoljica</item>	<!--  pismo -->

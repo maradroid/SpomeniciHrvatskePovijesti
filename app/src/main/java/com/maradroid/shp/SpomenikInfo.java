@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -39,7 +40,10 @@ public class SpomenikInfo extends ActionBarActivity{
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(getIntent().getStringExtra("stoljece"));
         toolbar.setTitleTextColor(Color.WHITE);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationIcon(R.mipmap.ic_chevron_left_white_36dp);
 
         nazivSpomenika = (TextView) findViewById(R.id.ime_spomenika_tv);
         mjestoLabel = (TextView) findViewById(R.id.mjesto_label_tv);
@@ -75,7 +79,18 @@ public class SpomenikInfo extends ActionBarActivity{
                 label[i].setVisibility(View.GONE);
             }
         }
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
 
+        int id = item.getItemId();
+
+        if(id == android.R.id.home) {
+            onBackPressed();
+            return true;
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="literatura_array">
+        <item>Blažević Krezić, Vera, Lukić, Milica, Divanimo, dakle postojimo..., Matica hrvatska, Ogranak Osijek, Osijek 2014.</item>
+        <item>Bogović, Mile, Senjska glagoljska baština, Senjski zbornik, Vol.35 No.1, Prosinac 2008., str. 11. – 26.</item>
+        <item>Bratulić, Josip, Povijest hrvatskoga jezika, Srednji vijek, Knjiga 1, CROATICA, Zagreb, 2009.</item>
+        <item>Bratulić, Josip, Povijest hrvatskoga jezika, 16. stoljeće, Knjiga 2, CROATICA, Zagreb, 2011.</item>
+        <item>Bratulić, Josip, Povijest hrvatskoga jezika, 17. i 18. stoljeće, Knjiga 3, CROATICA, Zagreb, 2013.</item>
+        <item>Damjanović, Stjepan, Slovo iskona, Matica hrvatska, Zagreb, 2002.</item>
+        <item>Damjanović, Stjepan, Novi filološki prinosi, Matica hrvatska, Zagreb, 2014.</item>
+        <item>Fučić, Branko, Ročki glagoljski abecedarij, Slovo, No.25-26, Rujan 1976., str. 193. – 201.</item>
+        <item>Fučić, Branko, Kulturno-povijesni vidovi glagoljske epigrafike, Croatia Christiana Periodica, Vol.5 No.8, Prosinac 1981., str. 135. – 189.</item>
+        <item>Fučić, Branko, Kvaderna kapitula lovranskoga, Zbornik Odsjeka za povijesne znanosti Zavoda za povijesne i društvene znanosti Hrvatske akademije znanosti i umjetnosti Vol.15, Listopad 1988., str. 27. – 39.</item>
+        <item>Gadžijeva, Sofija, Kovačević, Ana, Mihaljević, Milan, Požar, Sandra, Reinhart, Johannes, Šimić, Marinka, Vince, Jasna, Hrvatski crkvenoslavenski jezik, Hrvatska sveučilišna naknada, Staroslavenski institut, Zagreb, 2014.</item>
+        <item>Lokmer, Juraj, Ex – voto Kvirina Desantića, patricija senjskoga u crkvi Majke Božje Goričke u Baški, Senjski zbornik, Vol.32 No.1, Prosinac 2005., str. 95. – 115.</item>
+        <item>Kapetanović, Amir, Hrvatska srednjovjekovna latinica, Rasprave: časopis Instituta za hrvatski jezik i jezikoslovlje, Vol. 31 No.1, Veljača 2006., str. 463. – 471.</item>
+        <item>Nazor, Anica, Moskovski odlomak glagoljskog misala XV. st., Slovo, No.20 Rujan 1970., str. 103. – 109.</item>
+        <item>Nazor, Anica, Pronađeni Bašćanski ostrišci iz 12. stoljeća, Slovo, 47-48-49, 1999., 359-360</item>
+        <item>Nazor, Anica, Ja slovo znajući govorim..., Knjiga o hrvatskoj glagoljici, Erasmus naklada, Zagreb, 2008.</item>
+        <item>Pantelić, Marija Agnezija, Drivenički odlomak glagoljskoga brevijara iz 15. st., Slovo: časopis Staroslavenskog instituta u Zagrebu, 44-46, 1994.-1996., str. 85.-97.</item>
+        <item>Runje, Petar, Otočac, srednjovjekovna biskupija i kulturni centar, Senjski zbornik, Vol.33 No.1, Prosinac 2006., str. 51. – 62.</item>
+        <item>Šimić, Marinka Fojnički glagoljski fragment brevijara, Slovo, No. 60, Prosinac 2010., str. 687. – 724.</item>
+        <item>Štefanić, Vjekoslav, Glagoljski rukopisi Jugoslavenske akademije, Zagreb, JAZU, 1969.-1970.</item>
+        <item>Vlahov, Dražen Nekoliko glagoljskih zapisa iz Vižinade, Vjesnik Istarskog arhiva, 4/5, 1994./1995., str. 153.-164.</item>
+        <item>Žagar, Mateo, Uvod u glagoljsku paleografiju 1, Institut za hrvatski jezik i jezikoslovlje, Zagreb 2013.</item>
+        <item>http://www.croatianhistory.net/glagoljica/glkro.html (15.9.2015.)</item>
+        <item>http://www.croatianhistory.net/etf/acta.html (15.9.2015.)</item>
+        <item>http://www.croatianhistory.net/glagoljica/runjak.html (15.9.2015.)</item>
+    </string-array>
+
+</resources>

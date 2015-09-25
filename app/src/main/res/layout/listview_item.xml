@@ -14,6 +14,9 @@
         android:layout_marginLeft="@dimen/in_card_margin"
         android:layout_marginRight="@dimen/in_card_margin"
         android:text="safsa"
+        android:lines="1"
+        android:ellipsize="end"
+        android:singleLine="true"
         android:textColor="@color/main_color"
         android:fontFamily="sans-serif-medium"
         android:textSize="22sp"/>
