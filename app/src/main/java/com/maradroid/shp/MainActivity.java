@@ -31,7 +31,7 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
         toolbar.setTitleTextColor(Color.WHITE);
-
+//generate_JSON branch
 
         listaStoljeca.add(new Stoljece("11. stoljeće", "stoljece_11", "Pariški abecedarij...", R.mipmap.jedanaest_edited));
         listaStoljeca.add(new Stoljece("12. stoljeće", "stoljece_12", "Bašćanska ploča...", R.mipmap.dvanaest_edited));
