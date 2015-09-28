@@ -52,7 +52,42 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
         mAdapter.setClickListener(this);
         mRecycler.setAdapter(mAdapter);
 
+        String json = "[";
+        String[] json_tag = {"ime","mjesto","godina","pismo","jezik","sadrzaj","velicina","zanimljivosti"};
+        int id = 0;
 
+        for(int i = 11; i <= 20; i++){
+
+            String[] stoljece = getResources().getStringArray(getResources().getIdentifier("stoljece_" + i, "array", this.getPackageName()));
+            String[] stoljece_tag = getResources().getStringArray(getResources().getIdentifier("stoljece_" + i + "_tag", "array", this.getPackageName()));
+
+            if(stoljece.length == stoljece_tag.length){
+
+                for(int j = 0; j < stoljece_tag.length; j++){
+
+                    String[] spomenik = getResources().getStringArray(getResources().getIdentifier(stoljece_tag[j], "array", this.getPackageName()));
+
+                    for(int k = 0; k < 7; k++){
+
+                        if(k == 0){
+                            json = json + "{\"id\":\"" + id +"\",\"" + json_tag[0] + "\":\"" + stoljece[j] + "\",";
+                        }else if(k > 0 && k < 6){
+                            json = json + "\"" + json_tag[k + 1] + "\":\"" + spomenik[k] + "\",";
+                        }else if(k == 6){
+                            json = json + "\"" + json_tag[k + 1] + "\":\"" + spomenik[k] + "\"},";
+                        }
+
+                    }
+                    id++;
+                }
+
+            }else{
+                Log.e("maradroid","nizovi nisu jednake duljine!");
+            }
+
+        }
+
+        Log.e("maradroid","" + json);
     }
 
     @Override
