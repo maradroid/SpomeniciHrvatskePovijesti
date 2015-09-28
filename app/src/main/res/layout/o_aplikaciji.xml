@@ -35,10 +35,11 @@
                     android:layout_marginLeft="@dimen/in_card_margin"
                     android:layout_marginRight="@dimen/in_card_margin"
                     android:layout_marginTop="@dimen/label_top_margin"
-                    android:fontFamily="sans-serif-medium"
+                    android:typeface="sans"
                     android:text="@string/o_aplikaciji"
                     android:textColor="@color/main_color"
                     android:textSize="15sp"
+
                     />
 
             </LinearLayout>

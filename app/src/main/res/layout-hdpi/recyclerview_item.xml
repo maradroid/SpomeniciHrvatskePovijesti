@@ -27,7 +27,7 @@
         android:layout_marginTop="10dp"
         android:textColor="@color/main_color"
         android:textStyle="bold"
-        android:fontFamily="sans-serif-medium"
+        android:typeface="sans"
         android:text="sdffasdfsdf"
         />
 
@@ -40,7 +40,7 @@
         android:layout_marginLeft="@dimen/in_card_margin"
         android:layout_marginTop="2dp"
         android:layout_marginBottom="10dp"
-        android:fontFamily="sans-serif-medium"
+        android:typeface="sans"
         />
 
 </LinearLayout>

@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -62,8 +61,6 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
             intent.putExtra("tag",listaStoljeca.get(position).getStoljeceTag());
             intent.putExtra("stoljece",listaStoljeca.get(position).getCardStoljece());
             startActivity(intent);
-        Log.e("maradroid", "imageHeight: " + mAdapter.Mara().getHeight());
-        Log.e("maradroid", "imageWidth: " + mAdapter.Mara().getWidth());
     }
 
 

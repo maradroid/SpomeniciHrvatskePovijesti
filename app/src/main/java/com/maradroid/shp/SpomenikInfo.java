@@ -4,7 +4,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -72,7 +71,7 @@ public class SpomenikInfo extends ActionBarActivity{
         for(int i=0; i<7;i++){
             if(!info[i].equals("$")){
                 text[i].setText(info[i]);
-                Log.e("dsfgsdsf",""+info[i]);
+
             }else{
 
                 text[i].setVisibility(View.GONE);

@@ -36,7 +36,7 @@
                     android:layout_marginLeft="@dimen/in_card_margin"
                     android:layout_marginRight="@dimen/in_card_margin"
                     android:layout_marginTop="@dimen/in_card_margin"
-                    android:fontFamily="sans-serif-medium"
+                    android:typeface="sans"
                     android:text="dgdfgsdfg"
                     android:textColor="@color/main_color"
                     android:textSize="22sp"
@@ -54,7 +54,7 @@
                     android:layout_marginBottom="@dimen/label_bottom_margin"
                     android:layout_marginLeft="@dimen/in_card_margin"
                     android:layout_marginTop="@dimen/label_top_margin"
-                    android:fontFamily="sans-serif-medium"
+                    android:typeface="sans"
                     android:text="Mjesto"
                     android:textColor="@color/main_color"
                     android:textSize="@dimen/label_text" />
@@ -65,7 +65,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/in_card_margin"
                     android:layout_marginRight="@dimen/in_card_margin"
-                    android:fontFamily="sans-serif-medium"
+                    android:typeface="sans"
                     android:text="Mjesto"
                     android:textColor="@color/second_color"
                     android:textSize="@dimen/main_text" />
@@ -77,7 +77,7 @@
                     android:layout_marginBottom="@dimen/label_bottom_margin"
                     android:layout_marginLeft="@dimen/in_card_margin"
                     android:layout_marginTop="@dimen/label_top_margin"
-                    android:fontFamily="sans-serif-medium"
+                    android:typeface="sans"
                     android:text="Vrijeme nastanka"
                     android:textColor="@color/main_color"
                     android:textSize="@dimen/label_text" />
@@ -88,7 +88,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/in_card_margin"
                     android:layout_marginRight="@dimen/in_card_margin"
-                    android:fontFamily="sans-serif-medium"
+                    android:typeface="sans"
                     android:text="Godina"
                     android:textColor="@color/second_color"
                     android:textSize="@dimen/main_text" />
@@ -100,7 +100,7 @@
                     android:layout_marginBottom="@dimen/label_bottom_margin"
                     android:layout_marginLeft="@dimen/in_card_margin"
                     android:layout_marginTop="@dimen/label_top_margin"
-                    android:fontFamily="sans-serif-medium"
+                    android:typeface="sans"
                     android:text="Pismo"
                     android:textColor="@color/main_color"
                     android:textSize="@dimen/label_text" />
@@ -111,7 +111,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/in_card_margin"
                     android:layout_marginRight="@dimen/in_card_margin"
-                    android:fontFamily="sans-serif-medium"
+                    android:typeface="sans"
                     android:text="Pismo"
                     android:textColor="@color/second_color"
                     android:textSize="@dimen/main_text" />
@@ -123,7 +123,7 @@
                     android:layout_marginBottom="@dimen/label_bottom_margin"
                     android:layout_marginLeft="@dimen/in_card_margin"
                     android:layout_marginTop="@dimen/label_top_margin"
-                    android:fontFamily="sans-serif-medium"
+                    android:typeface="sans"
                     android:text="Jezik"
                     android:textColor="@color/main_color"
                     android:textSize="@dimen/label_text" />
@@ -134,7 +134,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/in_card_margin"
                     android:layout_marginRight="@dimen/in_card_margin"
-                    android:fontFamily="sans-serif-medium"
+                    android:typeface="sans"
                     android:text="Jezik"
                     android:textColor="@color/second_color"
                     android:textSize="@dimen/main_text" />
@@ -146,7 +146,7 @@
                     android:layout_marginBottom="@dimen/label_bottom_margin"
                     android:layout_marginLeft="@dimen/in_card_margin"
                     android:layout_marginTop="@dimen/label_top_margin"
-                    android:fontFamily="sans-serif-medium"
+                    android:typeface="sans"
                     android:text="Sadržaj"
                     android:textColor="@color/main_color"
                     android:textSize="@dimen/label_text" />
@@ -157,7 +157,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/in_card_margin"
                     android:layout_marginRight="@dimen/in_card_margin"
-                    android:fontFamily="sans-serif-medium"
+                    android:typeface="sans"
                     android:text="Sadržaj"
                     android:textColor="@color/second_color"
                     android:textSize="@dimen/main_text" />
@@ -169,7 +169,7 @@
                     android:layout_marginBottom="@dimen/label_bottom_margin"
                     android:layout_marginLeft="@dimen/in_card_margin"
                     android:layout_marginTop="@dimen/label_top_margin"
-                    android:fontFamily="sans-serif-medium"
+                    android:typeface="sans"
                     android:text="Veličina"
                     android:textColor="@color/main_color"
                     android:textSize="@dimen/label_text" />
@@ -180,7 +180,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/in_card_margin"
                     android:layout_marginRight="@dimen/in_card_margin"
-                    android:fontFamily="sans-serif-medium"
+                    android:typeface="sans"
                     android:text="Veličina"
                     android:textColor="@color/second_color"
                     android:textSize="@dimen/main_text" />
@@ -192,7 +192,7 @@
                     android:layout_marginBottom="@dimen/label_bottom_margin"
                     android:layout_marginLeft="@dimen/in_card_margin"
                     android:layout_marginTop="@dimen/label_top_margin"
-                    android:fontFamily="sans-serif-medium"
+                    android:typeface="sans"
                     android:text="Zanimljivosti"
                     android:textColor="@color/main_color"
                     android:textSize="@dimen/label_text" />
@@ -204,7 +204,7 @@
                     android:layout_marginBottom="@dimen/in_card_margin"
                     android:layout_marginLeft="@dimen/in_card_margin"
                     android:layout_marginRight="@dimen/in_card_margin"
-                    android:fontFamily="sans-serif-medium"
+                    android:typeface="sans"
                     android:text="Zanimljivosti"
                     android:textColor="@color/second_color"
                     android:textSize="@dimen/main_text" />
@@ -223,7 +223,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/card_margin"
                         android:layout_marginTop="@dimen/card_margin"
-                        android:fontFamily="sans-serif-medium"
+                        android:typeface="sans"
                         android:text="više..."
                         android:textColor="@color/main_color"
                         android:textSize="@dimen/main_text"

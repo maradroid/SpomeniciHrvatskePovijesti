@@ -111,7 +111,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         ((ViewHolder)holder).cardStoljece.setText(listaStoljeca.get(position).getCardStoljece());
         ((ViewHolder)holder).cardZnamenitosti.setText(listaStoljeca.get(position).getCardZanimljivosti());
         ((ViewHolder)holder).cardImage.setImageResource(listaStoljeca.get(position).getCardImage());
-        //Log.e("maradroid","imageHeight: "+holder.cardImage.getHeight());
     }
 
     public ImageView Mara(){
