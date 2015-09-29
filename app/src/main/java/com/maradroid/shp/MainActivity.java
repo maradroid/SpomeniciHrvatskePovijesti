@@ -31,7 +31,6 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
         setSupportActionBar(toolbar);
         toolbar.setTitleTextColor(Color.WHITE);
 
-
         listaStoljeca.add(new Stoljece("11. stoljeće", "stoljece_11", "Pariški abecedarij...", R.mipmap.jedanaest_edited));
         listaStoljeca.add(new Stoljece("12. stoljeće", "stoljece_12", "Bašćanska ploča...", R.mipmap.dvanaest_edited));
         listaStoljeca.add(new Stoljece("13. stoljeće","stoljece_13","Vinodolski zakon...",R.mipmap.trinaest_edited));
