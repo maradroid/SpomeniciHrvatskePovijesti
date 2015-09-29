@@ -37,7 +37,7 @@
                     android:layout_marginTop="@dimen/label_top_margin"
                     android:typeface="sans"
                     android:text="@string/o_aplikaciji"
-                    android:textColor="@color/main_color"
+                    android:textColor="@color/second_color"
                     android:textSize="15sp"
 
                     />

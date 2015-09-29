@@ -26,7 +26,7 @@
             android:layout_marginBottom="@dimen/label_bottom_margin"
             android:layout_marginLeft="@dimen/in_card_margin"
             android:layout_marginRight="@dimen/in_card_margin"
-            android:text="Sudionici projekta"
+            android:text="Projektni tim"
             android:typeface="sans"
             android:textStyle="bold"
             android:textColor="@color/main_color"
@@ -34,34 +34,7 @@
             />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/label_bottom_margin"
-            android:layout_marginLeft="@dimen/in_card_margin"
-            android:layout_marginRight="@dimen/in_card_margin"
-            android:layout_marginTop="@dimen/label_top_margin"
-            android:typeface="sans"
-            android:text="Elektrotehnički fakultet Osijek"
-            android:textStyle="bold"
-            android:textColor="@color/main_color"
-            android:textSize="15sp"
-            android:gravity="center"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/label_bottom_margin"
-            android:layout_marginLeft="@dimen/in_card_margin"
-            android:layout_marginRight="@dimen/in_card_margin"
-            android:typeface="sans"
-            android:text="Matija Marić (student)\nLuka Mandić (student)\ndr.sc. Josip Balen"
-            android:textColor="@color/second_color"
-            android:textSize="15sp"
-            android:gravity="center"
-            />
-
-        <TextView
+            android:id="@+id/ffos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/label_bottom_margin"
@@ -74,6 +47,7 @@
             android:textColor="@color/main_color"
             android:textSize="15sp"
             android:gravity="center"
+            android:onClick="Link"
             />
 
         <TextView
@@ -83,10 +57,111 @@
             android:layout_marginLeft="@dimen/in_card_margin"
             android:layout_marginRight="@dimen/in_card_margin"
             android:typeface="sans"
-            android:text="Matej Peharda (student)\nSilvijo Šaur (student)\nIzv. prof. dr. sc. Milica Lukić\nVera Blažević Krezić, znanstvena novakinja"
+            android:text="Matej Peharda (student)"
             android:textColor="@color/second_color"
             android:textSize="15sp"
             android:gravity="center"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/label_bottom_margin"
+            android:layout_marginLeft="@dimen/in_card_margin"
+            android:layout_marginRight="@dimen/in_card_margin"
+            android:typeface="sans"
+            android:text="Silvijo Šaur (student)"
+            android:textColor="@color/second_color"
+            android:textSize="15sp"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/milica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/label_bottom_margin"
+            android:layout_marginLeft="@dimen/in_card_margin"
+            android:layout_marginRight="@dimen/in_card_margin"
+            android:typeface="sans"
+            android:text="Izv. prof. dr. sc. Milica Lukić"
+            android:textColor="@color/second_color"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:onClick="Link"
+            />
+
+        <TextView
+            android:id="@+id/vera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/label_bottom_margin"
+            android:layout_marginLeft="@dimen/in_card_margin"
+            android:layout_marginRight="@dimen/in_card_margin"
+            android:typeface="sans"
+            android:text="Vera Blažević Krezić, znanstvena novakinja"
+            android:textColor="@color/second_color"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:onClick="Link"
+            />
+
+        <TextView
+            android:id="@+id/etfos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/label_bottom_margin"
+            android:layout_marginLeft="@dimen/in_card_margin"
+            android:layout_marginRight="@dimen/in_card_margin"
+            android:layout_marginTop="@dimen/label_top_margin"
+            android:typeface="sans"
+            android:text="Elektrotehnički fakultet Osijek"
+            android:textStyle="bold"
+            android:textColor="@color/main_color"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:onClick="Link"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/label_bottom_margin"
+            android:layout_marginLeft="@dimen/in_card_margin"
+            android:layout_marginRight="@dimen/in_card_margin"
+            android:typeface="sans"
+            android:text="Luka Mandić (student)"
+            android:textColor="@color/second_color"
+            android:textSize="15sp"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/label_bottom_margin"
+            android:layout_marginLeft="@dimen/in_card_margin"
+            android:layout_marginRight="@dimen/in_card_margin"
+            android:typeface="sans"
+            android:text="Matija Marić (student)"
+            android:textColor="@color/second_color"
+            android:textSize="15sp"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/balen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/label_bottom_margin"
+            android:layout_marginLeft="@dimen/in_card_margin"
+            android:layout_marginRight="@dimen/in_card_margin"
+            android:typeface="sans"
+            android:text="dr.sc. Josip Balen"
+            android:textColor="@color/second_color"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:onClick="Link"
             />
 
     </LinearLayout>
