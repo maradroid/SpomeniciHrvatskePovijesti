@@ -70,7 +70,7 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
                     for(int k = 0; k < 7; k++){
 
                         if(k == 0){
-                            json = json + "{\"id\":\"" + id +"\",\"" + json_tag[0] + "\":\"" + stoljece[j] + "\",";
+                            json = json + "{\"id\":\"" + id +"\",\"" + json_tag[0] + "\":\"" + stoljece[j] + "\",\"stoljece\":\"" + i + "\",";
                         }else if(k > 0 && k < 6){
                             json = json + "\"" + json_tag[k + 1] + "\":\"" + spomenik[k] + "\",";
                         }else if(k == 6){
