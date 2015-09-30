@@ -8,12 +8,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by mara on 3/16/15.
  */
 public class SpomenikInfo extends ActionBarActivity{
 
-    private String[] info;
+    private List<String> info;
     private TextView nazivSpomenika;
     private TextView mjestoLabel;
     private TextView mjesto;
@@ -29,8 +32,9 @@ public class SpomenikInfo extends ActionBarActivity{
     private TextView velicina;
     private TextView zanimljivostiLabel;
     private TextView zanimljivosti;
-    //private TextView[] text = {mjesto,godina,pismo,jezik,sadrzaj,velicina,zanimljivosti};
-    //private TextView[] label = {mjestoLabel,godinaLabel,pismoLabel,jezikLabel,sadrzajLabel,velicinaLabel,zanimljivostiLabel};
+    private Spomenik dataObject;
+    private String tag;
+    private int position;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,17 +64,28 @@ public class SpomenikInfo extends ActionBarActivity{
         zanimljivostiLabel = (TextView) findViewById(R.id.zanimljivosti_label_tv);
         zanimljivosti = (TextView) findViewById(R.id.zanimljivosti_tv);
 
+        tag = getIntent().getStringExtra("tag");
+        position = getIntent().getIntExtra("position", -1);
+
+        dataObject = ApiSingleton.getInstance().stoljeceMap.get(tag).get(position);
+
+        nazivSpomenika.setText(dataObject.ime);
+
         TextView[] text = {mjesto,godina,pismo,jezik,sadrzaj,velicina,zanimljivosti};
         TextView[] label = {mjestoLabel,godinaLabel,pismoLabel,jezikLabel,sadrzajLabel,velicinaLabel,zanimljivostiLabel};
 
-        info = getResources().getStringArray(getResources().getIdentifier(getIntent().getStringExtra("tag_tag"), "array", this.getPackageName()));
-
-        nazivSpomenika.setText(getIntent().getStringExtra("ime_spomenika"));
-
+        info = new ArrayList<String>();
+        info.add(dataObject.mjesto);
+        info.add(dataObject.godina);
+        info.add(dataObject.pismo);
+        info.add(dataObject.jezik);
+        info.add(dataObject.sadrzaj);
+        info.add(dataObject.velicina);
+        info.add(dataObject.zanimljivosti);
 
         for(int i=0; i<7;i++){
-            if(!info[i].equals("$")){
-                text[i].setText(info[i]);
+            if(!info.get(i).equals("$")){
+                text[i].setText(info.get(i));
 
             }else{
 

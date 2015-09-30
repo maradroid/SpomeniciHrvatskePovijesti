@@ -5,9 +5,9 @@ package com.maradroid.shp;
  */
 public class Spomenik {
 
-    public String id, ime, godina, pismo, jezik, sadrzaj, velicina, zanimljivosti;
+    public String id, ime, godina, pismo, jezik, sadrzaj, velicina, zanimljivosti, stoljece, mjesto;
 
-    public Spomenik(String id, String ime, String godina, String pismo, String jezik, String sadrzaj, String velicina, String zanimljivosti){
+    public Spomenik(String id, String ime, String godina, String pismo, String jezik, String sadrzaj, String velicina, String zanimljivosti, String stoljece, String mjesto){
 
         this.id = id;
         this.ime = ime;
@@ -17,5 +17,7 @@ public class Spomenik {
         this.sadrzaj = sadrzaj;
         this.velicina = velicina;
         this.zanimljivosti = zanimljivosti;
+        this.stoljece = stoljece;
+        this.mjesto = mjesto;
     }
 }

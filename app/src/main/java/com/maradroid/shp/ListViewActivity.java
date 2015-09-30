@@ -12,9 +12,11 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.text.Collator;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -26,9 +28,10 @@ public class ListViewActivity extends ActionBarActivity implements ListViewAdapt
     private RecyclerView mRecycler;
     private RecyclerView.LayoutManager mLayoutManager;
     private ListViewAdapter mAdapter;
-    private String[] listaSpomenika, spomenik;
+    private ArrayList<Spomenik> spomenikArray;
     private Intent intent;
     private Map<String, Integer> map;
+    private List<String> listaSpomenika;
     private String stoljece, tag;
 
     @Override
@@ -46,16 +49,18 @@ public class ListViewActivity extends ActionBarActivity implements ListViewAdapt
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationIcon(R.mipmap.ic_chevron_left_white_36dp);
 
-        listaSpomenika = getResources().getStringArray(getResources().getIdentifier(tag, "array", this.getPackageName()));
-        spomenik = getResources().getStringArray(getResources().getIdentifier(tag + "_tag", "array", this.getPackageName()));
+        spomenikArray = new ArrayList<Spomenik>();
+        spomenikArray = ApiSingleton.getInstance().stoljeceMap.get(tag);
 
         map = new HashMap<String, Integer>();
+        listaSpomenika = new ArrayList<String>();
 
-        for(int i = 0; i < listaSpomenika.length; i++){
-            map.put(listaSpomenika[i], i);
+        for(int i = 0; i < spomenikArray.size(); i++){
+            map.put(spomenikArray.get(i).ime, i);
+            listaSpomenika.add(spomenikArray.get(i).ime);
         }
 
-        Collections.sort(Arrays.asList(listaSpomenika), Collator.getInstance(new Locale("hr_HR")));
+        Collections.sort(listaSpomenika, Collator.getInstance(new Locale("hr_HR")));
 
         mRecycler = (RecyclerView) findViewById(R.id.list_view);
         mRecycler.setHasFixedSize(true);
@@ -74,8 +79,8 @@ public class ListViewActivity extends ActionBarActivity implements ListViewAdapt
         TextView tv = (TextView) ll.getChildAt(0);
 
         intent = new Intent(this, SpomenikInfo.class);
-        intent.putExtra("tag_tag", spomenik[map.get(tv.getText())]);
-        intent.putExtra("ime_spomenika", listaSpomenika[position]);
+        intent.putExtra("position", map.get(tv.getText()));
+        intent.putExtra("tag", tag);
         intent.putExtra("stoljece", stoljece);
         startActivity(intent);
 

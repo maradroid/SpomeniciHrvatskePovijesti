@@ -6,13 +6,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
+import java.util.List;
+
 
 /**
  * Created by mara on 3/15/15.
  */
 public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.ViewHolder> {
 
-    private String[] listaSpomenika;
+    private List<String> listaSpomenika;
     private static ClickListener clickListener;
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -61,7 +64,7 @@ public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.ViewHo
 
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public ListViewAdapter(String[] tags) {
+    public ListViewAdapter(List<String> tags) {
 
         this.listaSpomenika = tags;
     }
@@ -92,13 +95,13 @@ public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.ViewHo
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
 
-        holder.listItem.setText(listaSpomenika[position]);
+        holder.listItem.setText(listaSpomenika.get(position));
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return listaSpomenika.length;
+        return listaSpomenika.size();
     }
 
 }
