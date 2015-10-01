@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -56,7 +57,6 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
 
     @Override
     public void onClick(View v, int position) {
-
             intent = new Intent(this, ListViewActivity.class);
             intent.putExtra("tag",listaStoljeca.get(position).getStoljeceTag());
             intent.putExtra("stoljece",listaStoljeca.get(position).getCardStoljece());
