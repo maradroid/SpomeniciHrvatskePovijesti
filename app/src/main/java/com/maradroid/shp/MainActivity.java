@@ -11,6 +11,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -22,6 +27,7 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
     private RecyclerViewAdapter mAdapter;
     private ArrayList<Stoljece> listaStoljeca = new ArrayList<Stoljece>();
     private Intent intent;
+    private AutoCompleteTextView searchBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,14 +59,34 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
 
         ApiSingleton.getNewInstance().getJSON(getApplicationContext());
 
+        searchBar = (AutoCompleteTextView) findViewById(R.id.search);
+        ArrayList<Test> test = new ArrayList<Test>();
+        test.add(new Test("jedan","1"));
+        test.add(new Test("dva","2"));
+        test.add(new Test("tri","3"));
+        test.add(new Test("jedan dva","4"));
+        test.add(new Test("tri cetiri","5"));
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, test);
+        TestAdapter adapter = new TestAdapter(getApplicationContext(),R.layout.search_item, test);
+        searchBar.setAdapter(adapter);
+
+        searchBar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                //LinearLayout ll = (LinearLayout) view;
+                TextView tv = (TextView) view;
+                Log.e("maradroid", "" + tv.getText());
+            }
+        });
+
     }
 
     @Override
     public void onClick(View v, int position) {
 
             intent = new Intent(this, ListViewActivity.class);
-            intent.putExtra("tag",listaStoljeca.get(position).getStoljeceTag());
-            intent.putExtra("stoljece",listaStoljeca.get(position).getCardStoljece());
+            intent.putExtra("tag", listaStoljeca.get(position).getStoljeceTag());
+            intent.putExtra("stoljece", listaStoljeca.get(position).getCardStoljece());
             startActivity(intent);
     }
 

@@ -9,6 +9,11 @@
         layout="@layout/tool_bar"
         android:id="@+id/tool_bar"/>
 
+    <AutoCompleteTextView
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:scrollbars="vertical"
