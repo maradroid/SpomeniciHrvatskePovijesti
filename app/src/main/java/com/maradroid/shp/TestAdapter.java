@@ -14,12 +14,13 @@ import java.util.Iterator;
 /**
  * Created by mara on 9/30/15.
  */
-public class TestAdapter extends ArrayAdapter<Test> {
-    private final String MY_DEBUG_TAG = "CustomerAdapter";
-    private ArrayList<Test> spomenikArray;
+public class TestAdapter {
+
+   /* private ArrayList<Test> spomenikArray;
     private ArrayList<Test> itemsAll;
     private ArrayList<Test> suggestions;
     private int viewResourceId;
+    private int previousConstraints = 0;
 
     public TestAdapter(Context context, int viewResourceId, ArrayList<Test> items) {
         super(context, viewResourceId, items);
@@ -61,70 +62,53 @@ public class TestAdapter extends ArrayAdapter<Test> {
 
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
-            if(constraint != null) {
-                suggestions.clear();
-                for (Test spomenik : spomenikArray) {
-                    if(spomenik.ime.toLowerCase().startsWith(constraint.toString().toLowerCase())){
-                        suggestions.add(spomenik);
+            FilterResults filterResults = new FilterResults();
+
+            if(constraint == null){
+                Log.e("maradroid","null");
+                filterResults.values = itemsAll;
+                filterResults.count = itemsAll.size();
+            }else{
+                // if no constraint is given, return the whole list
+                if (constraint.length() == 0 || previousConstraints > constraint.length()) {
+                    Log.e("maradroid","0");
+                    previousConstraints = constraint.length();
+                    filterResults.values = itemsAll;
+                    filterResults.count = itemsAll.size();
+                } else {
+                    Log.e("maradroid","ok " + constraint);
+                    previousConstraints = constraint.length();
+                    suggestions.clear();
+                    for (Test spomenik : spomenikArray) {
+                        //String[] tempSpomenik = spomenik.ime.split(" ");
+                        //String[] tempConstraint = constraint.toString().split(" ");
+                        //for(String item: tempSpomenik){
+
+                            if(spomenik.ime.toLowerCase().contains(constraint.toString().toLowerCase())){
+                                suggestions.add(spomenik);
+                                break;
+                            }
+                        //}
+
                     }
+                    filterResults.values = suggestions;
+                    filterResults.count = suggestions.size();
                 }
-                FilterResults filterResults = new FilterResults();
-                filterResults.values = suggestions;
-                filterResults.count = suggestions.size();
-                return filterResults;
-            } else {
-                return new FilterResults();
             }
+
+            return filterResults;
         }
 
         @Override
         protected void publishResults(CharSequence charSequence, FilterResults results) {
-            clear();
-            if (results != null && results.count > 0) {
-                // we have filtered results
-                addAll((ArrayList<Test>) results.values);
-            } else {
-                // no filter, add entire original list back in
-                addAll(itemsAll);
-            }
-            notifyDataSetChanged();
-        }
-    };
+            Log.e("maradroid","publish: " + results.count);
 
-    /*{
-        @Override
-        public String convertResultToString(Object resultValue) {
-            String str = ((Customer)(resultValue)).getName();
-            return str;
-        }
-        @Override
-        protected FilterResults performFiltering(CharSequence constraint) {
-            if(constraint != null) {
-                suggestions.clear();
-                for (Customer customer : itemsAll) {
-                    if(customer.getName().toLowerCase().startsWith(constraint.toString().toLowerCase())){
-                        suggestions.add(customer);
-                    }
-                }
-                FilterResults filterResults = new FilterResults();
-                filterResults.values = suggestions;
-                filterResults.count = suggestions.size();
-                return filterResults;
-            } else {
-                return new FilterResults();
-            }
-        }
-        @Override
-        protected void publishResults(CharSequence constraint, FilterResults results) {
-            ArrayList<Customer> filteredList = (ArrayList<Customer>) results.values;
-            if(results != null && results.count > 0) {
+            if (results.count > 0) {
                 clear();
-                for (Customer c : filteredList) {
-                    add(c);
-                }
+                addAll((ArrayList<Test>) results.values);
                 notifyDataSetChanged();
             }
+
         }
     };*/
-
 }

@@ -25,7 +25,8 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
     private RecyclerView mRecycler;
     private RecyclerView.LayoutManager mLayoutManager;
     private RecyclerViewAdapter mAdapter;
-    private ArrayList<Stoljece> listaStoljeca = new ArrayList<Stoljece>();
+    private ArrayList<Stoljece> listaStoljeca;
+    private ArrayList<Spomenik> searchArray;
     private Intent intent;
     private AutoCompleteTextView searchBar;
 
@@ -38,6 +39,7 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
         setSupportActionBar(toolbar);
         toolbar.setTitleTextColor(Color.WHITE);
 //json_adaption branch
+        listaStoljeca = new ArrayList<Stoljece>();
         listaStoljeca.add(new Stoljece("11. stoljeće", "11", "Pariški abecedarij...", R.mipmap.jedanaest_edited));
         listaStoljeca.add(new Stoljece("12. stoljeće", "12", "Bašćanska ploča...", R.mipmap.dvanaest_edited));
         listaStoljeca.add(new Stoljece("13. stoljeće", "13", "Vinodolski zakon...", R.mipmap.trinaest_edited));
@@ -59,15 +61,18 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
 
         ApiSingleton.getNewInstance().getJSON(getApplicationContext());
 
+        searchArray = (ArrayList<Spomenik>) ApiSingleton.getInstance().spomenikArray.clone();
+
         searchBar = (AutoCompleteTextView) findViewById(R.id.search);
-        ArrayList<Test> test = new ArrayList<Test>();
+        /*ArrayList<Test> test = new ArrayList<Test>();
         test.add(new Test("jedan","1"));
+        test.add(new Test("jeden","12"));
         test.add(new Test("dva","2"));
         test.add(new Test("tri","3"));
         test.add(new Test("jedan dva","4"));
-        test.add(new Test("tri cetiri","5"));
+        test.add(new Test("tri cetiri pet","5"));*/
         //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, test);
-        TestAdapter adapter = new TestAdapter(getApplicationContext(),R.layout.search_item, test);
+        CustomSearchAdapter adapter = new CustomSearchAdapter(getApplicationContext(),R.layout.search_item, searchArray);
         searchBar.setAdapter(adapter);
 
         searchBar.setOnItemClickListener(new AdapterView.OnItemClickListener() {

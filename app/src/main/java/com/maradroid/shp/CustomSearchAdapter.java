@@ -1,6 +1,7 @@
 package com.maradroid.shp;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,16 +15,17 @@ import java.util.ArrayList;
  * Created by mara on 9/30/15.
  */
 public class CustomSearchAdapter extends ArrayAdapter<Spomenik>{
-    private final String MY_DEBUG_TAG = "CustomerAdapter";
+
     private ArrayList<Spomenik> spomenikArray;
-    //private ArrayList<Spomenik> itemsAll;
+    private ArrayList<Spomenik> itemsAll;
     private ArrayList<Spomenik> suggestions;
     private int viewResourceId;
+    private int previousConstraints = 0;
 
     public CustomSearchAdapter(Context context, int viewResourceId, ArrayList<Spomenik> items) {
         super(context, viewResourceId, items);
         this.spomenikArray = items;
-        //this.itemsAll = (ArrayList<Customer>) items.clone();
+        this.itemsAll = (ArrayList<Spomenik>) items.clone();
         this.suggestions = new ArrayList<Spomenik>();
         this.viewResourceId = viewResourceId;
     }
@@ -49,80 +51,54 @@ public class CustomSearchAdapter extends ArrayAdapter<Spomenik>{
 
     @Override
     public android.widget.Filter getFilter() {
-        return super.getFilter();
+        return nameFilter;
     }
 
     android.widget.Filter nameFilter = new android.widget.Filter() {
-        @Override
-        public CharSequence convertResultToString(Object resultValue) {
-            return ((Spomenik)resultValue).ime;
-        }
 
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
-            if(constraint != null) {
-                suggestions.clear();
-                for (Spomenik spomenik : spomenikArray) {
-                    if(spomenik.ime.toLowerCase().startsWith(constraint.toString().toLowerCase())){
-                        suggestions.add(spomenik);
+            FilterResults filterResults = new FilterResults();
+
+            if(constraint == null){
+                Log.e("maradroid", "null");
+                filterResults.values = itemsAll;
+                filterResults.count = itemsAll.size();
+            }else{
+                // if no constraint is given, return the whole list
+                if (constraint.length() == 0 || previousConstraints > constraint.length()) {
+                    Log.e("maradroid","0");
+                    previousConstraints = constraint.length();
+                    filterResults.values = itemsAll;
+                    filterResults.count = itemsAll.size();
+                } else {
+                    Log.e("maradroid","ok " + constraint);
+                    previousConstraints = constraint.length();
+                    suggestions.clear();
+                    for (Spomenik spomenik : spomenikArray) {
+
+                        if(spomenik.ime.toLowerCase().contains(constraint.toString().toLowerCase())){
+                            suggestions.add(spomenik);
+                        }
                     }
+                    filterResults.values = suggestions;
+                    filterResults.count = suggestions.size();
                 }
-                FilterResults filterResults = new FilterResults();
-                filterResults.values = suggestions;
-                filterResults.count = suggestions.size();
-                return filterResults;
-            } else {
-                return new FilterResults();
             }
+
+            return filterResults;
         }
 
         @Override
         protected void publishResults(CharSequence charSequence, FilterResults results) {
-            ArrayList<Spomenik> filteredList = (ArrayList<Spomenik>) results.values;
-            if(results != null && results.count > 0) {
+            Log.e("maradroid","publish: " + results.count);
+
+            if (results.count > 0) {
                 clear();
-                for (Spomenik spomenik : filteredList) {
-                    add(spomenik);
-                }
+                addAll((ArrayList<Spomenik>) results.values);
                 notifyDataSetChanged();
             }
         }
     };
-
-    /*{
-        @Override
-        public String convertResultToString(Object resultValue) {
-            String str = ((Customer)(resultValue)).getName();
-            return str;
-        }
-        @Override
-        protected FilterResults performFiltering(CharSequence constraint) {
-            if(constraint != null) {
-                suggestions.clear();
-                for (Customer customer : itemsAll) {
-                    if(customer.getName().toLowerCase().startsWith(constraint.toString().toLowerCase())){
-                        suggestions.add(customer);
-                    }
-                }
-                FilterResults filterResults = new FilterResults();
-                filterResults.values = suggestions;
-                filterResults.count = suggestions.size();
-                return filterResults;
-            } else {
-                return new FilterResults();
-            }
-        }
-        @Override
-        protected void publishResults(CharSequence constraint, FilterResults results) {
-            ArrayList<Customer> filteredList = (ArrayList<Customer>) results.values;
-            if(results != null && results.count > 0) {
-                clear();
-                for (Customer c : filteredList) {
-                    add(c);
-                }
-                notifyDataSetChanged();
-            }
-        }
-    };*/
 
 }
