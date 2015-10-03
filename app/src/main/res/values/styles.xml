@@ -11,4 +11,8 @@
 
     </style>
 
+    <style name="Autocomplete" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@drawable/apptheme_textfield_activated_holo_light</item>
+    </style>
+
 </resources>

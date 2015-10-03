@@ -9,10 +9,29 @@
         layout="@layout/tool_bar"
         android:id="@+id/tool_bar"/>
 
-    <AutoCompleteTextView
-        android:id="@+id/search"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="56dp"
+        android:background="@color/main_color"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <AutoCompleteTextView
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:typeface="sans"
+            android:completionThreshold="3"
+            android:singleLine="true"
+            style="@style/Autocomplete"
+            android:textCursorDrawable="@drawable/cursor"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
+
+    </LinearLayout>
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"

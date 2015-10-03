@@ -61,7 +61,7 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
 
         ApiSingleton.getNewInstance().getJSON(getApplicationContext());
 
-        searchArray = (ArrayList<Spomenik>) ApiSingleton.getInstance().spomenikArray.clone();
+        searchArray = new ArrayList<Spomenik>(ApiSingleton.getInstance().spomenikArray);
 
         searchBar = (AutoCompleteTextView) findViewById(R.id.search);
         /*ArrayList<Test> test = new ArrayList<Test>();
@@ -79,8 +79,8 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 //LinearLayout ll = (LinearLayout) view;
-                TextView tv = (TextView) view;
-                Log.e("maradroid", "" + tv.getText());
+                Spomenik temp = (Spomenik) adapterView.getItemAtPosition(i);
+                Log.e("maradroid", "" + temp.ime);
             }
         });
 

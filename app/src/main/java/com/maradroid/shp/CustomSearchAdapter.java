@@ -25,7 +25,7 @@ public class CustomSearchAdapter extends ArrayAdapter<Spomenik>{
     public CustomSearchAdapter(Context context, int viewResourceId, ArrayList<Spomenik> items) {
         super(context, viewResourceId, items);
         this.spomenikArray = items;
-        this.itemsAll = (ArrayList<Spomenik>) items.clone();
+        this.itemsAll = new ArrayList<Spomenik>(items);
         this.suggestions = new ArrayList<Spomenik>();
         this.viewResourceId = viewResourceId;
     }
@@ -43,7 +43,7 @@ public class CustomSearchAdapter extends ArrayAdapter<Spomenik>{
             TextView stoljece = (TextView) v.findViewById(R.id.stoljece);
 
             ime.setText(spomenik.ime);
-            stoljece.setText(spomenik.stoljece);
+            stoljece.setText(spomenik.stoljece + ". stoljeće");
 
         }
         return v;
@@ -69,8 +69,20 @@ public class CustomSearchAdapter extends ArrayAdapter<Spomenik>{
                 if (constraint.length() == 0 || previousConstraints > constraint.length()) {
                     Log.e("maradroid","0");
                     previousConstraints = constraint.length();
-                    filterResults.values = itemsAll;
-                    filterResults.count = itemsAll.size();
+                    //filterResults.values = itemsAll;
+                    //filterResults.count = itemsAll.size();
+                    spomenikArray.clear();
+                    spomenikArray.addAll(itemsAll);
+                    suggestions.clear();
+                    for (Spomenik spomenik : spomenikArray) {
+
+                        if(spomenik.ime.toLowerCase().contains(constraint.toString().toLowerCase())){
+                            suggestions.add(spomenik);
+                        }
+                    }
+                    filterResults.values = suggestions;
+                    filterResults.count = suggestions.size();
+
                 } else {
                     Log.e("maradroid","ok " + constraint);
                     previousConstraints = constraint.length();
