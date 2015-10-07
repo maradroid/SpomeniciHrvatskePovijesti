@@ -1,5 +1,10 @@
 package com.maradroid.shp;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
@@ -11,6 +16,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -29,6 +35,9 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
     private ArrayList<Spomenik> searchArray;
     private Intent intent;
     private AutoCompleteTextView searchBar;
+    private LinearLayout search_ll;
+    private boolean isSearching = false;
+    private InputMethodManager keyboardManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +48,9 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
         setSupportActionBar(toolbar);
         toolbar.setTitleTextColor(Color.WHITE);
 //json_adaption branch
+        search_ll = (LinearLayout) findViewById(R.id.search_ll);
+        keyboardManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
         listaStoljeca = new ArrayList<Stoljece>();
         listaStoljeca.add(new Stoljece("11. stoljeće", "11", "Pariški abecedarij...", R.mipmap.jedanaest_edited));
         listaStoljeca.add(new Stoljece("12. stoljeće", "12", "Bašćanska ploča...", R.mipmap.dvanaest_edited));
@@ -79,10 +91,78 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 //LinearLayout ll = (LinearLayout) view;
-                Spomenik temp = (Spomenik) adapterView.getItemAtPosition(i);
-                Log.e("maradroid", "" + temp.ime);
+                Spomenik tempObject = (Spomenik) adapterView.getItemAtPosition(i);
+                ArrayList<Spomenik> tempArray = ApiSingleton.getInstance().stoljeceMap.get(tempObject.stoljece);
+
+                for(int j = 0; j < tempArray.size(); j++){
+                    if(tempArray.get(j).id.equals(tempObject.id)){
+                        Intent intent = new Intent(MainActivity.this, SpomenikInfo.class);
+                        intent.putExtra("stoljece", tempObject.stoljece + ". stoljeće");
+                        intent.putExtra("tag", tempObject.stoljece);
+                        intent.putExtra("position", j);
+
+                        if(keyboardManager.isAcceptingText()) {
+                            keyboardManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+                        }
+
+                        searchBar.setText("");
+                        search_ll.setAlpha(0);
+                        search_ll.setVisibility(View.GONE);
+
+                        startActivity(intent);
+
+
+                        break;
+                    }
+                }
             }
         });
+
+    }
+
+    public void SearchButtonsClick(View v){
+
+        int id = v.getId();
+
+        if(id == R.id.close_search){
+
+            search_ll.clearAnimation();
+            search_ll.animate().alpha(0).setDuration(700).setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    super.onAnimationEnd(animation);
+                    search_ll.setVisibility(View.GONE);
+                }
+            });
+            searchBar.setText("");
+            isSearching = false;
+
+            if(keyboardManager.isAcceptingText()) {
+                keyboardManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+            }
+
+        }else if(id == R.id.clear_search){
+
+            searchBar.setText("");
+
+        }else if(id == R.id.search_ll){
+
+            search_ll.clearAnimation();
+            search_ll.animate().alpha(0).setDuration(700).setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    super.onAnimationEnd(animation);
+                    search_ll.setVisibility(View.GONE);
+                }
+            });
+
+            searchBar.setText("");
+            isSearching = false;
+
+            if(keyboardManager.isAcceptingText()) {
+                keyboardManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+            }
+        }
 
     }
 
@@ -110,7 +190,19 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
+        if (id == R.id.search_icon) {
+            search_ll.clearAnimation();
+            search_ll.animate().alpha(1).setDuration(700).setListener(null);
+            search_ll.setVisibility(View.VISIBLE);
+            isSearching = true;
+
+            if (searchBar.requestFocus()) {
+                InputMethodManager imm = (InputMethodManager)
+                        getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.showSoftInput(searchBar, InputMethodManager.SHOW_IMPLICIT);
+            }
+        }
+
         if (id == R.id.literatura) {
             Intent intent = new Intent(this, LiteraturaActivity.class);
             startActivity(intent);
@@ -132,5 +224,27 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        if(isSearching){
+            search_ll.clearAnimation();
+            search_ll.animate().alpha(0).setDuration(700).setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    super.onAnimationEnd(animation);
+                    search_ll.setVisibility(View.GONE);
+                }
+            });
+
+            searchBar.setText("");
+            isSearching = false;
+
+        }else{
+            super.onBackPressed();
+        }
+
     }
 }

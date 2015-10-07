@@ -1,7 +1,6 @@
 package com.maradroid.shp;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,13 +60,11 @@ public class CustomSearchAdapter extends ArrayAdapter<Spomenik>{
             FilterResults filterResults = new FilterResults();
 
             if(constraint == null){
-                Log.e("maradroid", "null");
                 filterResults.values = itemsAll;
                 filterResults.count = itemsAll.size();
             }else{
                 // if no constraint is given, return the whole list
                 if (constraint.length() == 0 || previousConstraints > constraint.length()) {
-                    Log.e("maradroid","0");
                     previousConstraints = constraint.length();
                     //filterResults.values = itemsAll;
                     //filterResults.count = itemsAll.size();
@@ -84,7 +81,6 @@ public class CustomSearchAdapter extends ArrayAdapter<Spomenik>{
                     filterResults.count = suggestions.size();
 
                 } else {
-                    Log.e("maradroid","ok " + constraint);
                     previousConstraints = constraint.length();
                     suggestions.clear();
                     for (Spomenik spomenik : spomenikArray) {
@@ -103,7 +99,6 @@ public class CustomSearchAdapter extends ArrayAdapter<Spomenik>{
 
         @Override
         protected void publishResults(CharSequence charSequence, FilterResults results) {
-            Log.e("maradroid","publish: " + results.count);
 
             if (results.count > 0) {
                 clear();
