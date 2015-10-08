@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ListViewActivity">
+
+    <item android:id="@+id/search_icon"
+        android:orderInCategory="200"
+        app:showAsAction="always"
+        android:title="search"
+        android:icon="@mipmap/ic_search_white_24dp"></item>
+
+</menu>
