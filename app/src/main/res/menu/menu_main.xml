@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".activitys.MainActivity">
 
     <item android:id="@+id/search_icon"
         android:orderInCategory="200"
@@ -23,6 +23,12 @@
 
     <item android:id="@+id/o_nama"
         android:title="O nama"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        />
+
+    <item android:id="@+id/translate"
+        android:title="Translate"
         android:orderInCategory="100"
         app:showAsAction="never"
         />

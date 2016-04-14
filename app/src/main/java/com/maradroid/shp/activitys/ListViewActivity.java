@@ -1,4 +1,4 @@
-package com.maradroid.shp;
+package com.maradroid.shp.activitys;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -17,108 +17,139 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.text.Collator;
+
+import com.maradroid.shp.R;
+import com.maradroid.shp.adapters.CustomSearchAdapter;
+import com.maradroid.shp.adapters.ListViewAdapter;
+import com.maradroid.shp.api.ApiSingleton;
+import com.maradroid.shp.api.SpomenikEvent;
+import com.maradroid.shp.dataModels.Spomenik;
+
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
 
 /**
  * Created by mara on 3/15/15.
  */
-public class ListViewActivity extends ActionBarActivity implements ListViewAdapter.ClickListener{
+public class ListViewActivity extends ActionBarActivity implements ListViewAdapter.ClickListener, SpomenikEvent{
+
+    private static final int SEARCH_ITEM_TAG = -2;
 
     private RecyclerView mRecycler;
     private RecyclerView.LayoutManager mLayoutManager;
     private ListViewAdapter mAdapter;
+
     private ArrayList<Spomenik> spomenikArray;
-    private Intent intent;
-    private Map<String, Integer> map;
-    private List<String> listaSpomenika;
-    private String stoljece, tag;
+
+    private String stoljece;
+    private String tag;
+
     private AutoCompleteTextView searchBar;
     private LinearLayout search_ll;
     private boolean isSearching = false;
     private InputMethodManager keyboardManager;
+
+    private Spomenik searchSpomenik;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listview);
 
-        stoljece = getIntent().getStringExtra("stoljece");
-        tag = getIntent().getStringExtra("tag");
+        ApiSingleton.getInstance().setSpomenikEvent(this);
+
+        getExtra();
+        initToolbar();
+        initViews();
+        getData();
+        initRecyclerView();
+        initSearch();
+
+    }
+
+    private void getExtra() {
+
+        Bundle extras = getIntent().getExtras();
+
+        if (extras != null) {
+            stoljece = extras.getString("stoljece", null);
+            tag = extras.getString("tag", null);
+        }
+    }
+
+    private void initToolbar() {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(stoljece);
         toolbar.setTitleTextColor(Color.WHITE);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationIcon(R.mipmap.ic_chevron_left_white_36dp);
 
+        if (stoljece != null) {
+            getSupportActionBar().setTitle(stoljece);
+        }
+    }
+
+    private void initViews() {
+
         search_ll = (LinearLayout) findViewById(R.id.search_ll);
-        keyboardManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         searchBar = (AutoCompleteTextView) findViewById(R.id.search);
+        mRecycler = (RecyclerView) findViewById(R.id.list_view);
+    }
+
+    private void getData() {
 
         spomenikArray = new ArrayList<Spomenik>();
-        spomenikArray = ApiSingleton.getInstance().stoljeceMap.get(tag);
 
-        map = new HashMap<String, Integer>();
-        listaSpomenika = new ArrayList<String>();
-
-        for(int i = 0; i < spomenikArray.size(); i++){
-            map.put(spomenikArray.get(i).ime, i);
-            listaSpomenika.add(spomenikArray.get(i).ime);
+        if (tag != null) {
+            spomenikArray = ApiSingleton.getInstance().getArrayListByCentury(tag);
         }
 
-        Collections.sort(listaSpomenika, Collator.getInstance(new Locale("hr_HR")));
+    }
 
-        mRecycler = (RecyclerView) findViewById(R.id.list_view);
+    private void initRecyclerView() {
+
         mRecycler.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mRecycler.setLayoutManager(mLayoutManager);
-        mAdapter = new ListViewAdapter(listaSpomenika);
+        mAdapter = new ListViewAdapter(spomenikArray);
         mAdapter.setClickListener(this);
         mRecycler.setAdapter(mAdapter);
+    }
+
+    private void initSearch() {
+
+        keyboardManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
         CustomSearchAdapter adapter = new CustomSearchAdapter(getApplicationContext(),R.layout.search_item, spomenikArray);
         searchBar.setAdapter(adapter);
 
+        setSearchClickListener();
+
+    }
+
+    private void setSearchClickListener() {
+
         searchBar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //LinearLayout ll = (LinearLayout) view;
-                Spomenik tempObject = (Spomenik) adapterView.getItemAtPosition(i);
-                ArrayList<Spomenik> tempArray = ApiSingleton.getInstance().stoljeceMap.get(tempObject.stoljece);
 
-                for (int j = 0; j < tempArray.size(); j++) {
-                    if (tempArray.get(j).id.equals(tempObject.id)) {
-                        Intent intent = new Intent(ListViewActivity.this, SpomenikInfo.class);
-                        intent.putExtra("stoljece", stoljece);
-                        intent.putExtra("tag", tag);
-                        intent.putExtra("position", j);
+                searchSpomenik = (Spomenik) adapterView.getItemAtPosition(i);
 
-                        if (keyboardManager.isAcceptingText()) {
-                            keyboardManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
-                        }
+                Intent intent = new Intent(ListViewActivity.this, SpomenikInfo.class);
+                intent.putExtra("position", SEARCH_ITEM_TAG);
 
-                        searchBar.setText("");
-                        search_ll.setAlpha(0);
-                        search_ll.setVisibility(View.GONE);
-
-                        startActivity(intent);
-
-
-                        break;
-                    }
+                if (keyboardManager.isAcceptingText()) {
+                    keyboardManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
                 }
+
+                searchBar.setText("");
+                search_ll.setAlpha(0);
+                search_ll.setVisibility(View.GONE);
+
+                startActivity(intent);
+
             }
         });
-
     }
 
     public void SearchButtonsClick(View v){
@@ -168,15 +199,10 @@ public class ListViewActivity extends ActionBarActivity implements ListViewAdapt
     }
 
     @Override
-    public void onClick(View v, int position, boolean isLongClick) {
+    public void onClick(View v, int position) {
 
-        LinearLayout ll = (LinearLayout) v;
-        TextView tv = (TextView) ll.getChildAt(0);
-
-        intent = new Intent(this, SpomenikInfo.class);
-        intent.putExtra("position", map.get(tv.getText()));
-        intent.putExtra("tag", tag);
-        intent.putExtra("stoljece", stoljece);
+        Intent intent = new Intent(this, SpomenikInfo.class);
+        intent.putExtra("position", position);
         startActivity(intent);
 
     }
@@ -235,5 +261,25 @@ public class ListViewActivity extends ActionBarActivity implements ListViewAdapt
             super.onBackPressed();
         }
 
+    }
+
+    @Override
+    public Spomenik getSpomenikById(int position) {
+
+        if (position == SEARCH_ITEM_TAG && searchSpomenik != null) {
+            return searchSpomenik;
+
+        } else if (position != SEARCH_ITEM_TAG && position != -1) {
+            return spomenikArray.get(position);
+        }
+
+        return null;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        ApiSingleton.getInstance().removeSpomenikEvent();
     }
 }

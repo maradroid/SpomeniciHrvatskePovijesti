@@ -1,4 +1,4 @@
-package com.maradroid.shp;
+package com.maradroid.shp.activitys;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -7,6 +7,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+
+import com.maradroid.shp.R;
+import com.maradroid.shp.adapters.LiteraturaAdapter;
 
 /**
  * Created by mara on 9/23/15.

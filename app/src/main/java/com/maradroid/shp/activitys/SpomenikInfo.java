@@ -1,4 +1,4 @@
-package com.maradroid.shp;
+package com.maradroid.shp.activitys;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -7,6 +7,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+
+import com.maradroid.shp.R;
+import com.maradroid.shp.api.ApiSingleton;
+import com.maradroid.shp.api.SpomenikEvent;
+import com.maradroid.shp.dataModels.Spomenik;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,12 +46,45 @@ public class SpomenikInfo extends ActionBarActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.spomenici_info);
 
+        getData();
+        initToolbar();
+        initViews();
+        setData();
+
+    }
+
+    public void getData() {
+
+        Bundle extra = getIntent().getExtras();
+
+        if (extra != null) {
+            position = extra.getInt("position", -1);
+        }
+
+        if (position != -1) {
+
+            SpomenikEvent event = ApiSingleton.getInstance().getSpomenikEvent();
+
+            if (event != null) {
+                dataObject = event.getSpomenikById(position);
+            }
+        }
+    }
+
+    private void initToolbar() {
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(getIntent().getStringExtra("stoljece"));
         toolbar.setTitleTextColor(Color.WHITE);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationIcon(R.mipmap.ic_chevron_left_white_36dp);
+
+        if (dataObject != null) {
+            getSupportActionBar().setTitle(dataObject.getStoljece() + ". stoljeće");
+        }
+    }
+
+    private void initViews() {
 
         nazivSpomenika = (TextView) findViewById(R.id.ime_spomenika_tv);
         mjestoLabel = (TextView) findViewById(R.id.mjesto_label_tv);
@@ -63,34 +101,35 @@ public class SpomenikInfo extends ActionBarActivity{
         velicina = (TextView) findViewById(R.id.velicina_tv);
         zanimljivostiLabel = (TextView) findViewById(R.id.zanimljivosti_label_tv);
         zanimljivosti = (TextView) findViewById(R.id.zanimljivosti_tv);
+    }
 
-        tag = getIntent().getStringExtra("tag");
-        position = getIntent().getIntExtra("position", -1);
+    private void setData() {
 
-        dataObject = ApiSingleton.getInstance().stoljeceMap.get(tag).get(position);
+        if (dataObject != null) {
 
-        nazivSpomenika.setText(dataObject.ime);
+            nazivSpomenika.setText(dataObject.getIme());
 
-        TextView[] text = {mjesto,godina,pismo,jezik,sadrzaj,velicina,zanimljivosti};
-        TextView[] label = {mjestoLabel,godinaLabel,pismoLabel,jezikLabel,sadrzajLabel,velicinaLabel,zanimljivostiLabel};
+            TextView[] text = {mjesto,godina,pismo,jezik,sadrzaj,velicina,zanimljivosti};
+            TextView[] label = {mjestoLabel,godinaLabel,pismoLabel,jezikLabel,sadrzajLabel,velicinaLabel,zanimljivostiLabel};
 
-        info = new ArrayList<String>();
-        info.add(dataObject.mjesto);
-        info.add(dataObject.godina);
-        info.add(dataObject.pismo);
-        info.add(dataObject.jezik);
-        info.add(dataObject.sadrzaj);
-        info.add(dataObject.velicina);
-        info.add(dataObject.zanimljivosti);
+            info = new ArrayList<String>();
+            info.add(dataObject.getMjesto());
+            info.add(dataObject.getGodina());
+            info.add(dataObject.getPismo());
+            info.add(dataObject.getJezik());
+            info.add(dataObject.getSadrzaj());
+            info.add(dataObject.getVelicina());
+            info.add(dataObject.getZanimljivosti());
 
-        for(int i=0; i<7;i++){
-            if(!info.get(i).equals("$")){
-                text[i].setText(info.get(i));
+            for(int i=0; i<7;i++){
+                if(!info.get(i).equals("$")){
+                    text[i].setText(info.get(i));
 
-            }else{
+                }else{
 
-                text[i].setVisibility(View.GONE);
-                label[i].setVisibility(View.GONE);
+                    text[i].setVisibility(View.GONE);
+                    label[i].setVisibility(View.GONE);
+                }
             }
         }
     }

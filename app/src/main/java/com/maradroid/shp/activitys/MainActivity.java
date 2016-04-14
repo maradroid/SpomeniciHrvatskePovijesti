@@ -1,9 +1,7 @@
-package com.maradroid.shp;
+package com.maradroid.shp.activitys;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -12,44 +10,93 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.Toast;
+
+import com.maradroid.shp.R;
+import com.maradroid.shp.adapters.CustomSearchAdapter;
+import com.maradroid.shp.adapters.RecyclerViewAdapter;
+import com.maradroid.shp.api.ApiSingleton;
+import com.maradroid.shp.api.SpomenikEvent;
+import com.maradroid.shp.dataModels.Spomenik;
+import com.maradroid.shp.dataModels.Stoljece;
 
 import java.util.ArrayList;
 
 
-public class MainActivity extends ActionBarActivity implements RecyclerViewAdapter.ClickListener {
+public class MainActivity extends ActionBarActivity implements RecyclerViewAdapter.ClickListener, SpomenikEvent {
+
+    private static final int SEARCH_ITEM_TAG = -2;
 
     private RecyclerView mRecycler;
     private RecyclerView.LayoutManager mLayoutManager;
     private RecyclerViewAdapter mAdapter;
+
     private ArrayList<Stoljece> listaStoljeca;
     private ArrayList<Spomenik> searchArray;
-    private Intent intent;
+
     private AutoCompleteTextView searchBar;
     private LinearLayout search_ll;
-    private boolean isSearching = false;
+
+    private boolean isSearching;
+    private boolean isSearchSet;
+
     private InputMethodManager keyboardManager;
+
+    private Spomenik searchSpomenik;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ApiSingleton.getNewInstance().getJSON(getApplicationContext());
+
+        initToolbar();
+        initViews();
+        initRecyclerData();
+        initRecyclerView();
+
+        if (ApiSingleton.getInstance().isDataReady()) {
+            initSearch();
+            isSearchSet = true;
+        }
+
+
+    }
+
+    private void initToolbar() {
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
         toolbar.setTitleTextColor(Color.WHITE);
-//json_adaption branch
+    }
+
+    private void initViews() {
+
         search_ll = (LinearLayout) findViewById(R.id.search_ll);
-        keyboardManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        mRecycler = (RecyclerView) findViewById(R.id.recycler_view);
+        searchBar = (AutoCompleteTextView) findViewById(R.id.search);
+
+    }
+
+    private void initRecyclerView() {
+
+        mRecycler.setHasFixedSize(true);
+        mLayoutManager = new LinearLayoutManager(this);
+        mRecycler.setLayoutManager(mLayoutManager);
+        mAdapter = new RecyclerViewAdapter(listaStoljeca);
+        mAdapter.setClickListener(this);
+        mRecycler.setAdapter(mAdapter);
+    }
+
+    private void initRecyclerData() {
 
         listaStoljeca = new ArrayList<Stoljece>();
         listaStoljeca.add(new Stoljece("11. stoljeće", "11", "Pariški abecedarij...", R.mipmap.jedanaest_edited));
@@ -62,63 +109,47 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
         listaStoljeca.add(new Stoljece("18. stoljeće", "18", "Karta sv. Bonifacija...", R.mipmap.osamnaest_edited));
         listaStoljeca.add(new Stoljece("19. stoljeće", "19", "Čini i pravilo misli...", R.mipmap.devetnaest_edited));
         listaStoljeca.add(new Stoljece("20. stoljeće", "20", "Rimski misal slověnskim jezikom...", R.mipmap.dvadeset_edited));
+    }
 
-        mRecycler = (RecyclerView) findViewById(R.id.recycler_view);
-        mRecycler.setHasFixedSize(true);
-        mLayoutManager = new LinearLayoutManager(this);
-        mRecycler.setLayoutManager(mLayoutManager);
-        mAdapter = new RecyclerViewAdapter(listaStoljeca);
-        mAdapter.setClickListener(this);
-        mRecycler.setAdapter(mAdapter);
+    private void initSearch() {
 
-        ApiSingleton.getNewInstance().getJSON(getApplicationContext());
+        keyboardManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
-        searchArray = new ArrayList<Spomenik>(ApiSingleton.getInstance().spomenikArray);
+        //searchArray = new ArrayList<Spomenik>();
 
-        searchBar = (AutoCompleteTextView) findViewById(R.id.search);
-        /*ArrayList<Test> test = new ArrayList<Test>();
-        test.add(new Test("jedan","1"));
-        test.add(new Test("jeden","12"));
-        test.add(new Test("dva","2"));
-        test.add(new Test("tri","3"));
-        test.add(new Test("jedan dva","4"));
-        test.add(new Test("tri cetiri pet","5"));*/
-        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, test);
-        CustomSearchAdapter adapter = new CustomSearchAdapter(getApplicationContext(),R.layout.search_item, searchArray);
+        CustomSearchAdapter adapter = new CustomSearchAdapter(getApplicationContext(),R.layout.search_item, ApiSingleton.getInstance().getSpomenikArray());
         searchBar.setAdapter(adapter);
+
+        setSearchClickListener();
+
+    }
+
+    private void setSearchClickListener() {
 
         searchBar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //LinearLayout ll = (LinearLayout) view;
-                Spomenik tempObject = (Spomenik) adapterView.getItemAtPosition(i);
-                ArrayList<Spomenik> tempArray = ApiSingleton.getInstance().stoljeceMap.get(tempObject.stoljece);
 
-                for(int j = 0; j < tempArray.size(); j++){
-                    if(tempArray.get(j).id.equals(tempObject.id)){
-                        Intent intent = new Intent(MainActivity.this, SpomenikInfo.class);
-                        intent.putExtra("stoljece", tempObject.stoljece + ". stoljeće");
-                        intent.putExtra("tag", tempObject.stoljece);
-                        intent.putExtra("position", j);
+                searchSpomenik = (Spomenik) adapterView.getItemAtPosition(i);
 
-                        if(keyboardManager.isAcceptingText()) {
-                            keyboardManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
-                        }
+                Intent intent = new Intent(MainActivity.this, SpomenikInfo.class);
+                intent.putExtra("position", SEARCH_ITEM_TAG);
 
-                        searchBar.setText("");
-                        search_ll.setAlpha(0);
-                        search_ll.setVisibility(View.GONE);
-
-                        startActivity(intent);
-
-
-                        break;
-                    }
+                if (keyboardManager.isAcceptingText()) {
+                    keyboardManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
                 }
+
+                searchBar.setText("");
+                search_ll.setAlpha(0);
+                search_ll.setVisibility(View.GONE);
+
+                ApiSingleton.getInstance().setSpomenikEvent(MainActivity.this);
+
+                startActivity(intent);
             }
         });
-
     }
+
 
     public void SearchButtonsClick(View v){
 
@@ -169,10 +200,16 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
     @Override
     public void onClick(View v, int position) {
 
-            intent = new Intent(this, ListViewActivity.class);
+        if (ApiSingleton.getInstance().isDataReady()) {
+            Intent intent = new Intent(this, ListViewActivity.class);
             intent.putExtra("tag", listaStoljeca.get(position).getStoljeceTag());
             intent.putExtra("stoljece", listaStoljeca.get(position).getCardStoljece());
             startActivity(intent);
+
+        } else {
+
+            Toast.makeText(this, "Podatci nisu spremni, pokušajte ponovno", Toast.LENGTH_SHORT).show();
+        }
     }
 
 
@@ -191,6 +228,12 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
         int id = item.getItemId();
 
         if (id == R.id.search_icon) {
+
+            if (ApiSingleton.getInstance().isDataReady() && !isSearchSet) {
+                initSearch();
+                isSearchSet = true;
+            }
+
             search_ll.clearAnimation();
             search_ll.animate().alpha(1).setDuration(700).setListener(null);
             search_ll.setVisibility(View.VISIBLE);
@@ -223,6 +266,12 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
             return true;
         }
 
+        if (id == R.id.translate) {
+            Intent intent = new Intent(this, TranslateActivity.class);
+            startActivity(intent);
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -230,6 +279,7 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
     public void onBackPressed() {
 
         if(isSearching){
+
             search_ll.clearAnimation();
             search_ll.animate().alpha(0).setDuration(700).setListener(new AnimatorListenerAdapter() {
                 @Override
@@ -246,5 +296,28 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
             super.onBackPressed();
         }
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        ApiSingleton.getInstance().removeSpomenikEvent();
+
+        if (ApiSingleton.getInstance().isDataReady() && !isSearchSet) {
+            initSearch();
+            isSearchSet = true;
+        }
+    }
+
+
+    @Override
+    public Spomenik getSpomenikById(int position) {
+
+        if (position == SEARCH_ITEM_TAG && searchSpomenik != null) {
+            return searchSpomenik;
+        }
+
+        return null;
     }
 }

@@ -1,4 +1,4 @@
-package com.maradroid.shp;
+package com.maradroid.shp.dataModels;
 
 /**
  * Created by mara on 3/15/15.

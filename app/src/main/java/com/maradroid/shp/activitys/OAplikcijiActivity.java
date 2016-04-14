@@ -1,4 +1,4 @@
-package com.maradroid.shp;
+package com.maradroid.shp.activitys;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -8,6 +8,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+
+import com.maradroid.shp.R;
 
 /**
  * Created by mara on 9/24/15.

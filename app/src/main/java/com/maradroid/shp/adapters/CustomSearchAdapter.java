@@ -1,4 +1,4 @@
-package com.maradroid.shp;
+package com.maradroid.shp.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import com.maradroid.shp.R;
+import com.maradroid.shp.dataModels.Spomenik;
 
 import java.util.ArrayList;
 
@@ -18,6 +21,7 @@ public class CustomSearchAdapter extends ArrayAdapter<Spomenik>{
     private ArrayList<Spomenik> spomenikArray;
     private ArrayList<Spomenik> itemsAll;
     private ArrayList<Spomenik> suggestions;
+
     private int viewResourceId;
     private int previousConstraints = 0;
 
@@ -41,8 +45,8 @@ public class CustomSearchAdapter extends ArrayAdapter<Spomenik>{
             TextView ime = (TextView) v.findViewById(R.id.ime);
             TextView stoljece = (TextView) v.findViewById(R.id.stoljece);
 
-            ime.setText(spomenik.ime);
-            stoljece.setText(spomenik.stoljece + ". stoljeće");
+            ime.setText(spomenik.getIme());
+            stoljece.setText(spomenik.getStoljece() + ". stoljeće");
 
         }
         return v;
@@ -62,6 +66,7 @@ public class CustomSearchAdapter extends ArrayAdapter<Spomenik>{
             if(constraint == null){
                 filterResults.values = itemsAll;
                 filterResults.count = itemsAll.size();
+
             }else{
                 // if no constraint is given, return the whole list
                 if (constraint.length() == 0 || previousConstraints > constraint.length()) {
@@ -71,24 +76,29 @@ public class CustomSearchAdapter extends ArrayAdapter<Spomenik>{
                     spomenikArray.clear();
                     spomenikArray.addAll(itemsAll);
                     suggestions.clear();
+
                     for (Spomenik spomenik : spomenikArray) {
 
-                        if(spomenik.ime.toLowerCase().contains(constraint.toString().toLowerCase())){
+                        if(spomenik.getIme().toLowerCase().contains(constraint.toString().toLowerCase())){
                             suggestions.add(spomenik);
                         }
                     }
+
                     filterResults.values = suggestions;
                     filterResults.count = suggestions.size();
 
                 } else {
+
                     previousConstraints = constraint.length();
                     suggestions.clear();
+
                     for (Spomenik spomenik : spomenikArray) {
 
-                        if(spomenik.ime.toLowerCase().contains(constraint.toString().toLowerCase())){
+                        if(spomenik.getIme().toLowerCase().contains(constraint.toString().toLowerCase())){
                             suggestions.add(spomenik);
                         }
                     }
+
                     filterResults.values = suggestions;
                     filterResults.count = suggestions.size();
                 }
@@ -107,5 +117,4 @@ public class CustomSearchAdapter extends ArrayAdapter<Spomenik>{
             }
         }
     };
-
 }
