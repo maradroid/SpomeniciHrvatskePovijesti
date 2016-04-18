@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#d9d9d9"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/item_toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="@drawable/card_like2"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!--Projektni tim-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/label_bottom_margin"
+            android:layout_marginLeft="@dimen/in_card_margin"
+            android:layout_marginRight="@dimen/in_card_margin"
+            android:text="@string/project_team"
+            android:typeface="sans"
+            android:textStyle="bold"
+            android:textColor="@color/main_color"
+            android:textSize="30sp"
+            />
+
+        <!--Filozofski fakultet-->
+
+        <TextView
+            android:id="@+id/ffos"
+            style="@style/AboutUsTv"
+            android:layout_marginTop="@dimen/label_top_margin"
+            android:text="@string/philosophy"
+            android:textStyle="bold"
+            android:textColor="@color/main_color"
+            android:onClick="Link"
+            />
+
+        <!--Matej Peharda-->
+
+        <TextView
+            style="@style/AboutUsTv"
+            android:text="@string/matej_peharda"
+            android:textColor="@color/second_color"
+            />
+
+        <!--Silvio Saur-->
+
+        <TextView
+            style="@style/AboutUsTv"
+            android:text="@string/silvio_saur"
+            android:textColor="@color/second_color"
+            />
+
+        <!--Milica Lukic-->
+
+        <TextView
+            android:id="@+id/milica"
+            style="@style/AboutUsTv"
+            android:text="@string/milica_lukic"
+            android:textColor="@color/second_color"
+            android:onClick="Link"
+            />
+
+        <!--Vera Blazevic-->
+
+        <TextView
+            android:id="@+id/vera"
+            style="@style/AboutUsTv"
+            android:text="@string/vera_blazevic"
+            android:textColor="@color/second_color"
+            android:onClick="Link"
+            />
+
+        <!--ETFOS-->
+
+        <TextView
+            android:id="@+id/etfos"
+            style="@style/AboutUsTv"
+            android:layout_marginTop="@dimen/label_top_margin"
+            android:text="@string/etfos"
+            android:textStyle="bold"
+            android:textColor="@color/main_color"
+            android:onClick="Link"
+            />
+
+        <!--Luka Mandic-->
+
+        <TextView
+            style="@style/AboutUsTv"
+            android:text="@string/luka_mandic"
+            android:textColor="@color/second_color"
+            />
+
+        <!--Matija Maric-->
+
+        <TextView
+            style="@style/AboutUsTv"
+            android:text="@string/matija_maric"
+            android:textColor="@color/second_color"
+            />
+
+        <!--Josip Balen-->
+
+        <TextView
+            android:id="@+id/balen"
+            style="@style/AboutUsTv"
+            android:text="@string/josip_balen"
+            android:textColor="@color/second_color"
+            android:onClick="Link"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

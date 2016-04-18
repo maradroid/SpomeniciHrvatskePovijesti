@@ -7,13 +7,12 @@
     android:layout_marginRight="@dimen/card_margin"
     android:layout_marginLeft="@dimen/card_margin"
     android:layout_marginTop="5dp"
-    android:id="@+id/parent_layout_ll"
     >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/literatura_tv"
+        android:id="@+id/tv_literature"
         android:layout_marginLeft="@dimen/in_card_margin"
         android:layout_marginRight="@dimen/in_card_margin"
         android:layout_marginTop="10dp"

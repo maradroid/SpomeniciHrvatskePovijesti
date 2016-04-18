@@ -14,19 +14,44 @@ import com.maradroid.shp.R;
 /**
  * Created by mara on 9/24/15.
  */
-public class OAplikcijiActivity extends ActionBarActivity {
+public class AboutAppActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if(getIntent().getStringExtra("activity").equals("O aplikaciji")){
-            setContentView(R.layout.o_aplikaciji);
-        }else{
-            setContentView(R.layout.o_nama);
+        setContent();
+        initToolbar();
+
+    }
+
+    private void setContent() {
+
+        String extra = getExtra();
+
+        if (extra != null) {
+
+            if (extra.equals("O aplikaciji")) {
+                setContentView(R.layout.activity_about_app);
+
+            } else {
+                setContentView(R.layout.activity_about_us);
+            }
+        }
+    }
+
+    private String getExtra() {
+
+        Bundle extras = getIntent().getExtras();
+
+        if (extras != null) {
+            return extras.getString("activity", null);
         }
 
+        return null;
+    }
 
+    private void initToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(getIntent().getStringExtra("activity"));

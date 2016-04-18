@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.maradroid.shp.R;
-import com.maradroid.shp.dataModels.Spomenik;
+import com.maradroid.shp.dataModels.Monument;
 
 import java.util.ArrayList;
 
@@ -16,20 +16,20 @@ import java.util.ArrayList;
 /**
  * Created by mara on 9/30/15.
  */
-public class CustomSearchAdapter extends ArrayAdapter<Spomenik>{
+public class CustomSearchAdapter extends ArrayAdapter<Monument>{
 
-    private ArrayList<Spomenik> spomenikArray;
-    private ArrayList<Spomenik> itemsAll;
-    private ArrayList<Spomenik> suggestions;
+    private ArrayList<Monument> monumentArray;
+    private ArrayList<Monument> itemsAll;
+    private ArrayList<Monument> suggestions;
 
     private int viewResourceId;
     private int previousConstraints = 0;
 
-    public CustomSearchAdapter(Context context, int viewResourceId, ArrayList<Spomenik> items) {
+    public CustomSearchAdapter(Context context, int viewResourceId, ArrayList<Monument> items) {
         super(context, viewResourceId, items);
-        this.spomenikArray = items;
-        this.itemsAll = new ArrayList<Spomenik>(items);
-        this.suggestions = new ArrayList<Spomenik>();
+        this.monumentArray = items;
+        this.itemsAll = new ArrayList<Monument>(items);
+        this.suggestions = new ArrayList<Monument>();
         this.viewResourceId = viewResourceId;
     }
 
@@ -40,13 +40,13 @@ public class CustomSearchAdapter extends ArrayAdapter<Spomenik>{
             v = vi.inflate(viewResourceId, null);
         }
 
-        Spomenik spomenik = spomenikArray.get(position);
-        if (spomenik != null) {
-            TextView ime = (TextView) v.findViewById(R.id.ime);
-            TextView stoljece = (TextView) v.findViewById(R.id.stoljece);
+        Monument monument = monumentArray.get(position);
+        if (monument != null) {
+            TextView tvName = (TextView) v.findViewById(R.id.tv_name);
+            TextView tvCentury = (TextView) v.findViewById(R.id.tv_century);
 
-            ime.setText(spomenik.getIme());
-            stoljece.setText(spomenik.getStoljece() + ". stoljeće");
+            tvName.setText(monument.getName());
+            tvCentury.setText(monument.getCentury() + ". stoljeće");
 
         }
         return v;
@@ -73,14 +73,14 @@ public class CustomSearchAdapter extends ArrayAdapter<Spomenik>{
                     previousConstraints = constraint.length();
                     //filterResults.values = itemsAll;
                     //filterResults.count = itemsAll.size();
-                    spomenikArray.clear();
-                    spomenikArray.addAll(itemsAll);
+                    monumentArray.clear();
+                    monumentArray.addAll(itemsAll);
                     suggestions.clear();
 
-                    for (Spomenik spomenik : spomenikArray) {
+                    for (Monument monument : monumentArray) {
 
-                        if(spomenik.getIme().toLowerCase().contains(constraint.toString().toLowerCase())){
-                            suggestions.add(spomenik);
+                        if(monument.getName().toLowerCase().contains(constraint.toString().toLowerCase())){
+                            suggestions.add(monument);
                         }
                     }
 
@@ -92,10 +92,10 @@ public class CustomSearchAdapter extends ArrayAdapter<Spomenik>{
                     previousConstraints = constraint.length();
                     suggestions.clear();
 
-                    for (Spomenik spomenik : spomenikArray) {
+                    for (Monument monument : monumentArray) {
 
-                        if(spomenik.getIme().toLowerCase().contains(constraint.toString().toLowerCase())){
-                            suggestions.add(spomenik);
+                        if(monument.getName().toLowerCase().contains(constraint.toString().toLowerCase())){
+                            suggestions.add(monument);
                         }
                     }
 
@@ -112,7 +112,7 @@ public class CustomSearchAdapter extends ArrayAdapter<Spomenik>{
 
             if (results.count > 0) {
                 clear();
-                addAll((ArrayList<Spomenik>) results.values);
+                addAll((ArrayList<Monument>) results.values);
                 notifyDataSetChanged();
             }
         }

@@ -22,7 +22,7 @@
         </activity>
 
         <activity
-            android:name=".activitys.ListViewActivity"
+            android:name=".activitys.ListActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -37,7 +37,7 @@
         </activity>
 
         <activity
-            android:name=".activitys.SpomenikInfo"
+            android:name=".activitys.MonumentInfoActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -48,12 +48,12 @@
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activitys.ListViewActivity" />
+                android:value=".activitys.ListActivity" />
 
         </activity>
 
         <activity
-            android:name=".activitys.LiteraturaActivity"
+            android:name=".activitys.LiteratureActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -68,7 +68,7 @@
         </activity>
 
         <activity
-            android:name=".activitys.OAplikcijiActivity"
+            android:name=".activitys.AboutAppActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
             <intent-filter>

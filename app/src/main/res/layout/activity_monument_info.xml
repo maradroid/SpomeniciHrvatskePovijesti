@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#d9d9d9"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/item_toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        >
+
+        <!-- additional layout because bottom padding -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/card_margin"
+                android:background="@drawable/card_like2"
+                android:orientation="vertical"
+                >
+
+                <!-- Monument name -->
+
+                <TextView
+                    android:id="@+id/tv_monument_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/in_card_margin"
+                    android:layout_marginLeft="@dimen/in_card_margin"
+                    android:layout_marginRight="@dimen/in_card_margin"
+                    android:layout_marginTop="@dimen/in_card_margin"
+                    android:typeface="sans"
+                    android:text="dgdfgsdfg"
+                    android:textColor="@color/main_color"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/main_color"></View>
+
+                <!-- Place label -->
+
+                <TextView
+                    android:id="@+id/tv_place_label"
+                    style="@style/MonumentInfoLabelTV"
+                    android:text="@string/place_label"
+                    />
+
+                <!-- Place -->
+
+                <TextView
+                    android:id="@+id/tv_place"
+                    style="@style/MonumentInfoTV"
+                    android:text="Mjesto"
+                    />
+
+                <!-- Year Label -->
+
+                <TextView
+                    android:id="@+id/tv_year_label"
+                    style="@style/MonumentInfoLabelTV"
+                    android:text="@string/year_label"
+                    />
+
+                <!-- Year -->
+
+                <TextView
+                    android:id="@+id/tv_year"
+                    style="@style/MonumentInfoTV"
+                    android:text="Godina"
+                    />
+
+                <!-- Type label -->
+
+                <TextView
+                    android:id="@+id/tv_type_label"
+                    style="@style/MonumentInfoLabelTV"
+                    android:text="@string/type_label"
+                    />
+
+                <!-- Type -->
+
+                <TextView
+                    android:id="@+id/tv_type"
+                    style="@style/MonumentInfoTV"
+                    android:text="Pismo"
+                    />
+
+                <!-- Language label -->
+
+                <TextView
+                    android:id="@+id/tv_language_label"
+                    style="@style/MonumentInfoLabelTV"
+                    android:text="@string/language_label"
+                    />
+
+                <!-- Language -->
+
+                <TextView
+                    android:id="@+id/tv_language"
+                    style="@style/MonumentInfoTV"
+                    android:text="Jezik"
+                    />
+
+                <!-- Content label -->
+
+                <TextView
+                    android:id="@+id/tv_content_label"
+                    style="@style/MonumentInfoLabelTV"
+                    android:text="@string/content_label"
+                    />
+
+                <!-- Content -->
+
+                <TextView
+                    android:id="@+id/tv_content"
+                    style="@style/MonumentInfoTV"
+                    android:text="Sadržaj"
+                    />
+
+                <!-- Size label -->
+
+                <TextView
+                    android:id="@+id/tv_size_label"
+                    style="@style/MonumentInfoLabelTV"
+                    android:text="@string/size_label"
+                    />
+
+                <!-- Size -->
+
+                <TextView
+                    android:id="@+id/tv_size"
+                    style="@style/MonumentInfoTV"
+                    android:text="Veličina"
+                    />
+
+                <!-- Interesting label -->
+
+                <TextView
+                    android:id="@+id/tv_interesting_label"
+                    style="@style/MonumentInfoLabelTV"
+                    android:text="@string/interesting_label"
+                    />
+
+                <!-- Interesting -->
+
+                <TextView
+                    android:id="@+id/tv_interesting"
+                    style="@style/MonumentInfoTV"
+                    android:layout_marginBottom="@dimen/in_card_margin"
+                    android:text="Zanimljivosti"
+                    />
+
+                <!--<LinearLayout
+                    android:id="@+id/link_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        android:id="@+id/link_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/card_margin"
+                        android:layout_marginTop="@dimen/card_margin"
+                        android:typeface="sans"
+                        android:text="više..."
+                        android:textColor="@color/main_color"
+                        android:textSize="@dimen/main_text"
+                        android:textStyle="bold" />
+
+                </LinearLayout>-->
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

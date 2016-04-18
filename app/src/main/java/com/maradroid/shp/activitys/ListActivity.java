@@ -20,42 +20,44 @@ import android.widget.LinearLayout;
 
 import com.maradroid.shp.R;
 import com.maradroid.shp.adapters.CustomSearchAdapter;
-import com.maradroid.shp.adapters.ListViewAdapter;
+import com.maradroid.shp.adapters.ListActivityAdapter;
 import com.maradroid.shp.api.ApiSingleton;
-import com.maradroid.shp.api.SpomenikEvent;
-import com.maradroid.shp.dataModels.Spomenik;
+import com.maradroid.shp.api.MonumentEvent;
+import com.maradroid.shp.dataModels.Monument;
 
 import java.util.ArrayList;
 
 /**
  * Created by mara on 3/15/15.
  */
-public class ListViewActivity extends ActionBarActivity implements ListViewAdapter.ClickListener, SpomenikEvent{
+public class ListActivity extends ActionBarActivity implements ListActivityAdapter.ClickListener, MonumentEvent {
 
     private static final int SEARCH_ITEM_TAG = -2;
 
     private RecyclerView mRecycler;
     private RecyclerView.LayoutManager mLayoutManager;
-    private ListViewAdapter mAdapter;
+    private ListActivityAdapter mAdapter;
 
-    private ArrayList<Spomenik> spomenikArray;
+    private ArrayList<Monument> monumentArray;
 
-    private String stoljece;
+    private String century;
     private String tag;
 
     private AutoCompleteTextView searchBar;
-    private LinearLayout search_ll;
+    private LinearLayout llSearch;
+
     private boolean isSearching = false;
+
     private InputMethodManager keyboardManager;
 
-    private Spomenik searchSpomenik;
+    private Monument searchMonument;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.listview);
+        setContentView(R.layout.activity_monument_list);
 
-        ApiSingleton.getInstance().setSpomenikEvent(this);
+        ApiSingleton.getInstance().setMonumentEvent(this);
 
         getExtra();
         initToolbar();
@@ -71,7 +73,7 @@ public class ListViewActivity extends ActionBarActivity implements ListViewAdapt
         Bundle extras = getIntent().getExtras();
 
         if (extras != null) {
-            stoljece = extras.getString("stoljece", null);
+            century = extras.getString("stoljece", null);
             tag = extras.getString("tag", null);
         }
     }
@@ -84,24 +86,24 @@ public class ListViewActivity extends ActionBarActivity implements ListViewAdapt
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationIcon(R.mipmap.ic_chevron_left_white_36dp);
 
-        if (stoljece != null) {
-            getSupportActionBar().setTitle(stoljece);
+        if (century != null) {
+            getSupportActionBar().setTitle(century);
         }
     }
 
     private void initViews() {
 
-        search_ll = (LinearLayout) findViewById(R.id.search_ll);
+        llSearch = (LinearLayout) findViewById(R.id.ll_search);
         searchBar = (AutoCompleteTextView) findViewById(R.id.search);
         mRecycler = (RecyclerView) findViewById(R.id.list_view);
     }
 
     private void getData() {
 
-        spomenikArray = new ArrayList<Spomenik>();
+        monumentArray = new ArrayList<Monument>();
 
         if (tag != null) {
-            spomenikArray = ApiSingleton.getInstance().getArrayListByCentury(tag);
+            monumentArray = ApiSingleton.getInstance().getArrayListByCentury(tag);
         }
 
     }
@@ -111,7 +113,7 @@ public class ListViewActivity extends ActionBarActivity implements ListViewAdapt
         mRecycler.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mRecycler.setLayoutManager(mLayoutManager);
-        mAdapter = new ListViewAdapter(spomenikArray);
+        mAdapter = new ListActivityAdapter(monumentArray);
         mAdapter.setClickListener(this);
         mRecycler.setAdapter(mAdapter);
     }
@@ -120,7 +122,7 @@ public class ListViewActivity extends ActionBarActivity implements ListViewAdapt
 
         keyboardManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
-        CustomSearchAdapter adapter = new CustomSearchAdapter(getApplicationContext(),R.layout.search_item, spomenikArray);
+        CustomSearchAdapter adapter = new CustomSearchAdapter(getApplicationContext(),R.layout.item_search, monumentArray);
         searchBar.setAdapter(adapter);
 
         setSearchClickListener();
@@ -133,9 +135,9 @@ public class ListViewActivity extends ActionBarActivity implements ListViewAdapt
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                searchSpomenik = (Spomenik) adapterView.getItemAtPosition(i);
+                searchMonument = (Monument) adapterView.getItemAtPosition(i);
 
-                Intent intent = new Intent(ListViewActivity.this, SpomenikInfo.class);
+                Intent intent = new Intent(ListActivity.this, MonumentInfoActivity.class);
                 intent.putExtra("position", SEARCH_ITEM_TAG);
 
                 if (keyboardManager.isAcceptingText()) {
@@ -143,8 +145,8 @@ public class ListViewActivity extends ActionBarActivity implements ListViewAdapt
                 }
 
                 searchBar.setText("");
-                search_ll.setAlpha(0);
-                search_ll.setVisibility(View.GONE);
+                llSearch.setAlpha(0);
+                llSearch.setVisibility(View.GONE);
 
                 startActivity(intent);
 
@@ -158,12 +160,12 @@ public class ListViewActivity extends ActionBarActivity implements ListViewAdapt
 
         if(id == R.id.close_search){
 
-            search_ll.clearAnimation();
-            search_ll.animate().alpha(0).setDuration(700).setListener(new AnimatorListenerAdapter() {
+            llSearch.clearAnimation();
+            llSearch.animate().alpha(0).setDuration(700).setListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(Animator animation) {
                     super.onAnimationEnd(animation);
-                    search_ll.setVisibility(View.GONE);
+                    llSearch.setVisibility(View.GONE);
                 }
             });
             searchBar.setText("");
@@ -177,14 +179,14 @@ public class ListViewActivity extends ActionBarActivity implements ListViewAdapt
 
             searchBar.setText("");
 
-        }else if(id == R.id.search_ll){
+        }else if(id == R.id.ll_search){
 
-            search_ll.clearAnimation();
-            search_ll.animate().alpha(0).setDuration(700).setListener(new AnimatorListenerAdapter() {
+            llSearch.clearAnimation();
+            llSearch.animate().alpha(0).setDuration(700).setListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(Animator animation) {
                     super.onAnimationEnd(animation);
-                    search_ll.setVisibility(View.GONE);
+                    llSearch.setVisibility(View.GONE);
                 }
             });
 
@@ -201,7 +203,7 @@ public class ListViewActivity extends ActionBarActivity implements ListViewAdapt
     @Override
     public void onClick(View v, int position) {
 
-        Intent intent = new Intent(this, SpomenikInfo.class);
+        Intent intent = new Intent(this, MonumentInfoActivity.class);
         intent.putExtra("position", position);
         startActivity(intent);
 
@@ -226,9 +228,9 @@ public class ListViewActivity extends ActionBarActivity implements ListViewAdapt
         }
 
         if (id == R.id.search_icon) {
-            search_ll.clearAnimation();
-            search_ll.animate().alpha(1).setDuration(700).setListener(null);
-            search_ll.setVisibility(View.VISIBLE);
+            llSearch.clearAnimation();
+            llSearch.animate().alpha(1).setDuration(700).setListener(null);
+            llSearch.setVisibility(View.VISIBLE);
             isSearching = true;
 
             if (searchBar.requestFocus()) {
@@ -245,12 +247,12 @@ public class ListViewActivity extends ActionBarActivity implements ListViewAdapt
     public void onBackPressed() {
 
         if(isSearching){
-            search_ll.clearAnimation();
-            search_ll.animate().alpha(0).setDuration(700).setListener(new AnimatorListenerAdapter() {
+            llSearch.clearAnimation();
+            llSearch.animate().alpha(0).setDuration(700).setListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(Animator animation) {
                     super.onAnimationEnd(animation);
-                    search_ll.setVisibility(View.GONE);
+                    llSearch.setVisibility(View.GONE);
                 }
             });
 
@@ -264,13 +266,13 @@ public class ListViewActivity extends ActionBarActivity implements ListViewAdapt
     }
 
     @Override
-    public Spomenik getSpomenikById(int position) {
+    public Monument getMonumentById(int position) {
 
-        if (position == SEARCH_ITEM_TAG && searchSpomenik != null) {
-            return searchSpomenik;
+        if (position == SEARCH_ITEM_TAG && searchMonument != null) {
+            return searchMonument;
 
         } else if (position != SEARCH_ITEM_TAG && position != -1) {
-            return spomenikArray.get(position);
+            return monumentArray.get(position);
         }
 
         return null;
@@ -280,6 +282,6 @@ public class ListViewActivity extends ActionBarActivity implements ListViewAdapt
     protected void onDestroy() {
         super.onDestroy();
 
-        ApiSingleton.getInstance().removeSpomenikEvent();
+        ApiSingleton.getInstance().removeMonumentEvent();
     }
 }

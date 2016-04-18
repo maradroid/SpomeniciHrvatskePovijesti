@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.maradroid.shp.R;
-import com.maradroid.shp.dataModels.Spomenik;
+import com.maradroid.shp.dataModels.Monument;
 
 import java.util.ArrayList;
 
@@ -15,14 +15,14 @@ import java.util.ArrayList;
 /**
  * Created by mara on 3/15/15.
  */
-public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.ViewHolder> {
+public class ListActivityAdapter extends RecyclerView.Adapter<ListActivityAdapter.ViewHolder> {
 
-    private ArrayList<Spomenik> listaSpomenika;
+    private ArrayList<Monument> dataArray;
     private ClickListener clickListener;
 
-    public ListViewAdapter(ArrayList<Spomenik> listaSpomenika) {
+    public ListActivityAdapter(ArrayList<Monument> listaSpomenika) {
 
-        this.listaSpomenika = listaSpomenika;
+        this.dataArray = listaSpomenika;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
@@ -32,7 +32,7 @@ public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.ViewHo
         public ViewHolder(View v) {
             super(v);
 
-            this.tvListItem = (TextView) v.findViewById(R.id.list_item_tv);
+            this.tvListItem = (TextView) v.findViewById(R.id.tv_item_name);
             v.setOnClickListener(this);
         }
 
@@ -43,9 +43,9 @@ public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.ViewHo
     }
 
     @Override
-    public ListViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ListActivityAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.listview_item, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_monument_list, parent, false);
 
         return new ViewHolder(v);
     }
@@ -53,12 +53,12 @@ public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.ViewHo
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
 
-        holder.tvListItem.setText(listaSpomenika.get(position).getIme());
+        holder.tvListItem.setText(dataArray.get(position).getName());
     }
 
     @Override
     public int getItemCount() {
-        return listaSpomenika.size();
+        return dataArray.size();
     }
 
     public interface ClickListener {

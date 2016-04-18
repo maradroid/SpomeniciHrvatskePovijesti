@@ -3,7 +3,7 @@ package com.maradroid.shp.api;
 import android.content.Context;
 import android.content.res.AssetManager;
 
-import com.maradroid.shp.dataModels.Spomenik;
+import com.maradroid.shp.dataModels.Monument;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,19 +24,19 @@ public class ApiSingleton {
     private Context context;
     private boolean isDataReady;
 
-    private ArrayList<Spomenik> spomenikArray;
-    private ArrayList<Spomenik> jedanaestoStoljeceArray;
-    private ArrayList<Spomenik> dvanaestoStoljeceArray;
-    private ArrayList<Spomenik> trinaestoStoljeceArray;
-    private ArrayList<Spomenik> cetrnaestoStoljeceArray;
-    private ArrayList<Spomenik> petnaestoStoljeceArray;
-    private ArrayList<Spomenik> sesnaestoStoljeceArray;
-    private ArrayList<Spomenik> sedamnaestoStoljeceArray;
-    private ArrayList<Spomenik> osamnaestoStoljeceArray;
-    private ArrayList<Spomenik> devetnaestoStoljeceArray;
-    private ArrayList<Spomenik> dvadesetoStoljeceArray;
+    private ArrayList<Monument> monumentArray;
+    private ArrayList<Monument> jedanaestoStoljeceArray;
+    private ArrayList<Monument> dvanaestoStoljeceArray;
+    private ArrayList<Monument> trinaestoStoljeceArray;
+    private ArrayList<Monument> cetrnaestoStoljeceArray;
+    private ArrayList<Monument> petnaestoStoljeceArray;
+    private ArrayList<Monument> sesnaestoStoljeceArray;
+    private ArrayList<Monument> sedamnaestoStoljeceArray;
+    private ArrayList<Monument> osamnaestoStoljeceArray;
+    private ArrayList<Monument> devetnaestoStoljeceArray;
+    private ArrayList<Monument> dvadesetoStoljeceArray;
 
-    private SpomenikEvent spomenikEvent;
+    private MonumentEvent monumentEvent;
 
     public static ApiSingleton getInstance() {
 
@@ -59,28 +59,16 @@ public class ApiSingleton {
 
         this.context = c;
 
-        jedanaestoStoljeceArray = new ArrayList<Spomenik>();
-        dvanaestoStoljeceArray = new ArrayList<Spomenik>();
-        trinaestoStoljeceArray = new ArrayList<Spomenik>();
-        cetrnaestoStoljeceArray = new ArrayList<Spomenik>();
-        petnaestoStoljeceArray = new ArrayList<Spomenik>();
-        sesnaestoStoljeceArray = new ArrayList<Spomenik>();
-        sedamnaestoStoljeceArray = new ArrayList<Spomenik>();
-        osamnaestoStoljeceArray = new ArrayList<Spomenik>();
-        devetnaestoStoljeceArray = new ArrayList<Spomenik>();
-        dvadesetoStoljeceArray = new ArrayList<Spomenik>();
-
-        /*stoljeceMap = new HashMap<String, ArrayList<Spomenik>>();
-        stoljeceMap.put("11", jedanaestoStoljeceArray);
-        stoljeceMap.put("12", dvanaestoStoljeceArray);
-        stoljeceMap.put("13", trinaestoStoljeceArray);
-        stoljeceMap.put("14", cetrnaestoStoljeceArray);
-        stoljeceMap.put("15", petnaestoStoljeceArray);
-        stoljeceMap.put("16", sesnaestoStoljeceArray);
-        stoljeceMap.put("17", sedamnaestoStoljeceArray);
-        stoljeceMap.put("18", osamnaestoStoljeceArray);
-        stoljeceMap.put("19", devetnaestoStoljeceArray);
-        stoljeceMap.put("20", dvadesetoStoljeceArray);*/
+        jedanaestoStoljeceArray = new ArrayList<Monument>();
+        dvanaestoStoljeceArray = new ArrayList<Monument>();
+        trinaestoStoljeceArray = new ArrayList<Monument>();
+        cetrnaestoStoljeceArray = new ArrayList<Monument>();
+        petnaestoStoljeceArray = new ArrayList<Monument>();
+        sesnaestoStoljeceArray = new ArrayList<Monument>();
+        sedamnaestoStoljeceArray = new ArrayList<Monument>();
+        osamnaestoStoljeceArray = new ArrayList<Monument>();
+        devetnaestoStoljeceArray = new ArrayList<Monument>();
+        dvadesetoStoljeceArray = new ArrayList<Monument>();
 
         new Thread(new Runnable() {
             @Override
@@ -108,12 +96,15 @@ public class ApiSingleton {
 
         try {
             i = inputStream.read();
+
             while (i != -1)
             {
                 byteArrayOutputStream.write(i);
                 i = inputStream.read();
             }
+
             inputStream.close();
+
         }catch (IOException e) {
             e.printStackTrace();
         }
@@ -124,7 +115,7 @@ public class ApiSingleton {
 
     private void parseJSON(){
 
-        spomenikArray = new ArrayList<Spomenik>();
+        monumentArray = new ArrayList<Monument>();
 
         JSONArray jArray = null;
 
@@ -133,7 +124,7 @@ public class ApiSingleton {
 
             for(int i = 0; i < jArray.length(); i++){
 
-                Spomenik tempSpomenik = new Spomenik(jArray.getJSONObject(i).getString("id"),
+                Monument tempMonument = new Monument(jArray.getJSONObject(i).getString("id"),
                         jArray.getJSONObject(i).getString("ime"),
                         jArray.getJSONObject(i).getString("godina"),
                         jArray.getJSONObject(i).getString("pismo"),
@@ -144,11 +135,11 @@ public class ApiSingleton {
                         jArray.getJSONObject(i).getString("stoljece"),
                         jArray.getJSONObject(i).getString("mjesto"));
 
-                spomenikArray.add(tempSpomenik);
+                monumentArray.add(tempMonument);
 
-                saveObjectToSpecificArray(tempSpomenik);
+                saveObjectToSpecificArray(tempMonument);
 
-                //stoljeceMap.get(tempSpomenik.stoljece).add(tempSpomenik);
+                //stoljeceMap.get(tempMonument.stoljece).add(tempMonument);
 
             }
 
@@ -159,48 +150,48 @@ public class ApiSingleton {
         sortArrays();
     }
 
-    private void saveObjectToSpecificArray(Spomenik spomenik) {
+    private void saveObjectToSpecificArray(Monument monument) {
 
-        switch (spomenik.getStoljece()) {
+        switch (monument.getCentury()) {
 
             case "11":
-                jedanaestoStoljeceArray.add(spomenik);
+                jedanaestoStoljeceArray.add(monument);
                 break;
 
             case "12":
-                dvanaestoStoljeceArray.add(spomenik);
+                dvanaestoStoljeceArray.add(monument);
                 break;
 
             case "13":
-                trinaestoStoljeceArray.add(spomenik);
+                trinaestoStoljeceArray.add(monument);
                 break;
 
             case "14":
-                cetrnaestoStoljeceArray.add(spomenik);
+                cetrnaestoStoljeceArray.add(monument);
                 break;
 
             case "15":
-                petnaestoStoljeceArray.add(spomenik);
+                petnaestoStoljeceArray.add(monument);
                 break;
 
             case "16":
-                sesnaestoStoljeceArray.add(spomenik);
+                sesnaestoStoljeceArray.add(monument);
                 break;
 
             case "17":
-                sedamnaestoStoljeceArray.add(spomenik);
+                sedamnaestoStoljeceArray.add(monument);
                 break;
 
             case "18":
-                osamnaestoStoljeceArray.add(spomenik);
+                osamnaestoStoljeceArray.add(monument);
                 break;
 
             case "19":
-                devetnaestoStoljeceArray.add(spomenik);
+                devetnaestoStoljeceArray.add(monument);
                 break;
 
             case "20":
-                dvadesetoStoljeceArray.add(spomenik);
+                dvadesetoStoljeceArray.add(monument);
                 break;
         }
     }
@@ -219,17 +210,17 @@ public class ApiSingleton {
         sort(dvadesetoStoljeceArray);
     }
 
-    private void sort(ArrayList<Spomenik> arrayList) {
+    private void sort(ArrayList<Monument> arrayList) {
 
-        Collections.sort(arrayList, new Comparator<Spomenik>() {
+        Collections.sort(arrayList, new Comparator<Monument>() {
 
-            public int compare(Spomenik spomenik1, Spomenik spomenik2) {
-                return spomenik1.getIme().compareTo(spomenik2.getIme());
+            public int compare(Monument monument1, Monument monument2) {
+                return monument1.getName().compareTo(monument2.getName());
             }
         });
     }
 
-    public ArrayList<Spomenik> getArrayListByCentury(String century) {
+    public ArrayList<Monument> getArrayListByCentury(String century) {
 
         switch (century) {
 
@@ -267,63 +258,63 @@ public class ApiSingleton {
         return null;
     }
 
-    public ArrayList<Spomenik> getDvadesetoStoljeceArray() {
+    public ArrayList<Monument> getDvadesetoStoljeceArray() {
         return dvadesetoStoljeceArray;
     }
 
-    public ArrayList<Spomenik> getDevetnaestoStoljeceArray() {
+    public ArrayList<Monument> getDevetnaestoStoljeceArray() {
         return devetnaestoStoljeceArray;
     }
 
-    public ArrayList<Spomenik> getOsamnaestoStoljeceArray() {
+    public ArrayList<Monument> getOsamnaestoStoljeceArray() {
         return osamnaestoStoljeceArray;
     }
 
-    public ArrayList<Spomenik> getSedamnaestoStoljeceArray() {
+    public ArrayList<Monument> getSedamnaestoStoljeceArray() {
         return sedamnaestoStoljeceArray;
     }
 
-    public ArrayList<Spomenik> getSesnaestoStoljeceArray() {
+    public ArrayList<Monument> getSesnaestoStoljeceArray() {
         return sesnaestoStoljeceArray;
     }
 
-    public ArrayList<Spomenik> getPetnaestoStoljeceArray() {
+    public ArrayList<Monument> getPetnaestoStoljeceArray() {
         return petnaestoStoljeceArray;
     }
 
-    public ArrayList<Spomenik> getCetrnaestoStoljeceArray() {
+    public ArrayList<Monument> getCetrnaestoStoljeceArray() {
         return cetrnaestoStoljeceArray;
     }
 
-    public ArrayList<Spomenik> getTrinaestoStoljeceArray() {
+    public ArrayList<Monument> getTrinaestoStoljeceArray() {
         return trinaestoStoljeceArray;
     }
 
-    public ArrayList<Spomenik> getDvanaestoStoljeceArray() {
+    public ArrayList<Monument> getDvanaestoStoljeceArray() {
         return dvanaestoStoljeceArray;
     }
 
-    public ArrayList<Spomenik> getJedanaestoStoljeceArray() {
+    public ArrayList<Monument> getJedanaestoStoljeceArray() {
         return jedanaestoStoljeceArray;
     }
 
-    public ArrayList<Spomenik> getSpomenikArray() {
-        return spomenikArray;
+    public ArrayList<Monument> getMonumentArray() {
+        return monumentArray;
     }
 
     public boolean isDataReady() {
         return isDataReady;
     }
 
-    public void setSpomenikEvent(SpomenikEvent event) {
-        this.spomenikEvent = event;
+    public void setMonumentEvent(MonumentEvent event) {
+        this.monumentEvent = event;
     }
 
-    public void removeSpomenikEvent() {
-        this.spomenikEvent = null;
+    public void removeMonumentEvent() {
+        this.monumentEvent = null;
     }
 
-    public SpomenikEvent getSpomenikEvent() {
-        return this.spomenikEvent;
+    public MonumentEvent getMonumentEvent() {
+        return this.monumentEvent;
     }
 }

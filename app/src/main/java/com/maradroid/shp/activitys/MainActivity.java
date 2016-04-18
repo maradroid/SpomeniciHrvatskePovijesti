@@ -21,35 +21,34 @@ import android.widget.Toast;
 
 import com.maradroid.shp.R;
 import com.maradroid.shp.adapters.CustomSearchAdapter;
-import com.maradroid.shp.adapters.RecyclerViewAdapter;
+import com.maradroid.shp.adapters.MainActivityAdapter;
 import com.maradroid.shp.api.ApiSingleton;
-import com.maradroid.shp.api.SpomenikEvent;
-import com.maradroid.shp.dataModels.Spomenik;
-import com.maradroid.shp.dataModels.Stoljece;
+import com.maradroid.shp.api.MonumentEvent;
+import com.maradroid.shp.dataModels.Monument;
+import com.maradroid.shp.dataModels.Century;
 
 import java.util.ArrayList;
 
 
-public class MainActivity extends ActionBarActivity implements RecyclerViewAdapter.ClickListener, SpomenikEvent {
+public class MainActivity extends ActionBarActivity implements MainActivityAdapter.ClickListener, MonumentEvent {
 
     private static final int SEARCH_ITEM_TAG = -2;
 
     private RecyclerView mRecycler;
     private RecyclerView.LayoutManager mLayoutManager;
-    private RecyclerViewAdapter mAdapter;
+    private MainActivityAdapter mAdapter;
 
-    private ArrayList<Stoljece> listaStoljeca;
-    private ArrayList<Spomenik> searchArray;
+    private ArrayList<Century> centuriesArray;
 
     private AutoCompleteTextView searchBar;
-    private LinearLayout search_ll;
+    private LinearLayout llSearch;
 
     private boolean isSearching;
     private boolean isSearchSet;
 
     private InputMethodManager keyboardManager;
 
-    private Spomenik searchSpomenik;
+    private Monument searchMonument;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +79,7 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
 
     private void initViews() {
 
-        search_ll = (LinearLayout) findViewById(R.id.search_ll);
+        llSearch = (LinearLayout) findViewById(R.id.ll_search);
         mRecycler = (RecyclerView) findViewById(R.id.recycler_view);
         searchBar = (AutoCompleteTextView) findViewById(R.id.search);
 
@@ -91,33 +90,31 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
         mRecycler.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mRecycler.setLayoutManager(mLayoutManager);
-        mAdapter = new RecyclerViewAdapter(listaStoljeca);
+        mAdapter = new MainActivityAdapter(centuriesArray);
         mAdapter.setClickListener(this);
         mRecycler.setAdapter(mAdapter);
     }
 
     private void initRecyclerData() {
 
-        listaStoljeca = new ArrayList<Stoljece>();
-        listaStoljeca.add(new Stoljece("11. stoljeće", "11", "Pariški abecedarij...", R.mipmap.jedanaest_edited));
-        listaStoljeca.add(new Stoljece("12. stoljeće", "12", "Bašćanska ploča...", R.mipmap.dvanaest_edited));
-        listaStoljeca.add(new Stoljece("13. stoljeće", "13", "Vinodolski zakon...", R.mipmap.trinaest_edited));
-        listaStoljeca.add(new Stoljece("14. stoljeće", "14", "Pašmanski brevijar...", R.mipmap.cetrnaest_edited));
-        listaStoljeca.add(new Stoljece("15. stoljeće", "15", "Lička listina...", R.mipmap.petnaest_edited));
-        listaStoljeca.add(new Stoljece("16. stoljeće", "16", "Klimantovićev ritual...", R.mipmap.sesnaest_edited));
-        listaStoljeca.add(new Stoljece("17. stoljeće", "17", "Fatevićev zbornik...", R.mipmap.sedamnaest_edited));
-        listaStoljeca.add(new Stoljece("18. stoljeće", "18", "Karta sv. Bonifacija...", R.mipmap.osamnaest_edited));
-        listaStoljeca.add(new Stoljece("19. stoljeće", "19", "Čini i pravilo misli...", R.mipmap.devetnaest_edited));
-        listaStoljeca.add(new Stoljece("20. stoljeće", "20", "Rimski misal slověnskim jezikom...", R.mipmap.dvadeset_edited));
+        centuriesArray = new ArrayList<Century>();
+        centuriesArray.add(new Century("11. stoljeće", "11", "Pariški abecedarij...", R.mipmap.jedanaest_edited));
+        centuriesArray.add(new Century("12. stoljeće", "12", "Bašćanska ploča...", R.mipmap.dvanaest_edited));
+        centuriesArray.add(new Century("13. stoljeće", "13", "Vinodolski zakon...", R.mipmap.trinaest_edited));
+        centuriesArray.add(new Century("14. stoljeće", "14", "Pašmanski brevijar...", R.mipmap.cetrnaest_edited));
+        centuriesArray.add(new Century("15. stoljeće", "15", "Lička listina...", R.mipmap.petnaest_edited));
+        centuriesArray.add(new Century("16. stoljeće", "16", "Klimantovićev ritual...", R.mipmap.sesnaest_edited));
+        centuriesArray.add(new Century("17. stoljeće", "17", "Fatevićev zbornik...", R.mipmap.sedamnaest_edited));
+        centuriesArray.add(new Century("18. stoljeće", "18", "Karta sv. Bonifacija...", R.mipmap.osamnaest_edited));
+        centuriesArray.add(new Century("19. stoljeće", "19", "Čini i pravilo misli...", R.mipmap.devetnaest_edited));
+        centuriesArray.add(new Century("20. stoljeće", "20", "Rimski misal slověnskim jezikom...", R.mipmap.dvadeset_edited));
     }
 
     private void initSearch() {
 
         keyboardManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
-        //searchArray = new ArrayList<Spomenik>();
-
-        CustomSearchAdapter adapter = new CustomSearchAdapter(getApplicationContext(),R.layout.search_item, ApiSingleton.getInstance().getSpomenikArray());
+        CustomSearchAdapter adapter = new CustomSearchAdapter(getApplicationContext(),R.layout.item_search, ApiSingleton.getInstance().getMonumentArray());
         searchBar.setAdapter(adapter);
 
         setSearchClickListener();
@@ -130,9 +127,9 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                searchSpomenik = (Spomenik) adapterView.getItemAtPosition(i);
+                searchMonument = (Monument) adapterView.getItemAtPosition(i);
 
-                Intent intent = new Intent(MainActivity.this, SpomenikInfo.class);
+                Intent intent = new Intent(MainActivity.this, MonumentInfoActivity.class);
                 intent.putExtra("position", SEARCH_ITEM_TAG);
 
                 if (keyboardManager.isAcceptingText()) {
@@ -140,10 +137,10 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
                 }
 
                 searchBar.setText("");
-                search_ll.setAlpha(0);
-                search_ll.setVisibility(View.GONE);
+                llSearch.setAlpha(0);
+                llSearch.setVisibility(View.GONE);
 
-                ApiSingleton.getInstance().setSpomenikEvent(MainActivity.this);
+                ApiSingleton.getInstance().setMonumentEvent(MainActivity.this);
 
                 startActivity(intent);
             }
@@ -157,12 +154,12 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
 
         if(id == R.id.close_search){
 
-            search_ll.clearAnimation();
-            search_ll.animate().alpha(0).setDuration(700).setListener(new AnimatorListenerAdapter() {
+            llSearch.clearAnimation();
+            llSearch.animate().alpha(0).setDuration(700).setListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(Animator animation) {
                     super.onAnimationEnd(animation);
-                    search_ll.setVisibility(View.GONE);
+                    llSearch.setVisibility(View.GONE);
                 }
             });
             searchBar.setText("");
@@ -176,14 +173,14 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
 
             searchBar.setText("");
 
-        }else if(id == R.id.search_ll){
+        }else if(id == R.id.ll_search){
 
-            search_ll.clearAnimation();
-            search_ll.animate().alpha(0).setDuration(700).setListener(new AnimatorListenerAdapter() {
+            llSearch.clearAnimation();
+            llSearch.animate().alpha(0).setDuration(700).setListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(Animator animation) {
                     super.onAnimationEnd(animation);
-                    search_ll.setVisibility(View.GONE);
+                    llSearch.setVisibility(View.GONE);
                 }
             });
 
@@ -201,9 +198,9 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
     public void onClick(View v, int position) {
 
         if (ApiSingleton.getInstance().isDataReady()) {
-            Intent intent = new Intent(this, ListViewActivity.class);
-            intent.putExtra("tag", listaStoljeca.get(position).getStoljeceTag());
-            intent.putExtra("stoljece", listaStoljeca.get(position).getCardStoljece());
+            Intent intent = new Intent(this, ListActivity.class);
+            intent.putExtra("tag", centuriesArray.get(position).getCenturyTag());
+            intent.putExtra("stoljece", centuriesArray.get(position).getCardCentury());
             startActivity(intent);
 
         } else {
@@ -234,9 +231,9 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
                 isSearchSet = true;
             }
 
-            search_ll.clearAnimation();
-            search_ll.animate().alpha(1).setDuration(700).setListener(null);
-            search_ll.setVisibility(View.VISIBLE);
+            llSearch.clearAnimation();
+            llSearch.animate().alpha(1).setDuration(700).setListener(null);
+            llSearch.setVisibility(View.VISIBLE);
             isSearching = true;
 
             if (searchBar.requestFocus()) {
@@ -247,30 +244,30 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
         }
 
         if (id == R.id.literatura) {
-            Intent intent = new Intent(this, LiteraturaActivity.class);
+            Intent intent = new Intent(this, LiteratureActivity.class);
             startActivity(intent);
             return true;
         }
 
         if (id == R.id.o_aplikaciji) {
-            Intent intent = new Intent(this, OAplikcijiActivity.class);
+            Intent intent = new Intent(this, AboutAppActivity.class);
             intent.putExtra("activity","O aplikaciji");
             startActivity(intent);
             return true;
         }
 
         if (id == R.id.o_nama) {
-            Intent intent = new Intent(this, OAplikcijiActivity.class);
+            Intent intent = new Intent(this, AboutAppActivity.class);
             intent.putExtra("activity","O nama");
             startActivity(intent);
             return true;
         }
 
-        if (id == R.id.translate) {
+        /*if (id == R.id.translate) {
             Intent intent = new Intent(this, TranslateActivity.class);
             startActivity(intent);
             return true;
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
     }
@@ -280,12 +277,12 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
 
         if(isSearching){
 
-            search_ll.clearAnimation();
-            search_ll.animate().alpha(0).setDuration(700).setListener(new AnimatorListenerAdapter() {
+            llSearch.clearAnimation();
+            llSearch.animate().alpha(0).setDuration(700).setListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(Animator animation) {
                     super.onAnimationEnd(animation);
-                    search_ll.setVisibility(View.GONE);
+                    llSearch.setVisibility(View.GONE);
                 }
             });
 
@@ -302,7 +299,7 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
     protected void onResume() {
         super.onResume();
 
-        ApiSingleton.getInstance().removeSpomenikEvent();
+        ApiSingleton.getInstance().removeMonumentEvent();
 
         if (ApiSingleton.getInstance().isDataReady() && !isSearchSet) {
             initSearch();
@@ -312,10 +309,10 @@ public class MainActivity extends ActionBarActivity implements RecyclerViewAdapt
 
 
     @Override
-    public Spomenik getSpomenikById(int position) {
+    public Monument getMonumentById(int position) {
 
-        if (position == SEARCH_ITEM_TAG && searchSpomenik != null) {
-            return searchSpomenik;
+        if (position == SEARCH_ITEM_TAG && searchMonument != null) {
+            return searchMonument;
         }
 
         return null;

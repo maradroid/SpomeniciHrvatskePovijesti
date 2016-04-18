@@ -6,7 +6,7 @@
     tools:context=".activitys.MainActivity">
 
     <include
-        layout="@layout/tool_bar"
+        layout="@layout/item_toolbar"
         android:id="@+id/tool_bar"/>
 
     <android.support.v7.widget.RecyclerView
@@ -15,10 +15,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#d9d9d9"
-        android:layout_below="@id/tool_bar"/>
+        android:layout_below="@id/tool_bar"
+        android:clipToPadding="false"/>
+
+    <!-- search dimmed (semi-transparent) layout -->
 
     <LinearLayout
-        android:id="@+id/search_ll"
+        android:id="@+id/ll_search"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
