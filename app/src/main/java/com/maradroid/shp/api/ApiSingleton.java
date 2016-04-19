@@ -46,12 +46,6 @@ public class ApiSingleton {
         return ourInstance;
     }
 
-    public static ApiSingleton getNewInstance() {
-
-        ourInstance = new ApiSingleton();
-        return ourInstance;
-    }
-
     private ApiSingleton() {
     }
 
@@ -138,8 +132,6 @@ public class ApiSingleton {
                 monumentArray.add(tempMonument);
 
                 saveObjectToSpecificArray(tempMonument);
-
-                //stoljeceMap.get(tempMonument.stoljece).add(tempMonument);
 
             }
 

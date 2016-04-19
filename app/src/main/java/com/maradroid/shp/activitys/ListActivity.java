@@ -224,7 +224,6 @@ public class ListActivity extends ActionBarActivity implements ListActivityAdapt
         if(id == android.R.id.home) {
             onBackPressed();
             return true;
-
         }
 
         if (id == R.id.search_icon) {
