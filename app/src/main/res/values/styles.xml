@@ -11,4 +11,40 @@
 
     </style>
 
+    <style name="Autocomplete" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@drawable/apptheme_textfield_activated_holo_light</item>
+    </style>
+
+    <style name="AboutUsTv" >
+        <item name="android:textSize">15sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginBottom">@dimen/label_bottom_margin</item>
+        <item name="android:layout_marginLeft">@dimen/in_card_margin</item>
+        <item name="android:layout_marginRight">@dimen/in_card_margin</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="MonumentInfoLabelTV">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/label_bottom_margin</item>
+        <item name="android:layout_marginLeft">@dimen/in_card_margin</item>
+        <item name="android:layout_marginTop">@dimen/label_top_margin</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/main_color</item>
+        <item name="android:textSize">@dimen/label_text</item>
+    </style>
+
+    <style name="MonumentInfoTV">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/in_card_margin</item>
+        <item name="android:layout_marginRight">@dimen/in_card_margin</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/second_color</item>
+        <item name="android:textSize">@dimen/main_text</item>
+    </style>
+
 </resources>
