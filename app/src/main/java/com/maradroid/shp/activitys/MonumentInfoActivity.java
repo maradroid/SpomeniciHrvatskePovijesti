@@ -4,6 +4,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -47,7 +49,7 @@ public class MonumentInfoActivity extends ActionBarActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_monument_info);
-
+        Log.e("maradroid","onCreate");
         getData();
         initToolbar();
         initViews();
@@ -137,7 +139,19 @@ public class MonumentInfoActivity extends ActionBarActivity{
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onCreateOptionsMenu(Menu menu) {
+        Log.e("maradroid","onCreateOptionsMenu");
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_monument_info, menu);
+
+        MenuItem item = menu.getItem(R.id.ic_map);
+
+        // hide menu if no coordinates
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {Log.e("maradroid","onOptionsItemSelected");
 
         int id = item.getItemId();
 
@@ -145,7 +159,10 @@ public class MonumentInfoActivity extends ActionBarActivity{
             onBackPressed();
             return true;
 
+        } else if (id == R.id.ic_map) {
+            //call maps
         }
+
         return super.onOptionsItemSelected(item);
     }
 }
