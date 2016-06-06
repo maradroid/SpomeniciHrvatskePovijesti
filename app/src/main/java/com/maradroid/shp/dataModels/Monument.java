@@ -21,10 +21,12 @@ public class Monument implements Comparable<Monument>{
     private String interesting;
     private String century;
     private String place;
+    private double latitude;
+    private double longitude;
 
     private CollationKey key;
 
-    public Monument(String id, String name, String year, String type, String language, String content, String size, String interesting, String century, String place){
+    public Monument(String id, String name, String year, String type, String language, String content, String size, String interesting, String century, String place, double latitude, double longitude){
 
         this.id = id;
         this.name = name;
@@ -36,6 +38,8 @@ public class Monument implements Comparable<Monument>{
         this.interesting = interesting;
         this.century = century;
         this.place = place;
+        this.latitude = latitude;
+        this.longitude = longitude;
 
         this.key = collator.getCollationKey(name);
     }
@@ -85,4 +89,11 @@ public class Monument implements Comparable<Monument>{
         return place;
     }
 
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
 }

@@ -1,5 +1,6 @@
 package com.maradroid.shp.activitys;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -49,12 +50,11 @@ public class MonumentInfoActivity extends ActionBarActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_monument_info);
-        Log.e("maradroid","onCreate");
+
         getData();
         initToolbar();
         initViews();
         setData();
-
     }
 
     public void getData() {
@@ -140,18 +140,21 @@ public class MonumentInfoActivity extends ActionBarActivity{
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        Log.e("maradroid","onCreateOptionsMenu");
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_monument_info, menu);
 
-        MenuItem item = menu.getItem(R.id.ic_map);
+        MenuItem item = menu.findItem(R.id.ic_map);
+
+        if (dataObject.getLatitude() == -1) {
+            item.setVisible(false);
+        }
 
         // hide menu if no coordinates
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {Log.e("maradroid","onOptionsItemSelected");
+    public boolean onOptionsItemSelected(MenuItem item) {
 
         int id = item.getItemId();
 
@@ -160,7 +163,10 @@ public class MonumentInfoActivity extends ActionBarActivity{
             return true;
 
         } else if (id == R.id.ic_map) {
-            //call maps
+            Intent mapIntent = new Intent(MonumentInfoActivity.this, MapsActivity.class);
+            mapIntent.putExtra("latitude", dataObject.getLatitude());
+            mapIntent.putExtra("longitude", dataObject.getLongitude());
+            startActivity(mapIntent);
         }
 
         return super.onOptionsItemSelected(item);

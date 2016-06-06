@@ -129,7 +129,9 @@ public class ApiSingleton {
                         jArray.getJSONObject(i).getString("velicina"),
                         jArray.getJSONObject(i).getString("zanimljivosti"),
                         jArray.getJSONObject(i).getString("stoljece"),
-                        jArray.getJSONObject(i).getString("mjesto"));
+                        jArray.getJSONObject(i).getString("mjesto"),
+                        jArray.getJSONObject(i).getDouble("latitude"),
+                        jArray.getJSONObject(i).getDouble("longitude"));
 
                 monumentArray.add(tempMonument);
 
