@@ -260,11 +260,11 @@ public class MainActivity extends ActionBarActivity implements MainActivityAdapt
             return true;
         }
 
-        /*if (id == R.id.translate) {
+        if (id == R.id.translate) {
             Intent intent = new Intent(this, TranslateActivity.class);
             startActivity(intent);
             return true;
-        }*/
+        }
 
         return super.onOptionsItemSelected(item);
     }

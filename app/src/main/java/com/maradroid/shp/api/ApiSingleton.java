@@ -10,9 +10,11 @@ import org.json.JSONException;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Locale;
 
 /**
  * Created by mara on 9/29/15.
@@ -190,26 +192,16 @@ public class ApiSingleton {
 
     private void sortArrays() {
 
-        sort(jedanaestoStoljeceArray);
-        sort(dvanaestoStoljeceArray);
-        sort(trinaestoStoljeceArray);
-        sort(cetrnaestoStoljeceArray);
-        sort(petnaestoStoljeceArray);
-        sort(sesnaestoStoljeceArray);
-        sort(sedamnaestoStoljeceArray);
-        sort(osamnaestoStoljeceArray);
-        sort(devetnaestoStoljeceArray);
-        sort(dvadesetoStoljeceArray);
-    }
-
-    private void sort(ArrayList<Monument> arrayList) {
-
-        Collections.sort(arrayList, new Comparator<Monument>() {
-
-            public int compare(Monument monument1, Monument monument2) {
-                return monument1.getName().compareTo(monument2.getName());
-            }
-        });
+        Collections.sort(jedanaestoStoljeceArray);
+        Collections.sort(dvanaestoStoljeceArray);
+        Collections.sort(trinaestoStoljeceArray);
+        Collections.sort(cetrnaestoStoljeceArray);
+        Collections.sort(petnaestoStoljeceArray);
+        Collections.sort(sesnaestoStoljeceArray);
+        Collections.sort(sedamnaestoStoljeceArray);
+        Collections.sort(osamnaestoStoljeceArray);
+        Collections.sort(devetnaestoStoljeceArray);
+        Collections.sort(dvadesetoStoljeceArray);
     }
 
     public ArrayList<Monument> getArrayListByCentury(String century) {

@@ -1,9 +1,15 @@
 package com.maradroid.shp.dataModels;
 
+import java.text.CollationKey;
+import java.text.Collator;
+import java.util.Locale;
+
 /**
  * Created by mara on 9/29/15.
  */
-public class Monument {
+public class Monument implements Comparable<Monument>{
+
+    private static final Collator collator = Collator.getInstance(new Locale("hr_HR"));
 
     private String id;
     private String name;
@@ -15,6 +21,8 @@ public class Monument {
     private String interesting;
     private String century;
     private String place;
+
+    private CollationKey key;
 
     public Monument(String id, String name, String year, String type, String language, String content, String size, String interesting, String century, String place){
 
@@ -28,6 +36,13 @@ public class Monument {
         this.interesting = interesting;
         this.century = century;
         this.place = place;
+
+        this.key = collator.getCollationKey(name);
+    }
+
+    @Override
+    public int compareTo(Monument monument) {
+        return key.compareTo(monument.key);
     }
 
     public String getId() {
@@ -69,4 +84,5 @@ public class Monument {
     public String getPlace() {
         return place;
     }
+
 }

@@ -3,25 +3,63 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/item_toolbar"></include>
 
     <EditText
         android:id="@+id/text_to_translate_et"
         android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="20dp"
+        android:singleLine="true"
+        android:background="@android:color/white"
+        android:gravity="center" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/main_color"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"></View>
 
     <TextView
-        android:id="@+id/translated_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="15dp"
-        android:textSize="30sp"/>
+        android:layout_gravity="center_horizontal"
+        android:text="@string/unsupported_input"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/main_color"
+        android:typeface="sans"
+        android:textSize="12sp"/>
 
-    <Button
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="translate"
-        android:onClick="translateText"/>
+        android:layout_marginTop="15dp">
+
+        <LinearLayout
+            android:id="@+id/ll_screenshot"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/translated_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textSize="30sp"
+                android:gravity="center"
+                android:background="@android:color/white"/>
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
