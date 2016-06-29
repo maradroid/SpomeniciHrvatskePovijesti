@@ -30,7 +30,7 @@ import java.util.ArrayList;
 /**
  * Created by mara on 3/15/15.
  */
-public class ListActivity extends ActionBarActivity implements ListActivityAdapter.ClickListener, MonumentEvent {
+public class ListActivity extends BaseActivity implements ListActivityAdapter.ClickListener, MonumentEvent {
 
     private static final int SEARCH_ITEM_TAG = -2;
 

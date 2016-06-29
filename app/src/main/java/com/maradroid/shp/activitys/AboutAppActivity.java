@@ -14,7 +14,7 @@ import com.maradroid.shp.R;
 /**
  * Created by mara on 9/24/15.
  */
-public class AboutAppActivity extends ActionBarActivity {
+public class AboutAppActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

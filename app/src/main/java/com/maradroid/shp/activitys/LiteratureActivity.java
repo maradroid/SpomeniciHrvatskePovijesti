@@ -14,7 +14,7 @@ import com.maradroid.shp.adapters.LiteratureAdapter;
 /**
  * Created by mara on 9/23/15.
  */
-public class LiteratureActivity extends ActionBarActivity {
+public class LiteratureActivity extends BaseActivity {
 
     private RecyclerView mRecycler;
     private RecyclerView.LayoutManager mLayoutManager;

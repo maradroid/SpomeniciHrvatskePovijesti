@@ -3,6 +3,7 @@ package com.maradroid.shp.api;
 import android.content.Context;
 import android.content.res.AssetManager;
 
+import com.maradroid.shp.dataModels.MapPointer;
 import com.maradroid.shp.dataModels.Monument;
 
 import org.json.JSONArray;
@@ -10,11 +11,8 @@ import org.json.JSONException;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
-import java.util.Locale;
 
 /**
  * Created by mara on 9/29/15.
@@ -37,6 +35,8 @@ public class ApiSingleton {
     private ArrayList<Monument> osamnaestoStoljeceArray;
     private ArrayList<Monument> devetnaestoStoljeceArray;
     private ArrayList<Monument> dvadesetoStoljeceArray;
+
+    private ArrayList<MapPointer> pointersArray;
 
     private MonumentEvent monumentEvent;
 
@@ -65,6 +65,8 @@ public class ApiSingleton {
         osamnaestoStoljeceArray = new ArrayList<Monument>();
         devetnaestoStoljeceArray = new ArrayList<Monument>();
         dvadesetoStoljeceArray = new ArrayList<Monument>();
+
+        pointersArray = new ArrayList<>();
 
         new Thread(new Runnable() {
             @Override
@@ -136,6 +138,16 @@ public class ApiSingleton {
                 monumentArray.add(tempMonument);
 
                 saveObjectToSpecificArray(tempMonument);
+
+                if (jArray.getJSONObject(i).getDouble("latitude") != -1 && jArray.getJSONObject(i).getDouble("longitude") != -1) {
+
+                    MapPointer tempPointer = new MapPointer(jArray.getJSONObject(i).getString("id"),
+                            jArray.getJSONObject(i).getString("ime"),
+                            jArray.getJSONObject(i).getDouble("latitude"),
+                            jArray.getJSONObject(i).getDouble("longitude"));
+
+                    pointersArray.add(tempPointer);
+                }
 
             }
 
@@ -244,49 +256,11 @@ public class ApiSingleton {
         return null;
     }
 
-    public ArrayList<Monument> getDvadesetoStoljeceArray() {
-        return dvadesetoStoljeceArray;
-    }
-
-    public ArrayList<Monument> getDevetnaestoStoljeceArray() {
-        return devetnaestoStoljeceArray;
-    }
-
-    public ArrayList<Monument> getOsamnaestoStoljeceArray() {
-        return osamnaestoStoljeceArray;
-    }
-
-    public ArrayList<Monument> getSedamnaestoStoljeceArray() {
-        return sedamnaestoStoljeceArray;
-    }
-
-    public ArrayList<Monument> getSesnaestoStoljeceArray() {
-        return sesnaestoStoljeceArray;
-    }
-
-    public ArrayList<Monument> getPetnaestoStoljeceArray() {
-        return petnaestoStoljeceArray;
-    }
-
-    public ArrayList<Monument> getCetrnaestoStoljeceArray() {
-        return cetrnaestoStoljeceArray;
-    }
-
-    public ArrayList<Monument> getTrinaestoStoljeceArray() {
-        return trinaestoStoljeceArray;
-    }
-
-    public ArrayList<Monument> getDvanaestoStoljeceArray() {
-        return dvanaestoStoljeceArray;
-    }
-
-    public ArrayList<Monument> getJedanaestoStoljeceArray() {
-        return jedanaestoStoljeceArray;
-    }
-
     public ArrayList<Monument> getMonumentArray() {
         return monumentArray;
     }
+
+    public ArrayList<MapPointer> getPointersArray(){return pointersArray;}
 
     public boolean isDataReady() {
         return isDataReady;

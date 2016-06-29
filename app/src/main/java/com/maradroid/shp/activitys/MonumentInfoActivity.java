@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * Created by mara on 3/16/15.
  */
-public class MonumentInfoActivity extends ActionBarActivity{
+public class MonumentInfoActivity extends BaseActivity{
 
     private List<String> info;
 
@@ -164,8 +164,7 @@ public class MonumentInfoActivity extends ActionBarActivity{
 
         } else if (id == R.id.ic_map) {
             Intent mapIntent = new Intent(MonumentInfoActivity.this, MapsActivity.class);
-            mapIntent.putExtra("latitude", dataObject.getLatitude());
-            mapIntent.putExtra("longitude", dataObject.getLongitude());
+            mapIntent.putExtra("id", dataObject.getId());
             startActivity(mapIntent);
         }
 

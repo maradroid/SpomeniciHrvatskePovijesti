@@ -1,22 +1,28 @@
 package com.maradroid.shp.activitys;
 
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.maradroid.shp.R;
+import com.maradroid.shp.api.ApiSingleton;
+import com.maradroid.shp.dataModels.MapPointer;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+import java.util.ArrayList;
+
+public class MapsActivity extends BaseActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
 
-    private double latitude = -1;
-    private double longitude = -1;
+    private ArrayList<MapPointer> pointersArray;
+    private String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +30,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         setContentView(R.layout.activity_maps);
 
         getData();
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -35,29 +41,43 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Bundle extras = getIntent().getExtras();
 
         if (extras != null) {
-            latitude = extras.getDouble("latitude");
-            longitude = extras.getDouble("longitude");
+            id = extras.getString("id", null);
         }
+
+        pointersArray = ApiSingleton.getInstance().getPointersArray();
     }
 
-
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng point = new LatLng(latitude, longitude);
-        mMap.addMarker(new MarkerOptions().position(point).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(point));
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(10), 2000, null);
+        if (id != null && pointersArray != null && pointersArray.size() != 0) {
+
+            for (MapPointer pointer : pointersArray) {
+
+                if (id.equals(pointer.getId())) {
+                    setMarker(pointer, BitmapDescriptorFactory.HUE_RED, true);
+
+                } else {
+                    setMarker(pointer, BitmapDescriptorFactory.HUE_AZURE, false);
+                }
+            }
+        } else {
+            Toast.makeText(MapsActivity.this, getResources().getString(R.string.maps_error), Toast.LENGTH_SHORT).show();
+        }
     }
+
+    private void setMarker(MapPointer pointer, float color, boolean setCamera) {
+
+        LatLng point = new LatLng(pointer.getLatitude(), pointer.getLongitude());
+
+        Marker marker = mMap.addMarker(new MarkerOptions().position(point).title(pointer.getName()).icon(BitmapDescriptorFactory.defaultMarker(color)));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(10), 2000, null);
+
+        if (setCamera) {
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(point));
+            marker.showInfoWindow();
+        }
+    }
+
 }

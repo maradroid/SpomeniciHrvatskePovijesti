@@ -14,6 +14,8 @@
 
     <item name="main_color" type="color">#B71C1C</item>
     <item name="second_color" type="color">#757575</item>
+    <item name="third_color" type="color">#8b1515</item>
+    <item name="fourth_color" type="color">#a11919</item>
 
 
 
