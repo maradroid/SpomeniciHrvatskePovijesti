@@ -30,7 +30,7 @@ import com.maradroid.shp.dataModels.Century;
 import java.util.ArrayList;
 
 
-public class MainActivity extends ActionBarActivity implements MainActivityAdapter.ClickListener, MonumentEvent {
+public class MainActivity extends BaseActivity implements MainActivityAdapter.ClickListener, MonumentEvent {
 
     private static final int SEARCH_ITEM_TAG = -2;
 

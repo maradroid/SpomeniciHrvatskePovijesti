@@ -31,7 +31,7 @@ import java.util.Date;
 /**
  * Created by mara on 3/18/16.
  */
-public class TranslateActivity extends ActionBarActivity {
+public class TranslateActivity extends BaseActivity {
 
     private static final int SAVE_TAG = 0;
     private static final int SHARE_TAG = 1;
@@ -132,6 +132,7 @@ public class TranslateActivity extends ActionBarActivity {
 
                     if (character.equals("č") || character.equals("ć") || character.equals("ž") || character.equals("š") || character.equals("đ")){
 
+                        editable.delete(editable.length()-1, editable.length());
                         Toast.makeText(TranslateActivity.this, getString(R.string.input_error), Toast.LENGTH_SHORT).show();
 
                     } else {
