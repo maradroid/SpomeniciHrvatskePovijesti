@@ -153,7 +153,7 @@ public class TranslateActivity extends BaseActivity {
             @Override
             public void run() {
 
-                String mPath = Environment.getExternalStorageDirectory().toString() + "/Glagopedija/";
+                String mPath = Environment.getExternalStorageDirectory().toString() + "/" + getResources().getString(R.string.app_name) + "/";
 
                 // create bitmap screen capture
                 //View v1 = getWindow().getDecorView().getRootView();
@@ -249,7 +249,7 @@ public class TranslateActivity extends BaseActivity {
 
     private void share() {
 
-        String imagePath = Environment.getExternalStorageDirectory().toString() + "/Glagopedija/" + imageName + ".jpeg";
+        String imagePath = Environment.getExternalStorageDirectory().toString() + "/" + getResources().getString(R.string.app_name) + "/" + imageName + ".jpeg";
 
         File file = new File(imagePath);
 

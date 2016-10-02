@@ -3,21 +3,16 @@ package com.maradroid.shp.activitys;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-
 import com.maradroid.shp.R;
-import com.maradroid.shp.api.ApiSingleton;
-import com.maradroid.shp.api.MonumentEvent;
 import com.maradroid.shp.dataModels.Monument;
-
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * Created by mara on 3/16/15.
@@ -44,8 +39,6 @@ public class MonumentInfoActivity extends BaseActivity{
 
     private Monument dataObject;
 
-    private int position;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,16 +55,7 @@ public class MonumentInfoActivity extends BaseActivity{
         Bundle extra = getIntent().getExtras();
 
         if (extra != null) {
-            position = extra.getInt("position", -1);
-        }
-
-        if (position != -1) {
-
-            MonumentEvent event = ApiSingleton.getInstance().getMonumentEvent();
-
-            if (event != null) {
-                dataObject = event.getMonumentById(position);
-            }
+            dataObject = extra.getParcelable("monument");
         }
     }
 
@@ -126,11 +110,11 @@ public class MonumentInfoActivity extends BaseActivity{
             info.add(dataObject.getInteresting());
 
             for(int i=0; i<7;i++){
+
                 if(!info.get(i).equals("$")){
                     text[i].setText(info.get(i));
 
                 }else{
-
                     text[i].setVisibility(View.GONE);
                     label[i].setVisibility(View.GONE);
                 }
@@ -138,20 +122,12 @@ public class MonumentInfoActivity extends BaseActivity{
         }
     }
 
-    @Override
+/*    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_monument_info, menu);
-
-        MenuItem item = menu.findItem(R.id.ic_map);
-
-        if (dataObject.getLatitude() == -1) {
-            item.setVisible(false);
-        }
-
-        // hide menu if no coordinates
         return true;
-    }
+    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -162,10 +138,6 @@ public class MonumentInfoActivity extends BaseActivity{
             onBackPressed();
             return true;
 
-        } else if (id == R.id.ic_map) {
-            Intent mapIntent = new Intent(MonumentInfoActivity.this, MapsActivity.class);
-            mapIntent.putExtra("id", dataObject.getId());
-            startActivity(mapIntent);
         }
 
         return super.onOptionsItemSelected(item);

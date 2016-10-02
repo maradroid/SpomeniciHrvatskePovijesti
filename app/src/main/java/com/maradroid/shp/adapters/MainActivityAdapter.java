@@ -1,6 +1,8 @@
 package com.maradroid.shp.adapters;
 
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,9 +23,13 @@ public class MainActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     private ArrayList<Century> dataArray;
     private ClickListener clickListener;
+    private Resources resources;
+    private String packageName;
 
-    public MainActivityAdapter(ArrayList<Century> data) {
+    public MainActivityAdapter(ArrayList<Century> data, Context context) {
         this.dataArray = data;
+        this.resources = context.getResources();
+        this.packageName = context.getPackageName();
     }
 
     @Override
@@ -39,13 +45,17 @@ public class MainActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
         ViewHolder viewHolder = (ViewHolder) holder;
 
-        viewHolder.tvCentury.setText(dataArray.get(position).getCardCentury());
-        viewHolder.tvInteresting.setText(dataArray.get(position).getInteresting());
-        viewHolder.ivCardImage.setImageResource(dataArray.get(position).getCardImage());
+        viewHolder.tvCentury.setText(dataArray.get(position).getCentury());
+        viewHolder.tvInteresting.setText(dataArray.get(position).getRepresentatives());
+        viewHolder.ivCardImage.setImageResource(resources.getIdentifier(dataArray.get(position).getImage() + "_edited" , "mipmap", packageName));
 
         if (position == dataArray.size() - 1) {
             RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) viewHolder.view.getLayoutParams();
             params.bottomMargin = params.topMargin;
+
+        } else {
+            RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) viewHolder.view.getLayoutParams();
+            params.bottomMargin = 0;
         }
     }
 
@@ -75,7 +85,7 @@ public class MainActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         public void onClick(View v) {
 
             if(clickListener != null)
-                clickListener.onClick(v, getPosition());
+                clickListener.onClick(v, getAdapterPosition());
         }
     }
 

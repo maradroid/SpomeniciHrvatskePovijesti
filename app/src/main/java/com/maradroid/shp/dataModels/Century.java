@@ -1,27 +1,52 @@
 package com.maradroid.shp.dataModels;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by mara on 3/15/15.
  */
 public class Century {
 
+    @Expose
+    @SerializedName("stoljece")
     private String century;
-    private String interesting;
-    private String centuryTag;
-    private int cardImage;
+    @Expose
+    @SerializedName("slika")
+    private String image;
+    @Expose
+    @SerializedName("predstavnici")
+    private String representatives;
+    @Expose
+    @SerializedName("spomenici")
+    private ArrayList<Monument> monumentList;
 
-    public Century(String century, String centuryTag, String interesting, int image){
+    /*public Century(String century, String centuryTag, String interesting, int image){
         this.century = century;
         this.interesting = interesting;
         this.cardImage = image;
         this.centuryTag = centuryTag;
+    }*/
+
+    public Century() {
     }
 
-    public String getCardCentury(){return this.century;}
+    public String getCentury() {
+        return century;
+    }
 
-    public String getInteresting(){return this.interesting;}
+    public ArrayList<Monument> getMonumentList() {
+        return monumentList;
+    }
 
-    public int getCardImage(){return this.cardImage;}
+    public String getRepresentatives() {
+        return representatives;
+    }
 
-    public String getCenturyTag(){return this.centuryTag;}
+    public String getImage() {
+        return image;
+    }
 }

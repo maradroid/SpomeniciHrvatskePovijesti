@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -21,16 +20,15 @@ import android.widget.LinearLayout;
 import com.maradroid.shp.R;
 import com.maradroid.shp.adapters.CustomSearchAdapter;
 import com.maradroid.shp.adapters.ListActivityAdapter;
-import com.maradroid.shp.api.ApiSingleton;
-import com.maradroid.shp.api.MonumentEvent;
 import com.maradroid.shp.dataModels.Monument;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by mara on 3/15/15.
  */
-public class ListActivity extends BaseActivity implements ListActivityAdapter.ClickListener, MonumentEvent {
+public class ListActivity extends BaseActivity implements ListActivityAdapter.ClickListener {
 
     private static final int SEARCH_ITEM_TAG = -2;
 
@@ -39,9 +37,7 @@ public class ListActivity extends BaseActivity implements ListActivityAdapter.Cl
     private ListActivityAdapter mAdapter;
 
     private ArrayList<Monument> monumentArray;
-
     private String century;
-    private String tag;
 
     private AutoCompleteTextView searchBar;
     private LinearLayout llSearch;
@@ -50,19 +46,14 @@ public class ListActivity extends BaseActivity implements ListActivityAdapter.Cl
 
     private InputMethodManager keyboardManager;
 
-    private Monument searchMonument;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_monument_list);
 
-        ApiSingleton.getInstance().setMonumentEvent(this);
-
         getExtra();
         initToolbar();
         initViews();
-        getData();
         initRecyclerView();
         initSearch();
 
@@ -74,7 +65,8 @@ public class ListActivity extends BaseActivity implements ListActivityAdapter.Cl
 
         if (extras != null) {
             century = extras.getString("stoljece", null);
-            tag = extras.getString("tag", null);
+            monumentArray = extras.getParcelableArrayList("monumentList");
+            Collections.sort(monumentArray, new CroatianComparator());
         }
     }
 
@@ -98,35 +90,28 @@ public class ListActivity extends BaseActivity implements ListActivityAdapter.Cl
         mRecycler = (RecyclerView) findViewById(R.id.list_view);
     }
 
-    private void getData() {
-
-        monumentArray = new ArrayList<Monument>();
-
-        if (tag != null) {
-            monumentArray = ApiSingleton.getInstance().getArrayListByCentury(tag);
-        }
-
-    }
-
     private void initRecyclerView() {
 
-        mRecycler.setHasFixedSize(true);
-        mLayoutManager = new LinearLayoutManager(this);
-        mRecycler.setLayoutManager(mLayoutManager);
-        mAdapter = new ListActivityAdapter(monumentArray);
-        mAdapter.setClickListener(this);
-        mRecycler.setAdapter(mAdapter);
+        if (monumentArray != null) {
+            mRecycler.setHasFixedSize(true);
+            mLayoutManager = new LinearLayoutManager(this);
+            mRecycler.setLayoutManager(mLayoutManager);
+            mAdapter = new ListActivityAdapter(monumentArray);
+            mAdapter.setClickListener(this);
+            mRecycler.setAdapter(mAdapter);
+        }
     }
 
     private void initSearch() {
 
-        keyboardManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (monumentArray != null) {
+            keyboardManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
-        CustomSearchAdapter adapter = new CustomSearchAdapter(getApplicationContext(),R.layout.item_search, monumentArray);
-        searchBar.setAdapter(adapter);
+            CustomSearchAdapter adapter = new CustomSearchAdapter(getApplicationContext(),R.layout.item_search, monumentArray);
+            searchBar.setAdapter(adapter);
 
-        setSearchClickListener();
-
+            setSearchClickListener();
+        }
     }
 
     private void setSearchClickListener() {
@@ -135,10 +120,10 @@ public class ListActivity extends BaseActivity implements ListActivityAdapter.Cl
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                searchMonument = (Monument) adapterView.getItemAtPosition(i);
+                Monument searchMonument = (Monument) adapterView.getItemAtPosition(i);
 
                 Intent intent = new Intent(ListActivity.this, MonumentInfoActivity.class);
-                intent.putExtra("position", SEARCH_ITEM_TAG);
+                intent.putExtra("monument", searchMonument);
 
                 if (keyboardManager.isAcceptingText()) {
                     keyboardManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
@@ -204,7 +189,7 @@ public class ListActivity extends BaseActivity implements ListActivityAdapter.Cl
     public void onClick(View v, int position) {
 
         Intent intent = new Intent(this, MonumentInfoActivity.class);
-        intent.putExtra("position", position);
+        intent.putExtra("monument", monumentArray.get(position));
         startActivity(intent);
 
     }
@@ -262,25 +247,5 @@ public class ListActivity extends BaseActivity implements ListActivityAdapter.Cl
             super.onBackPressed();
         }
 
-    }
-
-    @Override
-    public Monument getMonumentById(int position) {
-
-        if (position == SEARCH_ITEM_TAG && searchMonument != null) {
-            return searchMonument;
-
-        } else if (position != SEARCH_ITEM_TAG && position != -1) {
-            return monumentArray.get(position);
-        }
-
-        return null;
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
-        ApiSingleton.getInstance().removeMonumentEvent();
     }
 }

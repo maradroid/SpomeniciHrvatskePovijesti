@@ -3,7 +3,6 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
-
     defaultConfig {
         applicationId "com.maradroid.shp"
         minSdkVersion 15
@@ -17,11 +16,28 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+        glagopedijaflavor {
+            minSdkVersion 15
+            applicationId 'com.maradroid.glagopedija'
+            targetSdkVersion 23
+            versionCode 1
+            versionName '1.0'
+        }
+        cirilopedijaflavor {
+            minSdkVersion 15
+            applicationId 'com.maradroid.cirilopedija'
+            targetSdkVersion 23
+            versionCode 1
+            versionName '1.0'
+        }
+    }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:23.0.1'
     compile 'com.android.support:recyclerview-v7:23.0.1'
     compile 'com.google.android.gms:play-services:8.4.0'
+    compile 'com.google.code.gson:gson:2.7'
 }
