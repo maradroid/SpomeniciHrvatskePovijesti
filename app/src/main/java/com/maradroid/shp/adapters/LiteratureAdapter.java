@@ -32,7 +32,18 @@ public class LiteratureAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
 
-        ((ViewHolder)holder).tvText.setText(dataArray[position]);
+        ViewHolder viewHolder = (ViewHolder) holder;
+
+        viewHolder.tvText.setText(dataArray[position]);
+
+        if (position == dataArray.length - 1) {
+            RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) viewHolder.view.getLayoutParams();
+            params.bottomMargin = params.topMargin;
+
+        } else {
+            RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) viewHolder.view.getLayoutParams();
+            params.bottomMargin = 0;
+        }
     }
 
     @Override
@@ -43,10 +54,12 @@ public class LiteratureAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         private TextView tvText;
+        private View view;
 
         public ViewHolder(View v) {
             super(v);
 
+            this.view = v;
             this.tvText = (TextView) v.findViewById(R.id.tv_literature);
         }
     }

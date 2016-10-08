@@ -30,8 +30,6 @@ import java.util.Collections;
  */
 public class ListActivity extends BaseActivity implements ListActivityAdapter.ClickListener {
 
-    private static final int SEARCH_ITEM_TAG = -2;
-
     private RecyclerView mRecycler;
     private RecyclerView.LayoutManager mLayoutManager;
     private ListActivityAdapter mAdapter;

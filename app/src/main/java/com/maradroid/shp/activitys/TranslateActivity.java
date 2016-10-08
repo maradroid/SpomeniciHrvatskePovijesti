@@ -1,14 +1,16 @@
 package com.maradroid.shp.activitys;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -20,7 +22,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.maradroid.shp.R;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -51,7 +52,6 @@ public class TranslateActivity extends BaseActivity {
 
         initToolbar();
         initViews();
-
     }
 
     @Override
@@ -72,12 +72,12 @@ public class TranslateActivity extends BaseActivity {
 
         } else if (id == R.id.ic_save) {
 
-            if (screenshotEnabled)
+            if (screenshotEnabled && hasPermissins(SAVE_TAG))
                 saveImage();
 
         } else if (id == R.id.ic_share) {
 
-            if (screenshotEnabled)
+            if (screenshotEnabled && hasPermissins(SHARE_TAG))
                 shareImage();
         }
 
@@ -91,6 +91,7 @@ public class TranslateActivity extends BaseActivity {
         setSupportActionBar(toolbar);
         toolbar.setTitleTextColor(Color.WHITE);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(getResources().getString(R.string.translator));
         toolbar.setNavigationIcon(R.mipmap.ic_chevron_left_white_36dp);
     }
 
@@ -130,9 +131,9 @@ public class TranslateActivity extends BaseActivity {
                     String character = String.valueOf(lastCharacter);
                     character.toLowerCase();
 
-                    if (character.equals("č") || character.equals("ć") || character.equals("ž") || character.equals("š") || character.equals("đ")){
+                    if (character.equals("č") || character.equals("ć") || character.equals("ž") || character.equals("š") || character.equals("đ")) {
 
-                        editable.delete(editable.length()-1, editable.length());
+                        editable.delete(editable.length() - 1, editable.length());
                         Toast.makeText(TranslateActivity.this, getString(R.string.input_error), Toast.LENGTH_SHORT).show();
 
                     } else {
@@ -193,7 +194,6 @@ public class TranslateActivity extends BaseActivity {
                             } else if (tag == SHARE_TAG) {
                                 share();
                             }
-
                         }
                     });
 
@@ -209,14 +209,12 @@ public class TranslateActivity extends BaseActivity {
     private void saveImage() {
 
         if (imageName == null) {
-
             inputValue = etTextToTranslate.getText().toString();
             takeScreenshot(tvTranslatedText, SAVE_TAG);
 
         } else {
 
             if (!inputValue.equals(etTextToTranslate.getText().toString())) {
-
                 inputValue = etTextToTranslate.getText().toString();
                 takeScreenshot(tvTranslatedText, SAVE_TAG);
 
@@ -224,20 +222,17 @@ public class TranslateActivity extends BaseActivity {
                 Toast.makeText(this, getString(R.string.image_saved), Toast.LENGTH_SHORT).show();
             }
         }
-
     }
 
     public void shareImage() {
 
         if (imageName == null) {
-
             inputValue = etTextToTranslate.getText().toString();
             takeScreenshot(tvTranslatedText, SHARE_TAG);
 
         } else {
 
             if (!inputValue.equals(etTextToTranslate.getText().toString())) {
-
                 inputValue = etTextToTranslate.getText().toString();
                 takeScreenshot(tvTranslatedText, SHARE_TAG);
 
@@ -259,5 +254,47 @@ public class TranslateActivity extends BaseActivity {
         shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
         shareIntent.setType("image*//*");
         startActivity(Intent.createChooser(shareIntent, "Share photo..."));
+    }
+
+    private boolean hasPermissins(int tag) {
+
+        boolean hasPermission = (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED);
+
+        if (!hasPermission) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, tag);
+
+        } else {
+            return true;
+        }
+
+        return false;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        switch (requestCode) {
+
+            case SAVE_TAG:
+
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    saveImage();
+                } else {
+                    Toast.makeText(this, getResources().getString(R.string.save_abort), Toast.LENGTH_SHORT).show();
+                }
+
+                break;
+
+            case SHARE_TAG:
+
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    shareImage();
+                } else {
+                    Toast.makeText(this, getResources().getString(R.string.share_abort), Toast.LENGTH_SHORT).show();
+                }
+
+                break;
+        }
     }
 }

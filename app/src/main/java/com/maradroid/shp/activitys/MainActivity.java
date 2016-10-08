@@ -52,8 +52,6 @@ public class MainActivity extends BaseActivity implements MainActivityAdapter.Cl
 
         new JsonParser().parse(this);
         initToolbar();
-
-
     }
 
     private void initToolbar() {
@@ -211,14 +209,14 @@ public class MainActivity extends BaseActivity implements MainActivityAdapter.Cl
 
         if (id == R.id.o_aplikaciji) {
             Intent intent = new Intent(this, AboutAppActivity.class);
-            intent.putExtra("activity","O aplikaciji");
+            intent.putExtra("activity", getResources().getString(R.string.about_app));
             startActivity(intent);
             return true;
         }
 
         if (id == R.id.o_nama) {
             Intent intent = new Intent(this, AboutAppActivity.class);
-            intent.putExtra("activity","O nama");
+            intent.putExtra("activity", getResources().getString(R.string.about_us));
             startActivity(intent);
             return true;
         }
