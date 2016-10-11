@@ -16,7 +16,9 @@
         android:layout_height="match_parent"
         android:background="#d9d9d9"
         android:layout_below="@id/tool_bar"
-        android:clipToPadding="false"/>
+        android:clipToPadding="false"
+        android:paddingLeft="@dimen/recycler_padding"
+        android:paddingRight="@dimen/recycler_padding"/>
 
     <!-- search dimmed (semi-transparent) layout -->
 

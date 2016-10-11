@@ -4,11 +4,14 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -33,7 +36,7 @@ public class MainActivity extends BaseActivity implements MainActivityAdapter.Cl
     private static final int SEARCH_ITEM_TAG = -2;
 
     private RecyclerView mRecycler;
-    private RecyclerView.LayoutManager mLayoutManager;
+    private GridLayoutManager mLayoutManager;
     private MainActivityAdapter mAdapter;
 
     private ArrayList<Century> centuriesArray;
@@ -71,12 +74,28 @@ public class MainActivity extends BaseActivity implements MainActivityAdapter.Cl
 
     private void initRecyclerView() {
 
+        Configuration configuration = this.getResources().getConfiguration();
+        final int screenWidthDp = configuration.screenWidthDp;
+
         mRecycler.setHasFixedSize(true);
-        mLayoutManager = new LinearLayoutManager(this);
+        mLayoutManager = new GridLayoutManager(this, 2);
         mRecycler.setLayoutManager(mLayoutManager);
-        mAdapter = new MainActivityAdapter(centuriesArray, this);
+        mAdapter = new MainActivityAdapter(centuriesArray, this, screenWidthDp);
         mAdapter.setClickListener(this);
         mRecycler.setAdapter(mAdapter);
+
+        mLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+
+                if (screenWidthDp >= 600) {
+                    return 1;
+
+                } else {
+                    return 2;
+                }
+            }
+        });
     }
 
     private void initSearch(ArrayList<Century> centuryList) {

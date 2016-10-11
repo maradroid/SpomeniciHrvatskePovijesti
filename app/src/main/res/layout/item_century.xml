@@ -6,16 +6,17 @@
     android:background="@drawable/card_like2"
     android:layout_marginRight="@dimen/card_margin"
     android:layout_marginLeft="@dimen/card_margin"
-    android:layout_marginTop="@dimen/card_margin"
+    android:layout_marginTop="@dimen/card_margin_top"
     android:id="@+id/parent_layout_ll"
     >
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
         android:id="@+id/iv_card_image"
         android:background="@color/main_color"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"/>
 
 
     <TextView
@@ -40,6 +41,8 @@
         android:layout_marginTop="2dp"
         android:layout_marginBottom="10dp"
         android:typeface="sans"
+        android:maxLines="1"
+        android:ellipsize="end"
         />
 
 </LinearLayout>

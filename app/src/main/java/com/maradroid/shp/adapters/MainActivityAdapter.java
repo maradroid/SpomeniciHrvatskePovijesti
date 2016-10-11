@@ -25,11 +25,13 @@ public class MainActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     private ClickListener clickListener;
     private Resources resources;
     private String packageName;
+    private int screenWidthDp;
 
-    public MainActivityAdapter(ArrayList<Century> data, Context context) {
+    public MainActivityAdapter(ArrayList<Century> data, Context context, int screenWidthDp) {
         this.dataArray = data;
         this.resources = context.getResources();
         this.packageName = context.getPackageName();
+        this.screenWidthDp = screenWidthDp;
     }
 
     @Override
@@ -49,7 +51,11 @@ public class MainActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         viewHolder.tvInteresting.setText(dataArray.get(position).getRepresentatives());
         viewHolder.ivCardImage.setImageResource(resources.getIdentifier(dataArray.get(position).getImage() + "_edited" , "mipmap", packageName));
 
-        if (position == dataArray.size() - 1) {
+        if (screenWidthDp >= 600 && (position == dataArray.size() - 1 || position == dataArray.size() - 2)) { // tablet, last two
+            RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) viewHolder.view.getLayoutParams();
+            params.bottomMargin = params.topMargin;
+
+        } else if (screenWidthDp < 600 && position == dataArray.size() - 1) { //mobile, last one
             RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) viewHolder.view.getLayoutParams();
             params.bottomMargin = params.topMargin;
 
