@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -200,14 +199,12 @@ public class MainActivity extends BaseActivity implements ParserListener {
 
         if (id == R.id.o_aplikaciji) {
             Intent intent = new Intent(this, AboutAppActivity.class);
-            intent.putExtra("activity", getResources().getString(R.string.about_app));
             startActivity(intent);
             return true;
         }
 
         if (id == R.id.o_nama) {
-            Intent intent = new Intent(this, AboutAppActivity.class);
-            intent.putExtra("activity", getResources().getString(R.string.about_us));
+            Intent intent = new Intent(this, AboutUsActivity.class);
             startActivity(intent);
             return true;
         }

@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#d9d9d9"
     android:orientation="vertical">
 
@@ -9,45 +10,18 @@
         android:id="@+id/tool_bar"
         layout="@layout/item_toolbar" />
 
-    <ScrollView
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="50dp"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        app:tabMaxWidth="0dp"
+        style="@style/MyCustomTabLayout"
+        />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/card_margin"
-                android:layout_marginLeft="@dimen/card_margin"
-                android:layout_marginRight="@dimen/card_margin"
-                android:layout_marginTop="@dimen/card_margin"
-                android:background="@drawable/card_like2"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/mjesto_label_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/label_bottom_margin"
-                    android:layout_marginLeft="@dimen/in_card_margin"
-                    android:layout_marginRight="@dimen/in_card_margin"
-                    android:layout_marginTop="@dimen/label_top_margin"
-                    android:typeface="sans"
-                    android:text="@string/o_aplikaciji"
-                    android:textColor="@color/second_color"
-                    android:textSize="15sp"
-
-                    />
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-
-    </ScrollView>
-
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

@@ -35,7 +35,7 @@ public class LiteratureActivity extends BaseActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(getResources().getString(R.string.literature));
+        //getSupportActionBar().setTitle(getResources().getString(R.string.literature));
         toolbar.setTitleTextColor(Color.WHITE);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationIcon(R.mipmap.ic_chevron_left_white_36dp);

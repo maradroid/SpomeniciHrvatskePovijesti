@@ -1,95 +1,57 @@
 package com.maradroid.glagopedija.activitys;
 
-import android.content.Intent;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.maradroid.glagopedija.R;
+import com.maradroid.glagopedija.adapters.AboutAppAdapter;
 
 /**
- * Created by mara on 9/24/15.
+ * Created by mara on 1/8/17.
  */
+
 public class AboutAppActivity extends BaseActivity {
 
+    private ViewPager viewPager;
+    private TabLayout tabLayout;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setContent();
+        setContentView(R.layout.activity_about_app);
+        initViews();
         initToolbar();
-
     }
 
-    private void setContent() {
-
-        String extra = getExtra();
-
-        if (extra != null) {
-
-            if (extra.equals("O aplikaciji")) {
-                setContentView(R.layout.activity_about_app);
-
-            } else {
-                setContentView(R.layout.activity_about_us);
-            }
-        }
+    private void initViews() {
+        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        setupViewPager();
     }
 
-    private String getExtra() {
+    private void setupViewPager() {
+        AboutAppAdapter adapter = new AboutAppAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(adapter);
+        setupTabLayout();
+    }
 
-        Bundle extras = getIntent().getExtras();
-
-        if (extras != null) {
-            return extras.getString("activity", null);
-        }
-
-        return null;
+    private void setupTabLayout() {
+        tabLayout.setupWithViewPager(viewPager);
+        //tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER);
     }
 
     private void initToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(getIntent().getStringExtra("activity"));
+        //getSupportActionBar().setTitle(getString(R.string.about_app));
         toolbar.setTitleTextColor(Color.WHITE);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationIcon(R.mipmap.ic_chevron_left_white_36dp);
-    }
-
-    public void Link(View v){
-
-        int id = v.getId();
-
-        if(id == R.id.etfos) {
-
-            Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.etfos.unios.hr/"));
-            startActivity(i);
-
-        }else if(id == R.id.ffos) {
-
-            Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("http://web.ffos.hr/"));
-            startActivity(i);
-
-        }else if(id == R.id.vera) {
-
-            Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ffos.unios.hr/hrvatski/vera-blazevic-krezic-znanstvena-novakinja"));
-            startActivity(i);
-
-        }else if(id == R.id.milica) {
-
-            Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ffos.unios.hr/hrvatski/izv-prof-dr-sc-milica-lukic"));
-            startActivity(i);
-
-        }else if(id == R.id.balen) {
-
-            Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.etfos.unios.hr/fakultet/imenik-djelatnika/jbalen"));
-            startActivity(i);
-
-        }
-
     }
 
     @Override
@@ -100,7 +62,6 @@ public class AboutAppActivity extends BaseActivity {
         if(id == android.R.id.home) {
             onBackPressed();
             return true;
-
         }
         return super.onOptionsItemSelected(item);
     }
